@@ -1,0 +1,72 @@
+# dependencies
+client-side/node_modules
+client-side/.pnp
+client-side.pnp.js
+
+# testing
+client-side/coverage
+
+# next.js
+client-side/.next/
+client-side/out/
+
+# production
+client-side/build
+
+# misc
+client-side/.DS_Store
+client-side/*.pem
+
+# debug
+client-side/npm-debug.log*
+client-side/yarn-debug.log*
+client-side/yarn-error.log*
+client-side/.pnpm-debug.log*
+
+# local env files
+client-side/.env*.local
+
+# vercel
+client-side/.vercel
+
+# typescript
+client-side/*.tsbuildinfo
+client-side/next-env.d.ts
+
+
+
+
+server-side/dist
+server-side/node_modules
+
+# Logs
+server-side/logs
+server-side/*.log
+server-side/npm-debug.log*
+server-side/pnpm-debug.log*
+server-side/yarn-debug.log*
+server-side/yarn-error.log*
+server-side/lerna-debug.log*
+
+# OS
+server-side/.DS_Store
+
+# Tests
+server-side/coverage
+server-side/.nyc_output
+
+# IDEs and editors
+server-side/.idea
+server-side/.project
+server-side/.classpath
+server-side/.c9/
+server-side/*.launch
+server-side/.settings/
+server-side/*.sublime-workspace
+
+# IDE - VSCode
+server-side/.vscode/*
+server-side/!.vscode/settings.json
+server-side/!.vscode/tasks.json
+server-side/!.vscode/launch.json
+server-side/!.vscode/extensions.json
