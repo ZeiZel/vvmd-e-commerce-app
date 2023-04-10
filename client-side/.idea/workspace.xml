@@ -5,64 +5,71 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25dfd339-0899-469e-ae78-2f0648a5220e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/client-side.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/authentication.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/catalog.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/category/[alias].tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/main.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/member/[alias].tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/member/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/purshases.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/e-commerce-app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app.context.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/api.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/Footer/Footer.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/Footer/Footer.props.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/Footer/Footer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/Header/Header.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/Header/Header.props.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/Header/Header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/Layout.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/Layout.props.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/Layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/Sidebar/Sidebar.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/Sidebar/Sidebar.props.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/Sidebar/Sidebar.tsx" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Button/Arrow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Button/Button.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Button/Button.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Button/Button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ButtonIcon/ButtonIcon.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ButtonIcon/ButtonIcon.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ButtonIcon/ButtonIcon.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Card/Card.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Card/Card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Card/Card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Divider/Card.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Divider/Card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Divider/Divider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/HTag/HTag.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/HTag/Htag.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/HTag/Htag.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Paragraph/Paragraph.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Paragraph/Paragraph.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Paragraph/Paragraph.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Rating/Rating.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Rating/Rating.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Rating/Rating.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Review/Review.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Review/Review.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Review/Review.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ReviewForm/ReviewForm.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ReviewForm/ReviewForm.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ReviewForm/ReviewForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Search/Search.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Search/Search.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Search/Search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Search/Search.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Sort/Sort.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Sort/Sort.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Sort/Sort.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Tag/Tag.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Tag/Tag.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Tag/Tag.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Textarea/Textarea.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Textarea/Textarea.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Textarea/Textarea.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Up/Up.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Up/Up.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Up/Up.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/page-components/Login/Login.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/page-components/Login/Login.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/page-components/Login/Login.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/page-components/Register/Register.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/page-components/Register/Register.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/page-components/Register/Register.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/page-components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/404.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/500.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/500.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Buy.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Login.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/thirteen.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/main.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/types/product.interface.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/WiredTiger.turtle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/WiredTiger.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/collection-4-2289534341046070636.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/collection-4-2289534341046070636.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/diagnostic.data/metrics.2023-04-10T13-04-04Z-00000" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/diagnostic.data/metrics.2023-04-10T13-04-04Z-00000" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/diagnostic.data/metrics.interim" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/diagnostic.data/metrics.interim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-5-2289534341046070636.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-5-2289534341046070636.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-6-2289534341046070636.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-6-2289534341046070636.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/journal/WiredTigerLog.0000000003" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/journal/WiredTigerLog.0000000003" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/sizeStorer.wt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +79,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="PostCSS File" />
         <option value="TypeScript File" />
+        <option value="SCSS File" />
         <option value="TypeScript JSX File" />
       </list>
     </option>
@@ -96,6 +105,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/ZeiZel/Desktop/e-commerce-app/client-side/page-components/Register",
+    "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -107,6 +118,15 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ZeiZel\Desktop\e-commerce-app\client-side\page-components\Register" />
+      <recent name="C:\Users\ZeiZel\Desktop\e-commerce-app\client-side\components\Up" />
+      <recent name="C:\Users\ZeiZel\Desktop\e-commerce-app\client-side\components\Textarea" />
+      <recent name="C:\Users\ZeiZel\Desktop\e-commerce-app\client-side\components\Tag" />
+      <recent name="C:\Users\ZeiZel\Desktop\e-commerce-app\client-side\components\Sort" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -132,7 +152,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681138163963</updated>
-      <workItem from="1681138163963" duration="2124000" />
+      <workItem from="1681138163963" duration="7926000" />
     </task>
     <servers />
   </component>
