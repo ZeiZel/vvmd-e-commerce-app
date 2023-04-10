@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next dev\" \"npx json-server data.json --port 3001\"",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -21,9 +21,5 @@
     "react-yandex-metrika": "^2.6.0",
     "sass": "^1.60.0",
     "typescript": "5.0.2"
-  },
-  "devDependencies": {
-    "concurrently": "^8.0.1",
-    "json-server": "^0.17.3"
   }
 }

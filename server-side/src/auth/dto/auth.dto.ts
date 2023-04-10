@@ -3,7 +3,7 @@ import { TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
 
 export class AuthDto extends TimeStamps {
 	@IsString()
-	name: string;
+	login: string;
 
 	@IsString()
 	password: string;
