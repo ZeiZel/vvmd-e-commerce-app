@@ -5,71 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25dfd339-0899-469e-ae78-2f0648a5220e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/Button/Arrow.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Button/Button.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Button/Button.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Button/Button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ButtonIcon/ButtonIcon.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ButtonIcon/ButtonIcon.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ButtonIcon/ButtonIcon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Card/Card.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Card/Card.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Card/Card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Divider/Card.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Divider/Card.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Divider/Divider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/HTag/HTag.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/HTag/Htag.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/HTag/Htag.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Paragraph/Paragraph.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Paragraph/Paragraph.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Paragraph/Paragraph.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Rating/Rating.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Rating/Rating.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Rating/Rating.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Review/Review.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Review/Review.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Review/Review.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ReviewForm/ReviewForm.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ReviewForm/ReviewForm.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ReviewForm/ReviewForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Search/Search.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Search/Search.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Search/Search.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Search/Search.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Sort/Sort.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Sort/Sort.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Sort/Sort.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Tag/Tag.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Tag/Tag.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Tag/Tag.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Textarea/Textarea.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Textarea/Textarea.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Textarea/Textarea.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Up/Up.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Up/Up.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Up/Up.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/page-components/Login/Login.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/page-components/Login/Login.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/page-components/Login/Login.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/page-components/Register/Register.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/page-components/Register/Register.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/page-components/Register/Register.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/page-components/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Card/Card.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Notification/Notification.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Notification/Notification.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/diagnostic.data/metrics.2023-04-11T10-08-39Z-00000" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/journal/WiredTigerLog.0000000004" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Button/Button.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Button/Button.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Button/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Card/Card.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/Card/Card.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Card/Card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Divider/Divider.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Card/Card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Divider/Card.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/Divider/Divider.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Divider/Card.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/main.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/page-components/Login/Login.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/page-components/Login/Login.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page-components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/page-components/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page-components/Register/Register.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/page-components/Register/Register.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page-components/Register/Register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/page-components/Register/Register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/authentication.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/authentication.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/WiredTiger.turtle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/WiredTiger.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/diagnostic.data/metrics.2023-04-10T13-04-04Z-00000" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/diagnostic.data/metrics.2023-04-10T13-04-04Z-00000" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/_mdb_catalog.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/_mdb_catalog.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/collection-0-2289534341046070636.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/collection-0-2289534341046070636.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/collection-11-1328332172444269223.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/collection-11-1328332172444269223.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/collection-2-2289534341046070636.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/collection-2-2289534341046070636.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/collection-4-2289534341046070636.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/collection-4-2289534341046070636.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/collection-7-2289534341046070636.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/collection-7-2289534341046070636.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/collection-8-1328332172444269223.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/collection-8-1328332172444269223.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/diagnostic.data/metrics.interim" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/diagnostic.data/metrics.interim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-1-2289534341046070636.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-1-2289534341046070636.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-12-1328332172444269223.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-12-1328332172444269223.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-13-1328332172444269223.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-13-1328332172444269223.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-3-2289534341046070636.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-3-2289534341046070636.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-5-2289534341046070636.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-5-2289534341046070636.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-6-2289534341046070636.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-6-2289534341046070636.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/journal/WiredTigerLog.0000000003" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/journal/WiredTigerLog.0000000003" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-8-2289534341046070636.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-8-2289534341046070636.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-9-1328332172444269223.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-9-1328332172444269223.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-9-2289534341046070636.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/index-9-2289534341046070636.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/journal/WiredTigerLog.0000000003" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/mongo/mongo-data-4.4/sizeStorer.wt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,9 +61,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="PostCSS File" />
-        <option value="TypeScript File" />
         <option value="SCSS File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -97,27 +78,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/ZeiZel/Desktop/e-commerce-app/client-side/page-components/Register",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\ZeiZel\\AppData\\Roaming\\npm\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "C:\\Users\\ZeiZel\\Desktop\\e-commerce-app\\client-side\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ZeiZel/Desktop/e-commerce-app/client-side/page-components/Register&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\ZeiZel\\AppData\\Roaming\\npm\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ZeiZel\\Desktop\\e-commerce-app\\client-side\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ZeiZel\Desktop\e-commerce-app\client-side\page-components\Register" />
@@ -153,6 +134,9 @@
       <option name="presentableId" value="Default" />
       <updated>1681138163963</updated>
       <workItem from="1681138163963" duration="7926000" />
+      <workItem from="1681195004990" duration="7426000" />
+      <workItem from="1681204032981" duration="2154000" />
+      <workItem from="1681208947091" duration="1137000" />
     </task>
     <servers />
   </component>

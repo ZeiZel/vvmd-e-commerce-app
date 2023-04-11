@@ -1,7 +1,6 @@
 import { IsString } from 'class-validator';
-import { TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
 
-export class AuthDto extends TimeStamps {
+export class AuthDto {
 	@IsString()
 	login: string;
 
