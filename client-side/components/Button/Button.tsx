@@ -1,5 +1,5 @@
 import React from 'react';
-import { IButtonProps } from '@/components/Button/Button.props';
+import { IButtonProps } from './Button.props';
 import cn from 'classnames';
 import { motion } from 'framer-motion';
 import styles from './Button.module.scss';

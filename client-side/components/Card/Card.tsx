@@ -1,5 +1,5 @@
 import React, { FC, ForwardedRef, forwardRef } from 'react';
-import { ICardProps } from '@/components/Card/Card.props';
+import { ICardProps } from './Card.props';
 import cn from 'classnames';
 import styles from './Card.module.scss';
 

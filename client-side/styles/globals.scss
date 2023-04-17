@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-	--black: #3b434e;
+	--black: #262323;
 	--gray-light: #ebebeb;
 	--gray: #a4a4a4;
 	--gray-dark: #6c7077;
@@ -14,7 +14,7 @@
 	--red: #fc836d;
 	--green: #007b48;
 	--green-light: #c8f8e4;
-	--font-family: 'Noto Sans KR', sans-serif;
+	--font-family: 'Montserrat', sans-serif;
 }
 
 * {
@@ -23,14 +23,13 @@
 
 html,
 body {
-	@apply bg-gray-800;
+	background: var(--black);
 
 	margin: 0;
 	padding: 0;
 
-	color: var(--black);
-
-	font-family: 'Noto Sans KR', sans-serif;
+	color: var(--white);
+	font-family: var(--font-family);
 }
 
 a {

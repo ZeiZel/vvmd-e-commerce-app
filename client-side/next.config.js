@@ -1,9 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	reactStrictMode: true,
-	images: {
-		domains: ['courses-top.ru'],
-	},
 	webpack(config, options) {
 		config.module.rules.push({
 			loader: '@svgr/webpack',
@@ -27,7 +23,12 @@ const nextConfig = {
 			},
 			test: /\.svg$/,
 		});
+
 		return config;
+	},
+	reactStrictMode: true,
+	images: {
+		domains: ['http://localhost:3000/', 'http://localhost:3001/', 'http://localhost:3002/'],
 	},
 };
 
