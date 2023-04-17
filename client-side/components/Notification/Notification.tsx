@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { ISuccessProps } from './Notification.props';
-import { Card } from '@/components';
+import { Card } from '../Card/Card';
 
 export const Notification: FC<ISuccessProps> = ({
 	messageStatus,

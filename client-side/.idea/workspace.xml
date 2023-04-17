@@ -5,26 +5,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25dfd339-0899-469e-ae78-2f0648a5220e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/category/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ButtonIcon/ButtonIcon.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ButtonIcon/close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ButtonIcon/menu.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ButtonIcon/up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/useScrollY.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/Auth.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/Basket.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/Catalog.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/Collections.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/Product.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/ShoppingList.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/User.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/Footer/Footer.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/Footer/Footer.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/Footer/Footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/Header/Header.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/Header/Header.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/Header/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/Layout.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/Layout.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/Layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/Menu/Menu.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/Menu/Menu.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/Menu/Menu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/Sidebar/Sidebar.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/Sidebar/Sidebar.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/Sidebar/Sidebar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/page-components/ProductCard/ProductCard.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/page-components/ProductCard/ProductCard.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/page-components/ProductCard/ProductCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Button/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Button/Arrow.svg" beforeDir="false" afterPath="$PROJECT_DIR$/components/Button/Arrow.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ButtonIcon/ButtonIcon.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/ButtonIcon/ButtonIcon.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ButtonIcon/ButtonIcon.scss" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ButtonIcon/ButtonIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ButtonIcon/ButtonIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Card/Card.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Card/Card.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Card/Card.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/Card/Card.props.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Card/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/HTag/HTag.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/HTag/HTag.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Divider/Divider.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Divider/Divider.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Divider/Divider.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/Divider/Divider.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Divider/Divider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Divider/Divider.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/HTag/Htag.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/HTag/Htag.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/HTag/Htag.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/HTag/Htag.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Notification/Notification.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Notification/Notification.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Paragraph/Paragraph.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Paragraph/Paragraph.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Paragraph/Paragraph.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/Paragraph/Paragraph.props.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Paragraph/Paragraph.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Paragraph/Paragraph.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Tag/Tag.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Tag/Tag.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Tag/Tag.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/Tag/Tag.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Tag/Tag.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Tag/Tag.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Up/Up.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Up/Up.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Up/Up.props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Up/Up.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Up/Up.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/catalog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/catalog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/category/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/category/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/member/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/member/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +75,8 @@
       <list>
         <option value="PostCSS File" />
         <option value="SCSS File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -60,7 +99,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ZeiZel/Desktop/e-commerce-app/client-side/page-components/Register&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ZeiZel/Desktop/e-commerce-app/client-side/layout/Sidebar&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -75,11 +114,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ZeiZel\Desktop\e-commerce-app\client-side\layout\Sidebar" />
+      <recent name="C:\Users\ZeiZel\Desktop\e-commerce-app\client-side\layout\Menu" />
+      <recent name="C:\Users\ZeiZel\Desktop\e-commerce-app\client-side\layout\Header" />
+      <recent name="C:\Users\ZeiZel\Desktop\e-commerce-app\client-side\layout\Footer" />
       <recent name="C:\Users\ZeiZel\Desktop\e-commerce-app\client-side\page-components\Register" />
-      <recent name="C:\Users\ZeiZel\Desktop\e-commerce-app\client-side\components\Up" />
-      <recent name="C:\Users\ZeiZel\Desktop\e-commerce-app\client-side\components\Textarea" />
-      <recent name="C:\Users\ZeiZel\Desktop\e-commerce-app\client-side\components\Tag" />
-      <recent name="C:\Users\ZeiZel\Desktop\e-commerce-app\client-side\components\Sort" />
     </key>
   </component>
   <component name="RunManager">
@@ -113,7 +152,10 @@
       <workItem from="1681208947091" duration="1137000" />
       <workItem from="1681714905782" duration="3480000" />
       <workItem from="1681718447145" duration="2172000" />
-      <workItem from="1681721528252" duration="3022000" />
+      <workItem from="1681721528252" duration="3143000" />
+      <workItem from="1681728505023" duration="12616000" />
+      <workItem from="1681745405372" duration="109000" />
+      <workItem from="1681745551961" duration="1736000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Page = () => {
+const Category = () => {
 	return <div>Категории</div>;
 };
 
-export default Page;
+export default Category;
