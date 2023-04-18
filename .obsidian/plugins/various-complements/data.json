@@ -1,0 +1,1444 @@
+{
+  "strategy": "default",
+  "cedictPath": "./cedict_ts.u8",
+  "matchStrategy": "prefix",
+  "fuzzyMatch": true,
+  "maxNumberOfSuggestions": 10,
+  "maxNumberOfWordsAsPhrase": 3,
+  "minNumberOfCharactersTriggered": 0,
+  "minNumberOfWordsTriggeredPhrase": 1,
+  "complementAutomatically": true,
+  "delayMilliSeconds": 0,
+  "disableSuggestionsDuringImeOn": false,
+  "insertAfterCompletion": true,
+  "firstCharactersDisableSuggestions": ":/^",
+  "useCommonPrefixCompletionOfSuggestion": false,
+  "patternsToSuppressTrigger": [
+    "^~~~.*",
+    "^```.*"
+  ],
+  "showMatchStrategy": false,
+  "showComplementAutomatically": false,
+  "showIndexingStatus": false,
+  "descriptionOnSuggestion": "Short",
+  "selectSuggestionKeys": "Tab",
+  "additionalCycleThroughSuggestionsKeys": "None",
+  "disableUpDownKeysForCycleThroughSuggestionsKeys": false,
+  "openSourceFileKey": "None",
+  "propagateEsc": false,
+  "enableCurrentFileComplement": true,
+  "currentFileMinNumberOfCharacters": 0,
+  "onlyComplementEnglishOnCurrentFileComplement": false,
+  "enableCurrentVaultComplement": false,
+  "currentVaultMinNumberOfCharacters": 0,
+  "includeCurrentVaultPathPrefixPatterns": "",
+  "excludeCurrentVaultPathPrefixPatterns": "",
+  "includeCurrentVaultOnlyFilesUnderCurrentDirectory": false,
+  "enableCustomDictionaryComplement": false,
+  "customDictionaryPaths": "https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english-no-swears.txt",
+  "columnDelimiter": "Tab",
+  "customDictionaryWordRegexPattern": "",
+  "delimiterToHideSuggestion": "",
+  "delimiterToDivideSuggestionsForDisplayFromInsertion": "",
+  "caretLocationSymbolAfterComplement": "",
+  "displayedTextSuffix": " => ...",
+  "enableInternalLinkComplement": true,
+  "suggestInternalLinkWithAlias": false,
+  "excludeInternalLinkPathPrefixPatterns": "",
+  "updateInternalLinksOnSave": true,
+  "insertAliasTransformedFromDisplayedInternalLink": {
+    "enabled": false,
+    "beforeRegExp": "",
+    "after": ""
+  },
+  "enableFrontMatterComplement": true,
+  "frontMatterComplementMatchStrategy": "inherit",
+  "insertCommaAfterFrontMatterCompletion": false,
+  "intelligentSuggestionPrioritization": {
+    "maxDaysToKeepHistory": 30,
+    "maxNumberOfHistoryToKeep": 0
+  },
+  "showLogAboutPerformanceInConsole": false,
+  "selectionHistoryTree": {
+    "interface": {
+      "interface": {
+        "currentFile": {
+          "count": 7,
+          "lastUpdated": 1677499829658
+        }
+      }
+    },
+    "useContext": {
+      "useContext": {
+        "currentFile": {
+          "count": 5,
+          "lastUpdated": 1678871879212
+        }
+      }
+    },
+    "layout": {
+      "layout": {
+        "currentFile": {
+          "count": 5,
+          "lastUpdated": 1676989616264
+        }
+      }
+    },
+    "useEffect": {
+      "useEffect": {
+        "currentFile": {
+          "count": 16,
+          "lastUpdated": 1678433648737
+        }
+      }
+    },
+    "микросервисов": {
+      "микросервисов": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1677078423927
+        }
+      }
+    },
+    "зависимости": {
+      "зависимости": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1676986322372
+        }
+      }
+    },
+    "@Injectable": {
+      "@Injectable": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1677075857680
+        }
+      }
+    },
+    "docker-compose": {
+      "docker-compose": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1677057504742
+        }
+      }
+    },
+    "TopPageComponent": {
+      "TopPageComponent": {
+        "currentFile": {
+          "count": 6,
+          "lastUpdated": 1676996055185
+        }
+      }
+    },
+    "components": {
+      "components": {
+        "currentFile": {
+          "count": 39,
+          "lastUpdated": 1679152951783
+        }
+      }
+    },
+    "useReducer": {
+      "useReducer": {
+        "currentFile": {
+          "count": 5,
+          "lastUpdated": 1678881108956
+        }
+      }
+    },
+    "page-components": {
+      "page-components": {
+        "currentFile": {
+          "count": 4,
+          "lastUpdated": 1676996049390
+        }
+      }
+    },
+    "Input": {
+      "Input": {
+        "currentFile": {
+          "count": 4,
+          "lastUpdated": 1676985966392
+        }
+      }
+    },
+    "textarea": {
+      "textarea": {
+        "currentFile": {
+          "count": 4,
+          "lastUpdated": 1678434463590
+        }
+      }
+    },
+    "Product": {
+      "Product": {
+        "currentFile": {
+          "count": 8,
+          "lastUpdated": 1676979330403
+        }
+      }
+    },
+    "useState": {
+      "useState": {
+        "currentFile": {
+          "count": 5,
+          "lastUpdated": 1678530061037
+        }
+      }
+    },
+    "service": {
+      "service": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1678713937969
+        }
+      }
+    },
+    "ReviewForm": {
+      "ReviewForm": {
+        "currentFile": {
+          "count": 4,
+          "lastUpdated": 1676986002376
+        }
+      }
+    },
+    "motion": {
+      "motion": {
+        "currentFile": {
+          "count": 4,
+          "lastUpdated": 1676616853103
+        }
+      }
+    },
+    "useAnimation": {
+      "useAnimation": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676612543937
+        }
+      }
+    },
+    "framer-motion": {
+      "framer-motion": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1676635821718
+        }
+      }
+    },
+    "ButtonIcon": {
+      "ButtonIcon": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676619314437
+        }
+      }
+    },
+    "onClick": {
+      "onClick": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676619323569
+        }
+      }
+    },
+    "Layout": {
+      "Layout": {
+        "currentFile": {
+          "count": 5,
+          "lastUpdated": 1676978006013
+        }
+      }
+    },
+    "Header": {
+      "Header": {
+        "currentFile": {
+          "count": 3,
+          "lastUpdated": 1676989622759
+        }
+      }
+    },
+    "слабовидящих": {
+      "слабовидящих": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676641225711
+        }
+      }
+    },
+    "клавиатуры": {
+      "клавиатуры": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676645633611
+        }
+      }
+    },
+    "line-height": {
+      "line-height": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676645892016
+        }
+      }
+    },
+    "display": {
+      "display": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1678002538473
+        }
+      }
+    },
+    "skipLink": {
+      "skipLink": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676649120528
+        }
+      }
+    },
+    "skipContentAction": {
+      "skipContentAction": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676649340285
+        }
+      }
+    },
+    "табиндекс": {
+      "табиндекс": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676698455206
+        }
+      }
+    },
+    "SortEnum": {
+      "SortEnum": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676700007389
+        }
+      }
+    },
+    "ARIA-атрибуты": {
+      "ARIA-атрибуты": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676720411169
+        }
+      }
+    },
+    "ДОМ-дерева": {
+      "ДОМ-дерева": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676720515291
+        }
+      }
+    },
+    "скринридером": {
+      "скринридером": {
+        "currentFile": {
+          "count": 3,
+          "lastUpdated": 1676974811093
+        }
+      }
+    },
+    "девтулз": {
+      "девтулз": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676721256850
+        }
+      }
+    },
+    "несуществующую": {
+      "несуществующую": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1676734586899
+        }
+      }
+    },
+    "useHistory": {
+      "useHistory": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676735224119
+        }
+      }
+    },
+    "useParams": {
+      "useParams": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676735573964
+        }
+      }
+    },
+    "реакт-роутер-дом": {
+      "реакт-роутер-дом": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676735599687
+        }
+      }
+    },
+    "PostService": {
+      "PostService": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676735729444
+        }
+      }
+    },
+    "getById": {
+      "getById": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676736398883
+        }
+      }
+    },
+    "getCommentsByPostId": {
+      "getCommentsByPostId": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676736405873
+        }
+      }
+    },
+    "isLoading": {
+      "isLoading": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676782787826
+        }
+      }
+    },
+    "аутентификация": {
+      "аутентификация": {
+        "currentFile": {
+          "count": 3,
+          "lastUpdated": 1676783633912
+        }
+      }
+    },
+    "отображать": {
+      "отображать": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676782986518
+        }
+      }
+    },
+    "компоненте": {
+      "компоненте": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1677944945410
+        }
+      }
+    },
+    "находимся": {
+      "находимся": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676783141411
+        }
+      }
+    },
+    "появилась": {
+      "появилась": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676783351506
+        }
+      }
+    },
+    "атрибут": {
+      "атрибут": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676783530948
+        }
+      }
+    },
+    "аутентификации": {
+      "аутентификации": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676783669932
+        }
+      }
+    },
+    "хранилища": {
+      "хранилища": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676783675523
+        }
+      }
+    },
+    "Redis": {
+      "Redis": {
+        "internalLink": {
+          "count": 1,
+          "lastUpdated": 1676895279485
+        },
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676895582962
+        }
+      }
+    },
+    "имя_списка": {
+      "имя_списка": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676959713408
+        }
+      }
+    },
+    "существования": {
+      "существования": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676960026016
+        }
+      }
+    },
+    "aria-label": {
+      "aria-label": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1676975622879
+        }
+      }
+    },
+    "aria-labelledby": {
+      "aria-labelledby": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1676974985706
+        }
+      }
+    },
+    "sortName}": {
+      "sortName}": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676974964398
+        }
+      }
+    },
+    "aria-hidden": {
+      "aria-hidden": {
+        "currentFile": {
+          "count": 3,
+          "lastUpdated": 1676977164112
+        }
+      }
+    },
+    "скринридера": {
+      "скринридера": {
+        "currentFile": {
+          "count": 6,
+          "lastUpdated": 1676986062133
+        }
+      }
+    },
+    "landmarks": {
+      "landmarks": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676977499709
+        }
+      }
+    },
+    "Search": {
+      "Search": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676978331949
+        }
+      }
+    },
+    "скринридеру": {
+      "скринридеру": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676986205756
+        }
+      }
+    },
+    "редактируемости": {
+      "редактируемости": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676986326692
+        }
+      }
+    },
+    "оповещений": {
+      "оповещений": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676987483920
+        }
+      }
+    },
+    "информации": {
+      "информации": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676989568359
+        }
+      }
+    },
+    "listitem": {
+      "listitem": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676996316566
+        }
+      }
+    },
+    "description": {
+      "description": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677042901108
+        }
+      }
+    },
+    "инициализирует": {
+      "инициализирует": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677044874825
+        }
+      }
+    },
+    "dockerfile": {
+      "dockerfile": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677052647995
+        }
+      }
+    },
+    "Dockerfile": {
+      "Dockerfile": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1677062071870
+        }
+      }
+    },
+    "WORKDIR": {
+      "WORKDIR": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677052925167
+        }
+      }
+    },
+    "директирию": {
+      "директирию": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677052933021
+        }
+      }
+    },
+    "querystring": {
+      "querystring": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677055294876
+        }
+      }
+    },
+    "Github": {
+      "Github": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677060807446
+        }
+      }
+    },
+    "автоматизировать": {
+      "автоматизировать": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677060829232
+        }
+      }
+    },
+    "workflow": {
+      "workflow": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677061039469
+        }
+      }
+    },
+    "StyleLint": {
+      "StyleLint": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677062977538
+        }
+      }
+    },
+    "configService": {
+      "configService": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677069833313
+        }
+      }
+    },
+    "Middleware": {
+      "Middleware": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677075251503
+        }
+      }
+    },
+    "Interceptors": {
+      "Interceptors": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677075313328
+        }
+      }
+    },
+    "Codewars": {
+      "Codewars": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677425800582
+        }
+      }
+    },
+    "numberChecker": {
+      "numberChecker": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677427072315
+        }
+      }
+    },
+    "numberOfFilms": {
+      "numberOfFilms": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1677427120058
+        }
+      }
+    },
+    "getElementsById": {
+      "getElementsById": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677430385355
+        }
+      }
+    },
+    "getElementsByTagName": {
+      "getElementsByTagName": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677430638425
+        }
+      }
+    },
+    "DOMContentLoaded": {
+      "DOMContentLoaded": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677684735931
+        }
+      }
+    },
+    "querySelector": {
+      "querySelector": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677687048846
+        }
+      }
+    },
+    "getElementByClassName": {
+      "getElementByClassName": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677687079778
+        }
+      }
+    },
+    "boxesGet": {
+      "boxesGet": {
+        "currentFile": {
+          "count": 3,
+          "lastUpdated": 1677687254366
+        }
+      }
+    },
+    "псевдомассивах": {
+      "псевдомассивах": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677687268254
+        }
+      }
+    },
+    "defineProperty": {
+      "defineProperty": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1677688140413
+        }
+      }
+    },
+    "RandomChar": {
+      "RandomChar": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677771750867
+        }
+      }
+    },
+    "getCharacter": {
+      "getCharacter": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677771912956
+        }
+      }
+    },
+    "_transformCharacter": {
+      "_transformCharacter": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677771953342
+        }
+      }
+    },
+    "onCharLoaded": {
+      "onCharLoaded": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677772240559
+        }
+      }
+    },
+    "sliceDescription": {
+      "sliceDescription": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677772351860
+        }
+      }
+    },
+    "Бинарный": {
+      "Бинарный": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677776601175
+        }
+      }
+    },
+    "ErrorMessage": {
+      "ErrorMessage": {
+        "currentFile": {
+          "count": 4,
+          "lastUpdated": 1679032144960
+        }
+      }
+    },
+    "randomChar": {
+      "randomChar": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677842872433
+        }
+      }
+    },
+    "onError": {
+      "onError": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677843651479
+        }
+      }
+    },
+    "componentDidMount": {
+      "componentDidMount": {
+        "currentFile": {
+          "count": 8,
+          "lastUpdated": 1678377041897
+        }
+      }
+    },
+    "componentDidUpdate": {
+      "componentDidUpdate": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1678258252652
+        }
+      }
+    },
+    "componentWillUnmount": {
+      "componentWillUnmount": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677846528469
+        }
+      }
+    },
+    "selectedChar": {
+      "selectedChar": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677944961733
+        }
+      }
+    },
+    "onSelectedChar": {
+      "onSelectedChar": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677944986970
+        }
+      }
+    },
+    "charList": {
+      "charList": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1678117706113
+        }
+      }
+    },
+    "updateChar": {
+      "updateChar": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1679067351359
+        }
+      }
+    },
+    "charId": {
+      "charId": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677947584151
+        }
+      }
+    },
+    "charInfo": {
+      "charInfo": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677947586397
+        }
+      }
+    },
+    "component": {
+      "component": {
+        "currentFile": {
+          "count": 11,
+          "lastUpdated": 1679071783516
+        }
+      }
+    },
+    "componentDidCatch": {
+      "componentDidCatch": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1677950166021
+        }
+      }
+    },
+    "ErrorBoundary": {
+      "ErrorBoundary": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1677950249086
+        }
+      }
+    },
+    "Subscription": {
+      "Subscription": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677993494185
+        }
+      }
+    },
+    "disabled": {
+      "disabled": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1678003620740
+        }
+      }
+    },
+    "onRequest": {
+      "onRequest": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678003374417
+        }
+      }
+    },
+    "cloneElement": {
+      "cloneElement": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678025538833
+        }
+      }
+    },
+    "DynamicGreating": {
+      "DynamicGreating": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678026563825
+        }
+      }
+    },
+    "воспользоваться": {
+      "воспользоваться": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678093873538
+        }
+      }
+    },
+    "CharList": {
+      "CharList": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678117708617
+        }
+      }
+    },
+    "autoplay": {
+      "autoplay": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678205067738
+        }
+      }
+    },
+    "колбэк-функцию": {
+      "колбэк-функцию": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678206453818
+        }
+      }
+    },
+    "useCallback": {
+      "useCallback": {
+        "currentFile": {
+          "count": 3,
+          "lastUpdated": 1679226347332
+        }
+      }
+    },
+    "возвращает": {
+      "возвращает": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678428500878
+        }
+      }
+    },
+    "ДОМ-элементам": {
+      "ДОМ-элементам": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678433586857
+        }
+      }
+    },
+    "current": {
+      "current": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678433667812
+        }
+      }
+    },
+    "validateInput": {
+      "validateInput": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678604570076
+        }
+      }
+    },
+    "colorInput": {
+      "colorInput": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678606103009
+        }
+      }
+    },
+    "marvel": {
+      "marvel": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1678713940815
+        }
+      }
+    },
+    "request": {
+      "request": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678631829403
+        }
+      }
+    },
+    "clearError": {
+      "clearError": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678631878288
+        }
+      }
+    },
+    "AppHeader": {
+      "AppHeader": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1678693441625
+        }
+      }
+    },
+    "BrowserRouter": {
+      "BrowserRouter": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678693659593
+        }
+      }
+    },
+    "exact": {
+      "exact": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678697391400
+        }
+      }
+    },
+    "comics": {
+      "comics": {
+        "currentFile": {
+          "count": 3,
+          "lastUpdated": 1678713847120
+        }
+      }
+    },
+    "deadpool": {
+      "deadpool": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678701017463
+        }
+      }
+    },
+    "NavLink": {
+      "NavLink": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678701793744
+        }
+      }
+    },
+    "comicsList": {
+      "comicsList": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1678714320952
+        }
+      }
+    },
+    "appHeader": {
+      "appHeader": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1678714332836
+        }
+      }
+    },
+    "pages": {
+      "pages": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678714351772
+        }
+      }
+    },
+    "default": {
+      "default": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678800087047
+        }
+      }
+    },
+    "перерендерится": {
+      "перерендерится": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1678809738836
+        }
+      }
+    },
+    "Component": {
+      "Component": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1678809128957
+        }
+      }
+    },
+    "shouldComponentUpdate": {
+      "shouldComponentUpdate": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1678809135645
+        }
+      }
+    },
+    "PureComponent": {
+      "PureComponent": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678809108039
+        }
+      }
+    },
+    "createContext": {
+      "createContext": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678870184433
+        }
+      }
+    },
+    "forceChangeMail": {
+      "forceChangeMail": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678875631115
+        }
+      }
+    },
+    "Вёрстка PRO": {
+      "Вёрстка PRO": {
+        "internalLink": {
+          "count": 1,
+          "lastUpdated": 1678875661930
+        }
+      }
+    },
+    "Provider": {
+      "Provider": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678875665798
+        }
+      }
+    },
+    "dispatch": {
+      "dispatch": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1678880665676
+        }
+      }
+    },
+    "className": {
+      "className": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1679031165888
+        }
+      }
+    },
+    "unmountOnExit": {
+      "unmountOnExit": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678965163273
+        }
+      }
+    },
+    "handleBlur": {
+      "handleBlur": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1678980962623
+        }
+      }
+    },
+    "useField": {
+      "useField": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1679034993991
+        }
+      }
+    },
+    "CharSearchForm": {
+      "CharSearchForm": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1679071769234
+        }
+      }
+    },
+    "MainPage": {
+      "MainPage": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1679045527290
+        }
+      }
+    },
+    "react-helmet": {
+      "react-helmet": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1679058993975
+        }
+      }
+    },
+    "Получение": {
+      "Получение": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1679060275052
+        }
+      }
+    },
+    "setProcess": {
+      "setProcess": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1679067339047
+        }
+      }
+    },
+    "process": {
+      "process": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1679070741301
+        }
+      }
+    },
+    "стейт-машину": {
+      "стейт-машину": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1679071830349
+        }
+      }
+    },
+    "перерендеривается": {
+      "перерендеривается": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1679123039378
+        }
+      }
+    },
+    "incDispatch": {
+      "incDispatch": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1679138231792
+        }
+      }
+    },
+    "bindActionCreators": {
+      "bindActionCreators": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1679143474764
+        }
+      }
+    },
+    "subscribe": {
+      "subscribe": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1679151102679
+        }
+      }
+    },
+    "reducer": {
+      "reducer": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1679152799216
+        }
+      }
+    },
+    "actionCreator": {
+      "actionCreator": {
+        "currentFile": {
+          "count": 3,
+          "lastUpdated": 1679214600531
+        }
+      }
+    },
+    "Counter": {
+      "Counter": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1679213656629
+        }
+      }
+    },
+    "mapDispatchToProps": {
+      "mapDispatchToProps": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1679214631958
+        }
+      }
+    },
+    "useSelector": {
+      "useSelector": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1679225853825
+        }
+      }
+    },
+    "useDispatch": {
+      "useDispatch": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1679226319211
+        }
+      }
+    }
+  }
+}
