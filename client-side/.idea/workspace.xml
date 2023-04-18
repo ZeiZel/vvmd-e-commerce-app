@@ -4,15 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25dfd339-0899-469e-ae78-2f0648a5220e" name="Changes" comment="added interfaces, layout / realised components">
-      <change beforePath="$PROJECT_DIR$/../.obsidian/community-plugins.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.obsidian/community-plugins.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.obsidian/plugins/obsidian-git/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.obsidian/plugins/obsidian-git/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.obsidian/plugins/obsidian-git/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.obsidian/plugins/obsidian-git/styles.css" beforeDir="false" />
+    <list default="true" id="25dfd339-0899-469e-ae78-2f0648a5220e" name="Changes" comment="refreshed task list">
+      <change afterPath="$PROJECT_DIR$/helpers/helpers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.obsidian/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.obsidian/workspace.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/src/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/src/auth/auth.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/src/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/src/auth/strategies/jwt.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/src/auth/strategies/jwt.strategy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/src/auth/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/src/auth/auth.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/src/catalog-page/catalog-page.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/src/catalog-page/catalog-page.model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/src/catalog-page/catalog-page.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/src/catalog-page/catalog-page.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/src/catalog-page/dto/find-catalog-page.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server-side/src/product/product.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../server-side/src/product/product.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачи.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачи.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +116,8 @@
       <workItem from="1681728505023" duration="12616000" />
       <workItem from="1681745405372" duration="109000" />
       <workItem from="1681745551961" duration="3087000" />
-      <workItem from="1681793218454" duration="2335000" />
+      <workItem from="1681793218454" duration="4199000" />
+      <workItem from="1681810036995" duration="14000" />
     </task>
     <task id="LOCAL-00001" summary="added interfaces, layout / realised components">
       <created>1681747778208</created>
@@ -115,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681747778208</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refreshed task list">
+      <created>1681796465139</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681796465139</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +142,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="added interfaces, layout / realised components" />
-    <option name="LAST_COMMIT_MESSAGE" value="added interfaces, layout / realised components" />
+    <MESSAGE value="refreshed task list" />
+    <option name="LAST_COMMIT_MESSAGE" value="refreshed task list" />
   </component>
 </project>

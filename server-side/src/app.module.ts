@@ -4,10 +4,12 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { ProductModule } from './product/product.module';
 import { ReviewModule } from './review/review.module';
-import { CatalogPageModule } from './catalog-page/catalog-page.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { getMongoConfig } from './configs/mongo.config';
+import { EmailModule } from './email/email.module';
+import { CollectionModule } from './collection/collection.module';
+import { UserModule } from './user/user.module';
 
 @Module({
 	imports: [
@@ -20,7 +22,9 @@ import { getMongoConfig } from './configs/mongo.config';
 		AuthModule,
 		ProductModule,
 		ReviewModule,
-		CatalogPageModule,
+		EmailModule,
+		CollectionModule,
+		UserModule,
 	],
 	controllers: [AppController],
 	providers: [AppService],

@@ -1,6 +1,15 @@
 import { Base, TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
 import { prop } from '@typegoose/typegoose';
-import { CatalogPageCategory } from '../catalog-page/catalog-page.model';
+
+export enum CatalogPageCategory {
+	CoinsAndMedals,
+	MedalsAndOrders,
+	SignsAndSymbols,
+	ReplicaPostageStamps,
+	Jewelry,
+	TokensAndShields,
+	Packages,
+}
 
 class ProductCharacteristic {
 	@prop()

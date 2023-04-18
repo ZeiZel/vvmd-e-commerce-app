@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { TypegooseModule } from 'nestjs-typegoose';
-import { UserModel } from './user.model';
+import { AuthModel } from './auth.model';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { getJwtConfig } from '../configs/jwt.config';
@@ -13,7 +13,7 @@ import { JwtStrategy } from './strategies/jwt.strategy';
 	imports: [
 		TypegooseModule.forFeature([
 			{
-				typegooseClass: UserModel,
+				typegooseClass: AuthModel,
 				schemaOptions: {
 					collection: 'User',
 				},

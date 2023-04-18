@@ -1,6 +1,6 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectModel } from 'nestjs-typegoose';
-import { UserModel } from './user.model';
+import { AuthModel } from './auth.model';
 import { ModelType } from '@typegoose/typegoose/lib/types';
 import { AuthDto } from './dto/auth.dto';
 import { compare, genSaltSync, hashSync } from 'bcryptjs';
@@ -11,7 +11,7 @@ import { USER_NOT_FOUND_ERROR, WRONG_PASSWORD_ERROR } from './auth.constants';
 @Injectable()
 export class AuthService {
 	constructor(
-		@InjectModel(UserModel) private readonly userModel: ModelType<UserModel>,
+		@InjectModel(AuthModel) private readonly userModel: ModelType<AuthModel>,
 		private readonly jatService: JwtService,
 	) {}
 
@@ -30,7 +30,7 @@ export class AuthService {
 		return this.userModel.findOne({ email }).exec();
 	}
 
-	async validateUser(email: string, password: string): Promise<Pick<UserModel, 'email'>> {
+	async validateUser(email: string, password: string): Promise<Pick<AuthModel, 'email'>> {
 		const user = await this.findUser(email);
 
 		if (!user) {
