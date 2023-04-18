@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25dfd339-0899-469e-ae78-2f0648a5220e" name="Changes" comment="added interfaces, layout / realised components">
-      <change afterPath="$PROJECT_DIR$/components/Rating/star.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.obsidian/community-plugins.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.obsidian/community-plugins.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.obsidian/plugins/obsidian-git/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.obsidian/plugins/obsidian-git/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.obsidian/plugins/obsidian-git/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.obsidian/plugins/obsidian-git/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.obsidian/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.obsidian/workspace.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Rating/Rating.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Rating/Rating.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Rating/Rating.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/Rating/Rating.props.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Rating/Rating.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Rating/Rating.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Textarea/Textarea.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Textarea/Textarea.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Textarea/Textarea.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/Textarea/Textarea.props.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Textarea/Textarea.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Textarea/Textarea.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачи.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачи.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +106,7 @@
       <workItem from="1681728505023" duration="12616000" />
       <workItem from="1681745405372" duration="109000" />
       <workItem from="1681745551961" duration="3087000" />
-      <workItem from="1681793218454" duration="1287000" />
+      <workItem from="1681793218454" duration="2335000" />
     </task>
     <task id="LOCAL-00001" summary="added interfaces, layout / realised components">
       <created>1681747778208</created>
