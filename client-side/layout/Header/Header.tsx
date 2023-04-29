@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { IHeaderProps } from './Header.props';
 
-const Header = () => {
-	return <div></div>;
+export const Header: FC<IHeaderProps> = ({ ...props }: IHeaderProps): JSX.Element => {
+	return <div {...props}>Header</div>;
 };
-
-export default Header;

@@ -1,51 +1,59 @@
 .button {
-	@apply text-white;
-
 	display: inline-block;
 
-	box-sizing: border-box;
 	padding: 10px;
 
-	cursor: pointer;
-	transition: all 0.2s;
 	text-align: center;
+	font-size: 14px;
+
+	background: none;
 
 	border: none;
 	border-radius: 5px;
 
-	font-size: 14px;
-}
+	outline: none;
 
-.primary {
-	background-color: var(--primary);
+	cursor: pointer;
 
-	&:hover {
-		background-color: var(--primary-hover);
-	}
+	transition: all 0.4s;
 }
 
 .ghost {
-	border: 1px solid var(--gray-light);
-	background: none;
+	color: var(--white);
+	border: 1px solid var(--white);
 
 	&:hover {
-		color: var(--white);
-		background-color: var(--primary);
+		background: var(--gray-light-hover);
 	}
+
+	&:active {
+		background: var(--gray-light-active);
+	}
+}
+
+.primary {
+	background: var(--primary);
+
+	&:hover {
+		background: var(--primary-hover);
+	}
+
+	&:active {
+		background: var(--primary-active);
+	}
+}
+
+.primary svg,
+.ghost svg {
+	fill: var(--white);
 }
 
 .arrow {
 	display: inline-block;
-
 	margin-left: 10px;
 }
 
 .down {
 	transition: all 0.2s;
 	transform: rotate(90deg);
-}
-
-.primary svg,
-.ghost:hover svg {
-	fill: var(--white);
 }

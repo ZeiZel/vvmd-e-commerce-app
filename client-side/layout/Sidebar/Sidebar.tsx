@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { ISidebarProps } from './Sidebar.props';
 
-const Sidebar = () => {
-	return <div></div>;
+export const Sidebar: FC<ISidebarProps> = ({ ...props }: ISidebarProps): JSX.Element => {
+	return <div {...props}>Sidebar</div>;
 };
-
-export default Sidebar;

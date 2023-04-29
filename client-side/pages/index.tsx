@@ -1,11 +1,14 @@
-import { Button, ButtonIcon, Card, Divider, HTag, Paragraph, Tag, Up } from '../components';
-import React from 'react';
+import { Button, ButtonIcon, Card, Divider, HTag, Paragraph, Rating, Tag, Up } from '../components';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { Layout, withLayout } from '../layout/Layout';
 
-export default function Home() {
+export function Home() {
+	const [rating, setRating] = useState<number>(1);
+
 	return (
-		<div>
+		<>
 			<Head>
 				<title>Волго-Вятский Монетный Двор главная</title>
 				<meta
@@ -27,6 +30,9 @@ export default function Home() {
 			<Button arrow={'none'} appearance={'primary'}>
 				Текст
 			</Button>
+			<Divider />
+
+			<Rating rating={rating} setRating={setRating} isEditable />
 			<Divider />
 
 			<h1>Иконочные кнопки</h1>
@@ -78,6 +84,8 @@ export default function Home() {
 			<Card color={'red'}>Сколько-то текста в карточке</Card>
 			<Card color={'blue'}>Сколько-то текста в карточке</Card>
 			<Card color={'black'}>Сколько-то текста в карточке</Card>
-		</div>
+		</>
 	);
 }
+
+export default withLayout(Home);

@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { IFooterProps } from './Footer.props';
 
-const Footer = () => {
-	return <div></div>;
+export const Footer: FC<IFooterProps> = ({ ...props }: IFooterProps): JSX.Element => {
+	return <div {...props}>Footer</div>;
 };
-
-export default Footer;

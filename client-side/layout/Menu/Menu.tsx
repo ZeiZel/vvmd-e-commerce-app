@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { IMenuProps } from './Menu.props';
 
-const Menu = () => {
-	return <div></div>;
+export const Menu: FC<IMenuProps> = ({ ...props }: IMenuProps): JSX.Element => {
+	return <div {...props}>Menu</div>;
 };
-
-export default Menu;
