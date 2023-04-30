@@ -1,47 +1,56 @@
-import React, { useState } from 'react';
-import styles from './Login.module.scss';
-import { useForm } from 'react-hook-form';
-import { Button, Notification } from '../../components';
+import { FC, useState } from 'react';
+import { useRouter } from "next/router";
+import AuthStore from "../../utils/auth";
+import styles from './Login.module.scss'
 
-export const Login = ({ setToggleRegister }) => {
-	const [logined, setLogined] = useState<boolean>(false);
-	const { control, register, handleSubmit } = useForm();
+export const Login: FC = (): JSX.Element => {
+	const router = useRouter();
+	const authStore = new AuthStore();
+	const [email, setEmail] = useState<string>("");
+	const [password, setPassword] = useState<string>("");
+
+	async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+		event.preventDefault();
+
+		const response = await fetch("http://localhost:3000/api/auth/login", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ login: email, password }),
+		});
+
+		const { access_token } = await response.json();
+
+		if (access_token) {
+			authStore.setToken(access_token);
+			router.push("/");
+		} else {
+			console.error(`Login failed ${access_token}`);
+		}
+	}
 
 	return (
-		<div className={styles.wrapper}>
-			{logined ? (
-				<Notification messageStatus={'error'} completeStatus={'Error'} />
-			) : (
-				<div>
-					<form className={styles.card}>
-						<h2 className={styles.enter}>Вход</h2>
-						<div className={styles.enter__input}>
-							<label>Почта</label>
-							<input className={styles.input} type='text' />
-						</div>
-						<div className={styles.enter__input}>
-							<label>Пароль</label>
-							<input className={styles.input} type='password' />
-						</div>
-						<div className={styles.options}>
-							<p className='flex items-center'>
-								<input className='mr-2' type='checkbox' /> Запомнить меня
-							</p>
-							<button className={styles.button}>Забыл пароль</button>
-						</div>
-						<Button
-							onClick={() => setLogined(!logined)}
-							arrow={'none'}
-							appearance={'primary'}
-						>
-							Вход
-						</Button>
-					</form>
-					<Button arrow={'none'} appearance={'ghost'} onClick={setToggleRegister}>
-						Вы ещё не зарегистрированы?
-					</Button>
-				</div>
-			)}
-		</div>
+		<form className={styles.wrapper} onSubmit={handleSubmit}>
+			<div>
+				<label htmlFor="username">Email</label>
+				<input
+					type="text"
+					name="username"
+					value={email}
+					onChange={(event) => setEmail(event.target.value)}
+				/>
+			</div>
+			<div>
+				<label htmlFor="password">Password</label>
+				<input
+					type="password"
+					name="password"
+					value={password}
+					onChange={(event) => setPassword(event.target.value)}
+				/>
+			</div>
+			<button type="submit">Login</button>
+		</form>
 	);
-};
+}

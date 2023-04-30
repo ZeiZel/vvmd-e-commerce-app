@@ -1,0 +1,33 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 10px;
+	margin-bottom: 40px;
+
+	background: var(--black);
+
+	border: none;
+	border-radius: 15px;
+
+	box-shadow: var(--shadow);
+
+	&__logo {
+		display: inline-block;
+	}
+
+	&__nav {
+		display: inline-block;
+		text-align: right;
+
+		li {
+			display: inline-block;
+			margin-right: 40px;
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+}

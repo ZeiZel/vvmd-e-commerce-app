@@ -5,7 +5,6 @@ import { ModelType } from '@typegoose/typegoose/lib/types';
 import { AuthDto } from './dto/auth.dto';
 import { compare, genSaltSync, hashSync } from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
-import { use } from 'passport';
 import { USER_NOT_FOUND_ERROR, WRONG_PASSWORD_ERROR } from './auth.constants';
 
 @Injectable()
@@ -20,6 +19,7 @@ export class AuthService {
 
 		const newUser = await this.userModel.create({
 			email: dto.login,
+			username: dto.username,
 			passwordHash: hashSync(dto.password, salt),
 		});
 

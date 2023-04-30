@@ -4,6 +4,7 @@
 
 :root {
 	--black: #262323;
+	--dark-black: #1a1818;
 	--gray: #a4a4a4;
 	--gray-light: #ebebeb;
 	--gray-light-hover: #b7b6b6;
@@ -18,6 +19,7 @@
 	--green: #007b48;
 	--green-light: #c8f8e4;
 	--font-family: 'Montserrat', sans-serif;
+	--shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 * {
@@ -26,13 +28,17 @@
 
 html,
 body {
-	background: var(--black);
+	background: var(--dark-black);
 
 	margin: 0;
 	padding: 0;
 
 	color: var(--white);
 	font-family: var(--font-family);
+}
+
+body {
+	padding-top: 20px;
 }
 
 a {

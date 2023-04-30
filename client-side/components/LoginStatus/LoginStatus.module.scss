@@ -1,0 +1,23 @@
+.loginStatus {
+	position: relative;
+	z-index: 1;
+
+	&__image {
+		border-radius: 50px;
+	}
+
+	&__block {
+		position: absolute;
+		top: 89px;
+		left: -29px;
+		z-index: 1000;
+
+		padding: 20px;
+
+		border: none;
+		border-radius: 15px;
+
+		background: var(--black);
+		box-shadow: var(--shadow);
+	}
+}

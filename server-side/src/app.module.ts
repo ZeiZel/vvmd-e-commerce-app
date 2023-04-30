@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { ProductModule } from './product/product.module';
 import { ReviewModule } from './review/review.module';
@@ -10,6 +8,8 @@ import { getMongoConfig } from './configs/mongo.config';
 import { EmailModule } from './email/email.module';
 import { CollectionModule } from './collection/collection.module';
 import { UserModule } from './user/user.module';
+import { ShoppingcartModule } from './shoppingcart/shoppingcart.module';
+import { PaymentModule } from './payment/payment.module';
 
 @Module({
 	imports: [
@@ -25,8 +25,9 @@ import { UserModule } from './user/user.module';
 		EmailModule,
 		CollectionModule,
 		UserModule,
+		ShoppingcartModule,
+		PaymentModule,
 	],
-	controllers: [AppController],
-	providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+}

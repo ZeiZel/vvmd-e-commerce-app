@@ -1,6 +1,8 @@
 export interface IProductCardInterface {
+	id: string;
 	image: string;
 	title: string;
-	url: string;
 	rating: number;
+	price: number;
+	availableQty: number;
 }

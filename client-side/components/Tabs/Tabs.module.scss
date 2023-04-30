@@ -1,0 +1,28 @@
+.container {
+	display: flex;
+	flex-direction: row;
+
+	.tab-list {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+
+		&__item {
+			padding: 10px;
+			cursor: pointer;
+		}
+
+		&__content {
+			flex: 1;
+			padding: 10px;
+		}
+	}
+}
+
+.light {
+	background: #fff;
+}
+
+.dark {
+	background: #ccc;
+}

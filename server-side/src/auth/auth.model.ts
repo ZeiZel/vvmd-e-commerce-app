@@ -8,4 +8,7 @@ export class AuthModel extends TimeStamps {
 
 	@prop()
 	passwordHash: string;
+
+	@prop()
+	username: string
 }

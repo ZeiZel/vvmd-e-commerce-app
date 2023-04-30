@@ -3,7 +3,6 @@ import styles from './Layout.module.scss';
 import { ILayoutProps } from './Layout.props';
 import { Header } from './Header/Header';
 import { Footer } from './Footer/Footer';
-import { Sidebar } from './Sidebar/Sidebar';
 import cn from 'classnames';
 import { Up } from '../components';
 
@@ -36,7 +35,6 @@ export const Layout: FC<ILayoutProps> = ({ children }: ILayoutProps) => {
 				Сразу к содержанию
 			</a>
 			<Header className={styles.header} />
-			<Sidebar className={styles.sidebar} />
 			<main className={styles.body} ref={bodyRef} tabIndex={0} role='main'>
 				{children}
 			</main>

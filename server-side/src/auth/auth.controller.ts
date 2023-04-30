@@ -1,8 +1,8 @@
 import {
 	BadRequestException,
 	Body,
-	Controller,
-	HttpCode,
+	Controller, Header,
+	HttpCode, HttpStatus,
 	Post,
 	UsePipes,
 	ValidationPipe,
@@ -17,6 +17,8 @@ export class AuthController {
 
 	@UsePipes(new ValidationPipe())
 	@Post('register')
+	@HttpCode(HttpStatus.CREATED)
+	@Header("Content-Type", "application/json")
 	async register(@Body() dto: AuthDto) {
 		const oldUser = await this.authService.findUser(dto.login);
 
@@ -30,7 +32,7 @@ export class AuthController {
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
 	@Post('login')
-	async login(@Body() { login, password }: AuthDto) {
+	async login(@Body() { login, password }: Omit<AuthDto, 'username'>) {
 		const { email } = await this.authService.validateUser(login, password);
 
 		return this.authService.login(email);

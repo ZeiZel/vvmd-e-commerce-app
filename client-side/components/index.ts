@@ -13,3 +13,6 @@ export * from './Tag/Tag';
 export * from './Textarea/Textarea';
 export * from './Up/Up';
 export * from './Notification/Notification';
+export * from './LoginStatus/LoginStatus';
+export * from './Slider/Slider';
+export * from './Tabs/Tabs';

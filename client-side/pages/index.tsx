@@ -2,10 +2,12 @@ import { Button, ButtonIcon, Card, Divider, HTag, Paragraph, Rating, Tag, Up } f
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Layout, withLayout } from '../layout/Layout';
+import { withLayout } from '../layout/Layout';
+import AuthStore from '../utils/auth';
 
 export function Home() {
 	const [rating, setRating] = useState<number>(1);
+	const authStore = new AuthStore();
 
 	return (
 		<>
@@ -21,6 +23,12 @@ export function Home() {
 			</Head>
 			<Up />
 			<h1>Кнопки</h1>
+			<Button arrow={'none'} appearance={'primary'}>
+				<Link href={'/privateRoute'}>приватка</Link>
+			</Button>
+			<Button onClick={() => authStore.clearToken()} arrow={'none'} appearance={'primary'}>
+				убрать приватку
+			</Button>
 			<Button arrow={'right'} appearance={'primary'}>
 				Текст
 			</Button>

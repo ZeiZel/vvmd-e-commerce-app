@@ -1,27 +1,5 @@
 .wrapper {
-	@apply flex pt-28 flex-col justify-center items-center;
-
-	.card {
-		@apply max-w-[400px] w-full mx-auto rounded-lg bg-gray-900 p-8 px-8 m-8;
-
-		.enter {
-			@apply text-4xl text-white font-bold text-center;
-
-			&__input {
-				@apply flex flex-col text-white py-2;
-
-				.input {
-					@apply p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none;
-				}
-			}
-		}
-
-		.button {
-			@apply border-none;
-		}
-
-		.options {
-			@apply flex justify-between text-white py-2;
-		}
+	input {
+		color: var(--black);
 	}
 }
