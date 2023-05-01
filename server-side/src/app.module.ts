@@ -7,9 +7,8 @@ import { TypegooseModule } from 'nestjs-typegoose';
 import { getMongoConfig } from './configs/mongo.config';
 import { EmailModule } from './email/email.module';
 import { CollectionModule } from './collection/collection.module';
-import { UserModule } from './user/user.module';
-import { ShoppingcartModule } from './shoppingcart/shoppingcart.module';
 import { PaymentModule } from './payment/payment.module';
+import { ShoppingcartModule } from './shoppingcart/shoppingcart.module';
 
 @Module({
 	imports: [
@@ -24,10 +23,8 @@ import { PaymentModule } from './payment/payment.module';
 		ReviewModule,
 		EmailModule,
 		CollectionModule,
-		UserModule,
-		ShoppingcartModule,
 		PaymentModule,
+		ShoppingcartModule,
 	],
 })
-export class AppModule {
-}
+export class AppModule {}

@@ -32,6 +32,9 @@ export class ProductModel extends TimeStamps {
 	price: number;
 
 	@prop()
+	count: number;
+
+	@prop()
 	calculatedRating: number;
 
 	@prop()
