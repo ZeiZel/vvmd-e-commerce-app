@@ -21,8 +21,8 @@ export class ProductService {
 
 		const products = await this.productModel.findById(id);
 
-		if (products) {
-			products.images = images;
+		if (products && products.images) {
+			products.images = [...products.images, ...images];
 			await products.save();
 		}
 

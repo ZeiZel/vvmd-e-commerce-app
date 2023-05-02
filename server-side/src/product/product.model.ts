@@ -20,10 +20,10 @@ export class ProductCharacteristic {
 }
 
 export class ProductImageDto {
-	@prop({ default: 'имя не задано' })
+	@prop()
 	name: string;
 
-	@prop({ default: 'путь не задан' })
+	@prop()
 	path: string;
 }
 

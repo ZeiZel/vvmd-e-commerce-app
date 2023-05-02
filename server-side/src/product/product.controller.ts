@@ -32,8 +32,6 @@ export class ProductController {
 	@HttpCode(200)
 	@UseGuards(JwtAuthGuard)
 	async create(@Body() dto: Omit<CreateProductDto, 'images'>): Promise<ProductModel> {
-		console.log(dto);
-
 		const product: ProductModel = await this.productService.create(dto);
 
 		if (!product) {
