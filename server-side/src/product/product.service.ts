@@ -2,12 +2,8 @@ import { Injectable, Query } from '@nestjs/common';
 import { InjectModel } from 'nestjs-typegoose';
 import { ProductModel } from './product.model';
 import { ModelType } from '@typegoose/typegoose/lib/types';
-import { CreateProductDto, ProductImageDto } from './dto/create-product.dto';
-import { format } from 'date-fns';
-import { path } from 'app-root-path';
-import { ensureDir, writeFile } from 'fs-extra';
+import { CreateProductDto } from './dto/create-product.dto';
 import { FilesService } from '../files/files.service';
-import { FileElementResponse } from '../files/dto/file-element.response';
 
 @Injectable()
 export class ProductService {
@@ -16,18 +12,21 @@ export class ProductService {
 		private readonly filesService: FilesService,
 	) {}
 
-	async create(
-		dto: Omit<CreateProductDto, 'images'>,
-		files: Express.Multer.File[],
-	): Promise<ProductModel> {
-		const product = await this.productModel.create(dto);
+	async create(dto: CreateProductDto): Promise<ProductModel> {
+		return this.productModel.create(dto);
+	}
 
-		if (files && files.length) {
-			product.images = await this.filesService.saveFiles(files);
-			await product.save();
+	async addImgToProduct(id: string, files: Express.Multer.File[]) {
+		const images = await this.filesService.saveFiles(files);
+
+		const products = await this.productModel.findById(id);
+
+		if (products) {
+			products.images = images;
+			await products.save();
 		}
 
-		return product;
+		return products;
 	}
 
 	async findById(id: string) {

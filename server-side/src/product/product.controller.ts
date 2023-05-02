@@ -31,21 +31,23 @@ export class ProductController {
 	@Post('/create')
 	@HttpCode(200)
 	@UseGuards(JwtAuthGuard)
-	@UseInterceptors(FileInterceptor('image'))
-	// @Header('Content-Type', 'application/json')
-	async create(
-		@Body() dto: Omit<CreateProductDto, 'images'>,
-		@UploadedFile() images: Express.Multer.File,
-	): Promise<ProductModel> {
+	async create(@Body() dto: Omit<CreateProductDto, 'images'>): Promise<ProductModel> {
 		console.log(dto);
 
-		const product: ProductModel = await this.productService.create(dto, [images]);
+		const product: ProductModel = await this.productService.create(dto);
 
 		if (!product) {
 			throw new NotFoundException(PRODUCT_CANNOT_CREATED);
 		}
 
 		return product;
+	}
+
+	@Post('/addImg/:id')
+	@HttpCode(200)
+	@UseInterceptors(FileInterceptor('image'))
+	async addImgToProduct(@Param('id') id: string, @UploadedFile() file: Express.Multer.File) {
+		return this.productService.addImgToProduct(id, [file]);
 	}
 
 	@Get(':id')

@@ -12,18 +12,18 @@ export enum CatalogPageCategory {
 }
 
 export class ProductCharacteristic {
-	@prop()
+	@prop({ default: 'имя не задано' })
 	name: string;
 
-	@prop()
+	@prop({ default: 'значение не задано' })
 	value: string;
 }
 
 export class ProductImageDto {
-	@prop()
+	@prop({ default: 'имя не задано' })
 	name: string;
 
-	@prop()
+	@prop({ default: 'путь не задан' })
 	path: string;
 }
 
