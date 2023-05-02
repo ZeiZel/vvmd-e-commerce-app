@@ -20,7 +20,7 @@ export class ProductImageDto {
 
 export class CreateProductDto {
 	@IsArray()
-	@ValidateNested() // тут мы указываем, что декоратор должен протипизировать и  объект ProductCharacteristicDto
+	@ValidateNested() // тут мы указываем, что декоратор должен протипизировать и объект ProductCharacteristicDto
 	@Type(() => ProductImageDto)
 	images?: ProductImageDto[];
 

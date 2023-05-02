@@ -16,7 +16,10 @@ export class ProductService {
 		private readonly filesService: FilesService,
 	) {}
 
-	async create(dto: CreateProductDto, files: Express.Multer.File[]): Promise<ProductModel> {
+	async create(
+		dto: Omit<CreateProductDto, 'images'>,
+		files: Express.Multer.File[],
+	): Promise<ProductModel> {
 		const product = await this.productModel.create(dto);
 
 		if (files && files.length) {

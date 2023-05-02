@@ -3,6 +3,7 @@ import {
 	Controller,
 	Delete,
 	Get,
+	Header,
 	HttpCode,
 	NotFoundException,
 	Param,
@@ -31,11 +32,14 @@ export class ProductController {
 	@HttpCode(200)
 	@UseGuards(JwtAuthGuard)
 	@UseInterceptors(FileInterceptor('image'))
+	// @Header('Content-Type', 'application/json')
 	async create(
-		@Body() dto: CreateProductDto,
+		@Body() dto: Omit<CreateProductDto, 'images'>,
 		@UploadedFile() images: Express.Multer.File,
 	): Promise<ProductModel> {
-		const product = this.productService.create(dto, [images]);
+		console.log(dto);
+
+		const product: ProductModel = await this.productService.create(dto, [images]);
 
 		if (!product) {
 			throw new NotFoundException(PRODUCT_CANNOT_CREATED);
@@ -46,7 +50,7 @@ export class ProductController {
 
 	@Get(':id')
 	async get(@Param('id') id: string) {
-		const product = this.productService.findById(id);
+		const product = await this.productService.findById(id);
 
 		if (!product) {
 			throw new NotFoundException(PRODUCT_NOT_FOUND_ERROR);
@@ -57,7 +61,7 @@ export class ProductController {
 
 	@Get()
 	async getAll() {
-		const products = this.productService.findAll();
+		const products = await this.productService.findAll();
 
 		if (!products) {
 			throw new NotFoundException(PRODUCT_NOT_FOUND_ERROR);
@@ -68,8 +72,8 @@ export class ProductController {
 
 	@UseGuards(JwtAuthGuard)
 	@Patch(':id')
-	async patch(@Param('id') id: string, @Body() dto: ProductModel) {
-		const updatedProduct = this.productService.patchById(id, dto);
+	async patch(@Param('id') id: string, @Body() dto: CreateProductDto) {
+		const updatedProduct = await this.productService.patchById(id, dto);
 
 		if (!updatedProduct) {
 			throw new NotFoundException(PRODUCT_NOT_FOUND_ERROR);
@@ -82,7 +86,7 @@ export class ProductController {
 	@HttpCode(200)
 	@Delete(':id')
 	async delete(@Param('id') id: string) {
-		const deletedProduct = this.productService.deleteById(id);
+		const deletedProduct = await this.productService.deleteById(id);
 
 		if (!deletedProduct) {
 			throw new NotFoundException(PRODUCT_NOT_FOUND_ERROR);
