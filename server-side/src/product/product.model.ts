@@ -11,7 +11,7 @@ export enum CatalogPageCategory {
 	Packages,
 }
 
-class ProductCharacteristic {
+export class ProductCharacteristic {
 	@prop()
 	name: string;
 
@@ -19,25 +19,29 @@ class ProductCharacteristic {
 	value: string;
 }
 
-export interface ProductModel extends Base {}
-
-export class ProductModel extends TimeStamps {
-	@prop({ type: () => [String] })
-	images: string[];
+export class ProductImageDto {
+	@prop()
+	name: string;
 
 	@prop()
+	path: string;
+}
+
+export interface ProductModel extends Base {}
+export class ProductModel extends TimeStamps {
+	@prop({ type: () => [ProductImageDto] })
+	images?: ProductImageDto[];
+
+	@prop({ default: 'Товар отсутствует' })
 	title: string;
 
-	@prop()
+	@prop({ default: 0 })
 	price: number;
 
-	@prop()
+	@prop({ default: 0 })
 	count: number;
 
-	@prop()
-	calculatedRating: number;
-
-	@prop()
+	@prop({ default: 'Описание для данного товара отсутствует' })
 	description: string;
 
 	@prop({ enum: CatalogPageCategory })

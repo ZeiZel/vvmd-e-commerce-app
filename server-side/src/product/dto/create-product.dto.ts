@@ -2,7 +2,7 @@ import { IsArray, IsEnum, IsNumber, IsString, ValidateNested } from 'class-valid
 import { Type } from 'class-transformer';
 import { CatalogPageCategory } from '../product.model';
 
-class ProductCharacteristicDto {
+export class ProductCharacteristicDto {
 	@IsString()
 	name: string;
 
@@ -10,10 +10,19 @@ class ProductCharacteristicDto {
 	value: string;
 }
 
+export class ProductImageDto {
+	@IsString()
+	name: string;
+
+	@IsString()
+	path: string;
+}
+
 export class CreateProductDto {
 	@IsArray()
-	@IsString({ each: true })
-	images: string[];
+	@ValidateNested() // тут мы указываем, что декоратор должен протипизировать и  объект ProductCharacteristicDto
+	@Type(() => ProductImageDto)
+	images?: ProductImageDto[];
 
 	@IsString()
 	title: string;
@@ -23,9 +32,6 @@ export class CreateProductDto {
 
 	@IsNumber()
 	count: number;
-
-	@IsNumber()
-	calculatedRating: number;
 
 	@IsString()
 	description: string;
