@@ -3,7 +3,7 @@ import { ProductController } from './product.controller';
 import { ProductService } from './product.service';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { ProductModel } from './product.model';
-import { MulterModule } from '@nestjs/platform-express';
+import { FilesModule } from '../files/files.module';
 
 @Module({
 	imports: [
@@ -15,9 +15,7 @@ import { MulterModule } from '@nestjs/platform-express';
 				},
 			},
 		]),
-		MulterModule.register({
-			dest: './uploads',
-		}),
+		FilesModule,
 	],
 	controllers: [ProductController],
 	providers: [ProductService],

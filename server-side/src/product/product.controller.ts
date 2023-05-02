@@ -18,23 +18,30 @@ import {
 import { ProductService } from './product.service';
 import { ProductModel } from './product.model';
 import { CreateProductDto } from './dto/create-product.dto';
-import { PRODUCT_NOT_FOUND_ERROR } from './product.constants';
+import { PRODUCT_CANNOT_CREATED, PRODUCT_NOT_FOUND_ERROR } from './product.constants';
 import { AuthGuard } from '@nestjs/passport';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { JwtAuthGuard } from '../auth/guards/jwt.guard';
 
 @Controller('product')
 export class ProductController {
 	constructor(private readonly productService: ProductService) {}
 
-	@UseGuards(AuthGuard)
-	@UseInterceptors(FileInterceptor('images'))
+	@Post('/create')
 	@HttpCode(200)
-	@Post('create')
+	@UseGuards(JwtAuthGuard)
+	@UseInterceptors(FileInterceptor('image'))
 	async create(
 		@Body() dto: CreateProductDto,
-		@UploadedFile() images: Express.Multer.File[],
+		@UploadedFile() images: Express.Multer.File,
 	): Promise<ProductModel> {
-		return this.productService.create(dto, images);
+		const product = this.productService.create(dto, [images]);
+
+		if (!product) {
+			throw new NotFoundException(PRODUCT_CANNOT_CREATED);
+		}
+
+		return product;
 	}
 
 	@Get(':id')
@@ -59,7 +66,7 @@ export class ProductController {
 		return products;
 	}
 
-	@UseGuards(AuthGuard)
+	@UseGuards(JwtAuthGuard)
 	@Patch(':id')
 	async patch(@Param('id') id: string, @Body() dto: ProductModel) {
 		const updatedProduct = this.productService.patchById(id, dto);
@@ -71,7 +78,7 @@ export class ProductController {
 		return updatedProduct;
 	}
 
-	@UseGuards(AuthGuard)
+	@UseGuards(JwtAuthGuard)
 	@HttpCode(200)
 	@Delete(':id')
 	async delete(@Param('id') id: string) {

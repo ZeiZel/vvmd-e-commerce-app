@@ -6,34 +6,25 @@ import { CreateProductDto, ProductImageDto } from './dto/create-product.dto';
 import { format } from 'date-fns';
 import { path } from 'app-root-path';
 import { ensureDir, writeFile } from 'fs-extra';
+import { FilesService } from '../files/files.service';
+import { FileElementResponse } from '../files/dto/file-element.response';
 
 @Injectable()
 export class ProductService {
 	constructor(
 		@InjectModel(ProductModel) private readonly productModel: ModelType<ProductModel>,
+		private readonly filesService: FilesService,
 	) {}
 
-	async create(dto: CreateProductDto, images: Express.Multer.File[]): Promise<ProductModel> {
-		const dateFolder = format(new Date(), 'yyyy-MM-dd');
+	async create(dto: CreateProductDto, files: Express.Multer.File[]): Promise<ProductModel> {
+		const product = await this.productModel.create(dto);
 
-		const uploadFolder = `${path}/uploads/${dateFolder}`;
-
-		await ensureDir(uploadFolder);
-
-		const imagesArray: ProductImageDto[] = [];
-
-		for (const image of images) {
-			await writeFile(`${uploadFolder}/${image.originalname}`, image.buffer);
-
-			imagesArray.push({
-				path: `/uploads/${dateFolder}/${image.originalname}`,
-				name: image.originalname,
-			});
+		if (files && files.length) {
+			product.images = await this.filesService.saveFiles(files);
+			await product.save();
 		}
 
-		dto.images = imagesArray;
-
-		return this.productModel.create(dto);
+		return product;
 	}
 
 	async findById(id: string) {
