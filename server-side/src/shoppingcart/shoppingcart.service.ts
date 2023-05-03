@@ -33,7 +33,7 @@ export class ShoppingcartService {
 				totalPrice: product.price,
 				price: product.price,
 				count: product.count,
-				images: product.images,
+				images: product.images, // todo: если будут проблемы с изображениями, то брать из массива одно тут
 				title: product.title,
 			});
 
@@ -44,7 +44,7 @@ export class ShoppingcartService {
 	}
 
 	async updateCount(productId: Types.ObjectId, count: number) {
-		return this.shoppingCartModel.findOneAndUpdate(productId, { count }).exec();
+		return this.shoppingCartModel.findOneAndUpdate(productId, { countToBuy: count }).exec();
 	}
 
 	// сюда с фронта нужно присылать подсчитанное число
@@ -54,11 +54,11 @@ export class ShoppingcartService {
 			.exec();
 	}
 
-	async remove(productId: Types.ObjectId) {
-		return this.shoppingCartModel.deleteOne(productId);
+	async remove(productId: string) {
+		return this.shoppingCartModel.deleteOne({ productId });
 	}
 
 	async removeAll(userId: Types.ObjectId) {
-		return this.shoppingCartModel.deleteMany(userId);
+		return this.shoppingCartModel.deleteMany({ userId });
 	}
 }

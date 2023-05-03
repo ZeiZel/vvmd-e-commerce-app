@@ -6,7 +6,6 @@ export class addToShoppingCardDto {
 	@IsString()
 	login: string; // email
 
-	@IsNotEmpty()
 	@IsString()
 	userId?: Types.ObjectId;
 
