@@ -3,7 +3,6 @@ import {
 	Controller,
 	Delete,
 	Get,
-	Header,
 	HttpCode,
 	NotFoundException,
 	Param,
@@ -20,7 +19,6 @@ import { ProductService } from './product.service';
 import { ProductModel } from './product.model';
 import { CreateProductDto } from './dto/create-product.dto';
 import { PRODUCT_CANNOT_CREATED, PRODUCT_NOT_FOUND_ERROR } from './product.constants';
-import { AuthGuard } from '@nestjs/passport';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { JwtAuthGuard } from '../auth/guards/jwt.guard';
 
@@ -97,19 +95,19 @@ export class ProductController {
 
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
-	@Post('/category/:categoryNumber')
+	@Get('/category/:categoryNumber')
 	async findByCategoryWithPagination(
-		@Param() categoryNumber: number,
-		@Query() page: number,
-		@Query() limit: number,
+		@Param('categoryNumber') categoryNumber: number,
+		@Query('page') page: number,
+		@Query('limit') limit: number,
 	) {
 		return this.productService.findByCategoryWithPagination(categoryNumber, page, limit);
 	}
 
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
-	@Get('/search')
-	async findByString(@Query('q') query: string) {
-		return this.productService.findByString(query);
+	@Get('/searching/search')
+	async findString(@Query('query') query: string) {
+		return await this.productService.findByString(query);
 	}
 }

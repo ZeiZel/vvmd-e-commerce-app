@@ -1,4 +1,4 @@
-import { Injectable, Query } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectModel } from 'nestjs-typegoose';
 import { ProductModel } from './product.model';
 import { ModelType } from '@typegoose/typegoose/lib/types';
@@ -37,17 +37,17 @@ export class ProductService {
 		return this.productModel.find().exec();
 	}
 
-	async findByCategoryWithPagination(
-		categoryNumber: number,
-		@Query() page: number,
-		@Query() limit: number,
-	) {
-		const skip = (page - 1) * limit;
+	async findByCategoryWithPagination(categoryNumber: number, page: number, limit: number) {
+		const skip = page * limit;
 		return this.productModel.find({ category: categoryNumber }).skip(skip).limit(limit).exec();
 	}
 
-	async findByString(query: string) {
-		return this.productModel.find({ title: { $regex: new RegExp(query, 'i') } }).exec();
+	async findByString(query: string): Promise<ProductModel[]> {
+		return this.productModel
+			.find({
+				title: { $regex: new RegExp(query, 'i') },
+			})
+			.exec();
 	}
 
 	async deleteById(id: string) {
