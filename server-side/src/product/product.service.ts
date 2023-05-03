@@ -4,6 +4,7 @@ import { ProductModel } from './product.model';
 import { ModelType } from '@typegoose/typegoose/lib/types';
 import { CreateProductDto } from './dto/create-product.dto';
 import { FilesService } from '../files/files.service';
+import { Types } from 'mongoose';
 
 @Injectable()
 export class ProductService {
@@ -29,7 +30,7 @@ export class ProductService {
 		return products;
 	}
 
-	async findById(id: string) {
+	async findById(id: Types.ObjectId) {
 		return this.productModel.findById(id).exec();
 	}
 

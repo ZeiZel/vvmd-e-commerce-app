@@ -6,6 +6,7 @@ import { AuthDto } from './dto/auth.dto';
 import { compare, genSaltSync, hashSync } from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
 import { USER_NOT_FOUND_ERROR, WRONG_PASSWORD_ERROR } from './auth.constants';
+import { Types } from 'mongoose';
 
 @Injectable()
 export class AuthService {
@@ -28,6 +29,10 @@ export class AuthService {
 
 	async findUser(email: string) {
 		return this.userModel.findOne({ email }).exec();
+	}
+
+	async findUserById(id: Types.ObjectId) {
+		return this.userModel.findOne({ _id: id }).exec();
 	}
 
 	async validateUser(email: string, password: string): Promise<Pick<AuthModel, 'email'>> {

@@ -2,10 +2,13 @@ import {
 	BadRequestException,
 	Body,
 	Controller,
+	Get,
 	Header,
 	HttpCode,
 	HttpStatus,
+	Param,
 	Post,
+	UseGuards,
 	UsePipes,
 	ValidationPipe,
 } from '@nestjs/common';
@@ -19,6 +22,8 @@ import {
 	RegisterUserRequest,
 	RegisterUserResponse,
 } from './types';
+import { JwtAuthGuard } from './guards/jwt.guard';
+import { Types } from 'mongoose';
 
 @Controller('auth')
 export class AuthController {
@@ -49,5 +54,21 @@ export class AuthController {
 		const { email } = await this.authService.validateUser(login, password);
 
 		return this.authService.login(email);
+	}
+
+	@UseGuards(JwtAuthGuard)
+	@UsePipes(new ValidationPipe())
+	@HttpCode(HttpStatus.OK)
+	@Post('/findUser')
+	async findUser(@Body() { login }: Pick<AuthDto, 'login'>) {
+		return this.authService.findUser(login);
+	}
+
+	@UseGuards(JwtAuthGuard)
+	@UsePipes(new ValidationPipe())
+	@HttpCode(HttpStatus.OK)
+	@Get('/findUser/:id')
+	async find(@Param('id') id: Types.ObjectId) {
+		return this.authService.findUserById(id);
 	}
 }

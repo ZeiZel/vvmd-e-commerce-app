@@ -21,6 +21,7 @@ import { CreateProductDto } from './dto/create-product.dto';
 import { PRODUCT_CANNOT_CREATED, PRODUCT_NOT_FOUND_ERROR } from './product.constants';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { JwtAuthGuard } from '../auth/guards/jwt.guard';
+import { Types } from 'mongoose';
 
 @Controller('product')
 export class ProductController {
@@ -47,7 +48,7 @@ export class ProductController {
 	}
 
 	@Get(':id')
-	async get(@Param('id') id: string) {
+	async get(@Param('id') id: Types.ObjectId) {
 		const product = await this.productService.findById(id);
 
 		if (!product) {

@@ -19,6 +19,6 @@ import { FilesModule } from '../files/files.module';
 	],
 	controllers: [ProductController],
 	providers: [ProductService],
-	exports: [ProductService],
+	exports: [ProductService, ProductModule],
 })
 export class ProductModule {}
