@@ -53,8 +53,18 @@ export class AuthService {
 
 	async login(email: string) {
 		const payload = { email };
+		const user = await this.findUser(email);
+
+		if (!user) {
+			throw new UnauthorizedException(USER_NOT_FOUND_ERROR);
+		}
 
 		return {
+			user: {
+				email: user.email,
+				username: user.username,
+				password: user.passwordHash,
+			},
 			access_token: await this.jatService.signAsync(payload),
 		};
 	}

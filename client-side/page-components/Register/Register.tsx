@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '../../components';
 import styles from './Register.module.scss';
 
-export const Register = ({ setToggleRegister }) => {
+export const Register = () => {
 	return (
 		<div className={styles.wrapper}>
 			<form className={styles.card}>
@@ -19,9 +19,6 @@ export const Register = ({ setToggleRegister }) => {
 					Регистрация
 				</Button>
 			</form>
-			<Button arrow={'none'} appearance={'ghost'} onClick={setToggleRegister}>
-				Вы уже зарегистрированы?
-			</Button>
 		</div>
 	);
 };
