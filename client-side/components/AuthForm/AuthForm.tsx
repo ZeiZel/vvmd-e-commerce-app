@@ -5,6 +5,7 @@ import { RegisterForm } from '../RegisterForm/RegisterForm';
 import { Button } from '../Button/Button';
 import { IRegisterForm } from '../../interfaces/Auth.interface';
 import { HTag } from '../HTag/HTag';
+import styles from './AuthForm.module.scss';
 
 const initialState: IRegisterForm = {
 	email: '',
@@ -17,8 +18,11 @@ export const AuthForm = () => {
 	const [showRegister, setShowRegister] = useState<boolean>(false);
 
 	return (
-		<Card color={'black'}>
-			<HTag tag={'h2'}>{!showRegister ? 'Авторизация' : 'Регистрация'}</HTag>
-		</Card>
+		<div className={styles['auth-form__wrapper']}>
+			<div className={styles['auth-form__htag']}>
+				<HTag tag={'h2'}>{showRegister ? 'Авторизация' : 'Регистрация'}</HTag>
+			</div>
+			{showRegister ? <LoginForm /> : <RegisterForm />}
+		</div>
 	);
 };

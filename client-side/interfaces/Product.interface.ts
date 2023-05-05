@@ -10,7 +10,7 @@ export interface IProductImage {
 	path: string;
 }
 
-export interface ProductModel {
+export interface IProductModel {
 	images?: IProductImage[];
 	title: string;
 	price: number;
