@@ -16,3 +16,7 @@ export * from './Notification/Notification';
 export * from './LoginStatus/LoginStatus';
 export * from './Slider/Slider';
 export * from './Tabs/Tabs';
+export * from './Modal/Modal';
+export * from './LoginForm/LoginForm';
+export * from './RegisterForm/RegisterForm';
+export * from './AuthForm/AuthForm';

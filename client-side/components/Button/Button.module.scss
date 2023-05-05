@@ -1,6 +1,8 @@
 .button {
 	display: inline-block;
 
+	position: relative;
+
 	padding: 10px;
 
 	text-align: center;
@@ -15,7 +17,52 @@
 
 	cursor: pointer;
 
-	transition: all 0.4s;
+	transition: all 0.3s ease-in-out;
+
+	overflow: hidden;
+
+	&:hover {
+		box-shadow: 0 0 15px rgba(0, 123, 255, 0.1);
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 0;
+		height: 0;
+		border-radius: 50%;
+		background-color: rgba(255, 255, 255, 0.3);
+		opacity: 0;
+	}
+
+	&:active:before {
+		animation: ripple 0.7s linear;
+	}
+
+	&:hover:before {
+		width: 300px;
+		height: 300px;
+		inset: 0;
+		margin-top: -150px;
+		margin-left: -150px;
+
+		opacity: 0.6;
+		transition: all 0.5s ease-out;
+	}
+}
+
+@keyframes ripple {
+	0% {
+		opacity: 1;
+		transform: scale(0);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.1);
+	}
 }
 
 .ghost {

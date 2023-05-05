@@ -13,12 +13,13 @@ export const Button: FC<IButtonProps> = ({
 }: IButtonProps): JSX.Element => {
 	return (
 		<button
-			className={cn(styles.button, className, {
+			className={cn(styles.button, styles.animate, className, {
 				[styles.primary]: appearance === 'primary',
 				[styles.ghost]: appearance === 'ghost',
 			})}
 			{...props}
 		>
+			<span></span>
 			{children}
 			{arrow != 'none' && (
 				<span
@@ -29,6 +30,7 @@ export const Button: FC<IButtonProps> = ({
 					<ArrowIcon />
 				</span>
 			)}
+			<span></span>
 		</button>
 	);
 };

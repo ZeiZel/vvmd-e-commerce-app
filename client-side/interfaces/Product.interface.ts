@@ -1,33 +1,22 @@
 import { CatalogPageCategory } from './Catalog.interface';
 
-export interface IReviewModel {
-	name: string;
-	title: string;
-	description: string;
-	rating: number;
-	createdAt: Date;
-	productId: string;
-}
-
 export interface IProductCharacteristic {
 	name: string;
 	value: string;
 }
 
-export interface ITag {
+export interface IProductImage {
 	name: string;
-	url: string;
+	path: string;
 }
 
-export interface IProductModel {
-	images: string[];
+export interface ProductModel {
+	images?: IProductImage[];
 	title: string;
-	description: string;
 	price: number;
-	calculatedRating: number;
+	count: number;
+	description: string;
 	category: CatalogPageCategory;
-	tags: ITag[];
+	tags: string[];
 	characteristics: IProductCharacteristic[];
-	comments?: IReviewModel[];
-	rating?: number;
 }

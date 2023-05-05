@@ -11,9 +11,9 @@ import { LoginStatus } from '../../components';
 export const Header: FC<IHeaderProps> = ({ className, ...props }: IHeaderProps): JSX.Element => {
 	return (
 		<header className={cn(styles.header, className)} {...props}>
-			<div className={styles['header__logo']}>
+			<Link className={styles['header__logo']} href={'/'}>
 				<Image src={LogoIcon} alt={'логотип'} width={200} height={100} />
-			</div>
+			</Link>
 			<nav className={styles['header__nav']}>
 				<ul>
 					<li>
@@ -28,10 +28,8 @@ export const Header: FC<IHeaderProps> = ({ className, ...props }: IHeaderProps):
 					<li>
 						<Link href={'/contacts'}>Контакты</Link>
 					</li>
-					<li>
-						<LoginStatus login={'Alexey'} image={AccLogoIcon} />
-					</li>
 				</ul>
+				<LoginStatus login={'Alexey'} image={AccLogoIcon} />
 			</nav>
 		</header>
 	);

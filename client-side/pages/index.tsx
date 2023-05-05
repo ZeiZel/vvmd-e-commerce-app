@@ -1,12 +1,27 @@
-import { Button, ButtonIcon, Card, Divider, HTag, Paragraph, Rating, Tag, Up } from '../components';
+import {
+	Button,
+	ButtonIcon,
+	Card,
+	Divider,
+	HTag,
+	Modal,
+	Paragraph,
+	Rating,
+	Tag,
+	Up,
+} from '../components';
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { withLayout } from '../layout/Layout';
 import AuthStore from '../utils/auth';
+import { AuthForm } from '../components';
 
 export function Home() {
 	const [rating, setRating] = useState<number>(1);
+
+	const [modal, setModal] = useState<boolean>(false);
+
 	const authStore = new AuthStore();
 
 	return (
@@ -39,7 +54,12 @@ export function Home() {
 			</Button>
 			<Divider />
 
-			<Rating rating={rating} setRating={setRating} isEditable />
+			<Modal active={modal} setActive={setModal}>
+				<AuthForm />
+			</Modal>
+			<Button onClick={() => setModal(!modal)} arrow={'none'} appearance={'primary'}>
+				Авторизация
+			</Button>
 			<Divider />
 
 			<h1>Иконочные кнопки</h1>

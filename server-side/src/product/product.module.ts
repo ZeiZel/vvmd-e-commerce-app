@@ -11,7 +11,7 @@ import { FilesModule } from '../files/files.module';
 			{
 				typegooseClass: ProductModel,
 				schemaOptions: {
-					collection: 'Product',
+					collection: 'CatalogPage',
 				},
 			},
 		]),

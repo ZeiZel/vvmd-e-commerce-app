@@ -3,7 +3,7 @@
 	align-items: center;
 	justify-content: space-between;
 
-	padding: 10px;
+	padding: 13px 20px;
 	margin-bottom: 40px;
 
 	background: var(--black);
@@ -18,15 +18,40 @@
 	}
 
 	&__nav {
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
 		text-align: right;
 
-		li {
-			display: inline-block;
-			margin-right: 40px;
 
-			&:last-child {
-				margin: 0;
+
+		ul {
+			margin-right: 20px;
+
+			li {
+				display: inline-block;
+				margin-right: 40px;
+				position: relative;
+
+				&:last-child {
+					margin: 0;
+				}
+
+				&::before {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 0%;
+					height: 3px;
+					background-color: var(--white);
+					transition: all 0.3s ease-in-out;
+				}
+
+				&:hover::before {
+					width: 100%;
+				}
 			}
 		}
 	}

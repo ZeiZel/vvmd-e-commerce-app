@@ -1,3 +1,2 @@
-export * from './Login/Login';
-export * from './Register/Register';
-export * from './Product/Product';
+export * from './ProductPage/ProductPage';
+export * from './CatalogPage/CatalogPage';

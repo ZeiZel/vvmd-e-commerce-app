@@ -1,0 +1,40 @@
+.modal {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 20;
+
+	width: 100vw;
+	height: 100vh;
+
+	background-color: rgba(0, 0, 0, 0.5);
+
+	opacity: 1;
+
+	transition: all .2s;
+
+	pointer-events: auto;
+
+	&__content {
+		position: relative;
+		z-index: 21;
+
+		padding: 20px;
+
+		transition: all .2s;
+		transform: scale(0);
+	}
+}
+
+.active {
+	transform: scale(1);
+}
+
+.hide {
+	pointer-events: none;
+	opacity: 0;
+}

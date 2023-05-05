@@ -1,6 +1,7 @@
+import { CatalogPageCategory } from '../../interfaces/Catalog.interface';
+
 export interface ICategoryCardProps {
 	image: string;
-	alt: string;
+	category: CatalogPageCategory;
 	title: string;
-	count: number;
 }
