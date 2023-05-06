@@ -12,6 +12,7 @@ import cn from 'classnames';
 import Image from 'next/image';
 import { Button } from '../Button/Button';
 import { Input } from '../Input/Input';
+import { Card } from '../Card/Card';
 
 export const LoginForm: FC = (): JSX.Element => {
 	const { register, handleSubmit } = useForm<ILoginForm>();
@@ -19,23 +20,18 @@ export const LoginForm: FC = (): JSX.Element => {
 	const dispatch = useAppDispatch();
 
 	const [showPassword, setShowPassword] = useState<boolean>(false);
-	const [login, setLogin] = useState<string>('');
-	const [password, setPassword] = useState<string>('');
 
 	const [fetchLogin, { error, isLoading }] = useLoginMutation();
 
 	const toggleShowPassword = () => setShowPassword(!showPassword);
 
 	async function onSubmit(data: ILoginForm) {
-		console.log(data);
 		const responseData = await fetchLogin(data).unwrap();
-		console.log(responseData);
 
 		if (responseData.access_token) {
 			dispatch(setToken(responseData.access_token));
-			await router.push('/');
-		} else {
-			return <HTag tag={'h2'}>Login failed {`${error}`}</HTag>;
+			// await router.push('/');
+			return <Card color={'green'}>Вы успешно вошли!</Card>;
 		}
 	}
 
@@ -94,6 +90,7 @@ export const LoginForm: FC = (): JSX.Element => {
 				>
 					Отправить
 				</Button>
+				{error && <HTag tag={'h2'}>Login failed {`${error.message}`}</HTag>}
 			</div>
 		</form>
 	);

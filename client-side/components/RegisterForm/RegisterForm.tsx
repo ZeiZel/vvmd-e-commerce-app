@@ -11,6 +11,8 @@ import { ChangeEvent } from 'preact/compat';
 import { API_FUNCTIONS, API_PATH, API_ROUTE } from '../../api/apiService';
 import AuthStore from '../../store/localStorage/localStorageSlice';
 import { useRouter } from 'next/router';
+import { useRegisterMutation } from '../../store/auth/authApi';
+import { Input } from '../Input/Input';
 
 export const RegisterForm = ({ className, ...props }: IRegisterFormProps) => {
 	const { register, control, handleSubmit } = useForm<IAuthRegister>();
@@ -18,31 +20,11 @@ export const RegisterForm = ({ className, ...props }: IRegisterFormProps) => {
 	const [showPassword, setShowPassword] = useState<boolean>(false);
 	const [applyPolicy, setApplyPolicy] = useState<boolean>(false);
 
-	const [email, setEmail] = useState<string>('');
-	const [password, setPassword] = useState<string>('');
-	const [username, setUsername] = useState<string>('');
-
-	const [success, setSuccess] = useState<boolean>(false);
-
 	const router = useRouter();
+	const [fetchRegister, { isLoading, isError, error, isSuccess }] = useRegisterMutation();
 
-	async function onSubmit(data: IAuthRegister): Promise<JSX.Element> {
-		const response = await fetch(API_PATH + API_ROUTE.auth + API_FUNCTIONS.auth.register, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({ login: email, password, username }),
-		});
-
-		let answer = <Card>Неполадки на сервере. Регистрация прервана.</Card>;
-
-		if (response.ok) {
-			answer = <Card>Вы успешно зарегистрированы! Пожалуйста, войдите в систему</Card>;
-			setSuccess(!success);
-		}
-
-		return answer;
+	async function onSubmit(data: IAuthRegister) {
+		await fetchRegister(data).unwrap();
 	}
 
 	const toggleShowPassword = () => setShowPassword(!showPassword);
@@ -51,9 +33,9 @@ export const RegisterForm = ({ className, ...props }: IRegisterFormProps) => {
 	};
 
 	return (
-		<form className={styles['register-form']} onSubmit={() => handleSubmit(onSubmit)}>
-			<div className={styles['register-form__content']} {...props}>
-				<input
+		<form onSubmit={handleSubmit(onSubmit)}>
+			<div className={styles['register-form']} {...props}>
+				<Input
 					className={styles['register-form__input']}
 					type='text'
 					placeholder={'имя пользователя'}
@@ -64,7 +46,7 @@ export const RegisterForm = ({ className, ...props }: IRegisterFormProps) => {
 						},
 					})}
 				/>
-				<input
+				<Input
 					className={styles['register-form__input']}
 					type='text'
 					placeholder={'почта'}
@@ -76,7 +58,7 @@ export const RegisterForm = ({ className, ...props }: IRegisterFormProps) => {
 					})}
 				/>
 				<div className={styles['register-form__input-password-wrapper']}>
-					<input
+					<Input
 						className={cn(styles['register-form__input'])}
 						type={showPassword ? 'text' : 'password'}
 						placeholder={'пароль'}
@@ -106,7 +88,7 @@ export const RegisterForm = ({ className, ...props }: IRegisterFormProps) => {
 					</button>
 				</div>
 				<label htmlFor='privacy-policy' className={styles['register-form__check']}>
-					<input
+					<Input
 						checked={applyPolicy}
 						onChange={handleCheckboxChange}
 						type='checkbox'
@@ -117,8 +99,13 @@ export const RegisterForm = ({ className, ...props }: IRegisterFormProps) => {
 						условия конфиденциальности
 					</Link>
 				</label>
+				{isSuccess && (
+					<Card color={'green'}>
+						Вы успешно зарегистрированы! Пожалуйста, войдите в систему
+					</Card>
+				)}
 				<Button
-					disabled={applyPolicy}
+					disabled={!applyPolicy}
 					arrow={'none'}
 					appearance={'primary'}
 					className={cn(styles['register-form__button'], {
