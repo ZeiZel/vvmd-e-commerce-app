@@ -1,14 +1,16 @@
-import { configureStore, Store } from '@reduxjs/toolkit';
+import { Action, configureStore, Store, ThunkAction } from '@reduxjs/toolkit';
 import { productApi } from './product/product.api';
 import { shoppingcartApi } from './shoppingcart/shoppingcart.api';
 import { paymentApi } from './payment/payment.api';
 import { authApi } from './auth/authApi';
 import authentication from './auth/authSlice';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import localStorageSlice from './localStorage/localStorageSlice';
 
 export function makeStore(): Store {
 	return configureStore({
 		reducer: {
+			localStorageSlice,
 			authentication,
 			[authApi.reducerPath]: authApi.reducer,
 			[productApi.reducerPath]: productApi.reducer,
@@ -28,18 +30,18 @@ export function makeStore(): Store {
 
 const store = makeStore();
 
-export type TypeRootState = ReturnType<typeof store.getState>;
+export type RootState = ReturnType<typeof store.getState>;
 
 export type AppDispatch = typeof store.dispatch;
 
 // export type AppThunk<ReturnType = void> = ThunkAction<
 // 	ReturnType,
-// 	AppState,
+// 	RootState,
 // 	unknown,
 // 	Action<string>
 // >;
 
 export const useAppDispatch = () => useDispatch<AppDispatch>();
-export const useAppSelector: TypedUseSelectorHook<TypeRootState> = useSelector;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export default store;

@@ -1,19 +1,17 @@
-import { useRouter } from "next/router";
-import { useEffect } from "react";
-import AuthStore from "./auth";
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 function withAuth(Component: React.ComponentType) {
 	return function WithAuth(props: any) {
 		const router = useRouter();
-		const authStore = new AuthStore();
 
 		useEffect(() => {
-			if (!authStore.token) {
-				router.push("/login");
+			if (typeof window !== 'undefined' && !localStorage.token) {
+				router.push('/');
 			}
 		}, []);
 
-		if (!authStore.token) {
+		if (typeof window !== 'undefined' && !localStorage.token) {
 			// скрываем компонент, если пользователь неавторизован
 			return null;
 		}

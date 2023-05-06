@@ -1,57 +1,100 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useRouter } from 'next/router';
-import AuthStore from '../../utils/auth';
+import { setToken } from '../../store/localStorage/localStorageSlice';
 import styles from './LoginForm.module.scss';
-import { API_PATH } from '../../api/apiService';
+import { useLoginMutation } from '../../store/auth/authApi';
+import { useForm } from 'react-hook-form';
+import { ILoginForm } from '../../interfaces/Auth.interface';
+import { Spinner } from '../Spinner/Spinner';
+import { useAppDispatch } from '../../store';
+import { HTag } from '../HTag/HTag';
+import cn from 'classnames';
+import Image from 'next/image';
+import { Button } from '../Button/Button';
+import { Input } from '../Input/Input';
 
 export const LoginForm: FC = (): JSX.Element => {
+	const { register, handleSubmit } = useForm<ILoginForm>();
 	const router = useRouter();
-	const authStore = new AuthStore();
-	const [email, setEmail] = useState<string>('');
+	const dispatch = useAppDispatch();
+
+	const [showPassword, setShowPassword] = useState<boolean>(false);
+	const [login, setLogin] = useState<string>('');
 	const [password, setPassword] = useState<string>('');
 
-	async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-		event.preventDefault();
+	const [fetchLogin, { error, isLoading }] = useLoginMutation();
 
-		const response = await fetch(API_PATH + '/api/auth/login', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({ login: email, password }),
-		});
+	const toggleShowPassword = () => setShowPassword(!showPassword);
 
-		const { access_token } = await response.json();
+	async function onSubmit(data: ILoginForm) {
+		console.log(data);
+		const responseData = await fetchLogin(data).unwrap();
+		console.log(responseData);
 
-		if (access_token) {
-			authStore.setToken(access_token);
-			router.push('/');
+		if (responseData.access_token) {
+			dispatch(setToken(responseData.access_token));
+			await router.push('/');
 		} else {
-			console.error(`Login failed ${access_token}`);
+			return <HTag tag={'h2'}>Login failed {`${error}`}</HTag>;
 		}
 	}
 
+	if (isLoading) {
+		return <Spinner />;
+	}
+
 	return (
-		<form className={styles.wrapper} onSubmit={handleSubmit}>
-			<div>
-				<label htmlFor='username'>Email</label>
-				<input
+		<form onSubmit={handleSubmit(onSubmit)}>
+			<div className={styles['auth-form']}>
+				<Input
+					className={styles['auth-form__input']}
 					type='text'
-					name='username'
-					value={email}
-					onChange={(event) => setEmail(event.target.value)}
+					placeholder={'почта'}
+					{...register('login', {
+						required: {
+							value: true,
+							message: 'Поле почты должно быть обязательно заполнено',
+						},
+					})}
 				/>
+				<div className={styles['auth-form__input-password-wrapper']}>
+					<Input
+						className={cn(styles['auth-form__input'])}
+						type={showPassword ? 'text' : 'password'}
+						placeholder={'пароль'}
+						{...register('password', {
+							required: {
+								value: true,
+								message: 'Поле пароля должно быть обязательно заполнено',
+							},
+						})}
+					/>
+					<button onClick={toggleShowPassword} className={styles['auth-form__eye']}>
+						{showPassword ? (
+							<Image
+								src={'/opened-eye.svg'}
+								alt={'opened-eye'}
+								width={25}
+								height={25}
+							/>
+						) : (
+							<Image
+								src={'/closed-eye.svg'}
+								alt={'closed-eye'}
+								width={25}
+								height={25}
+							/>
+						)}
+					</button>
+				</div>
+				<Button
+					arrow={'none'}
+					appearance={'primary'}
+					className={cn(styles['auth-form__button'])}
+				>
+					Отправить
+				</Button>
 			</div>
-			<div>
-				<label htmlFor='password'>Password</label>
-				<input
-					type='password'
-					name='password'
-					value={password}
-					onChange={(event) => setPassword(event.target.value)}
-				/>
-			</div>
-			<button type='submit'>Login</button>
 		</form>
 	);
 };

@@ -1,22 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { IInitialState } from './auth.interface';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IAuthLoginResponse } from '../../interfaces/Auth.interface';
 
-export const initialState: IInitialState = {
-	toggleAuth: false,
+interface IUserState {
+	user: IAuthLoginResponse | null;
+}
+
+const initialState: IUserState = {
+	user: null,
 };
 
-export const authSlice = createSlice({
-	name: 'auth',
+export const userSlice = createSlice({
 	initialState,
+	name: 'userSlice',
 	reducers: {
-		toggleForms: (state) => {
-			state.toggleAuth = !state.toggleAuth;
+		logout: () => initialState,
+		setUser: (state, action: PayloadAction<IAuthLoginResponse>) => {
+			state.user = action.payload;
 		},
 	},
 });
 
-const { actions, reducer } = authSlice;
+export const { reducer, actions } = userSlice;
 
-export const { toggleForms } = actions;
+export const { logout, setUser } = actions;
 
 export default reducer;

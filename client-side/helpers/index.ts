@@ -1,4 +1,5 @@
 import { ICatalogPageModel } from '../interfaces/Catalog.interface';
+import { ISlideModel } from '../components/SliderComponent/SliderComponent.props';
 
 export const catalogPageData: ICatalogPageModel[] = [
 	{ title: 'Монеты и медали монетного типа', image: '/0_coins_and_medals.png', category: 0 },
@@ -8,6 +9,28 @@ export const catalogPageData: ICatalogPageModel[] = [
 	{ title: 'Ювелирные изделия', image: '/4_jewelry.jpg', category: 4 },
 	{ title: 'Жетоны и Шильды', image: '/5_tokens_and_shields.jpg', category: 5 },
 	{ title: 'Упаковки', image: '/6_packages.jpg', category: 6 },
+];
+
+export const slides: ISlideModel[] = [
+	{
+		img: '/bg-main-slider.png',
+		medal: '/medal-main-slider.png',
+		title: 'Slide 1',
+		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+	},
+	{
+		img: 'https://picsum.photos/800/400?random=2',
+		medal: '/',
+		title: 'Slide 2',
+		description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+	},
+	{
+		img: 'https://picsum.photos/800/400?random=3',
+		medal: '/',
+		title: 'Slide 3',
+		description:
+			'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+	},
 ];
 
 // переводим числовую цену в стринговую

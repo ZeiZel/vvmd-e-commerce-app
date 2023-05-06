@@ -1,6 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { API_FUNCTIONS, API_PATH, API_ROUTE } from '../../api/apiService';
-import { IAuthLogin, IAuthLoginResponse, IAuthRegister } from './auth.interface';
+import {
+	IAuthLogin,
+	IAuthLoginResponse,
+	IAuthRegister,
+	IAuthRegisterResponse,
+} from '../../interfaces/Auth.interface';
 
 export const authApi = createApi({
 	reducerPath: 'auth',
@@ -8,7 +13,7 @@ export const authApi = createApi({
 		baseUrl: API_PATH,
 	}),
 	endpoints: (builder) => ({
-		register: builder.mutation({
+		register: builder.mutation<IAuthRegisterResponse, IAuthRegister>({
 			query: (user: IAuthRegister) => ({
 				url: API_ROUTE.auth + API_FUNCTIONS.auth.register,
 				method: 'POST',
@@ -16,10 +21,10 @@ export const authApi = createApi({
 			}),
 		}),
 		login: builder.mutation<IAuthLoginResponse, IAuthLogin>({
-			query: (credentials: IAuthLogin) => ({
+			query: (user: IAuthLogin) => ({
 				url: API_ROUTE.auth + API_FUNCTIONS.auth.login,
 				method: 'POST',
-				body: credentials,
+				body: user,
 			}),
 		}),
 	}),

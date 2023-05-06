@@ -1,31 +1,57 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Button } from '../../components';
+import { Button, Card } from '../../components';
 import styles from './RegisterForm.module.scss';
 import { useForm } from 'react-hook-form';
 import { IRegisterFormProps } from './RegisterForm.props';
-import { IRegisterForm } from '../../interfaces/Auth.interface';
+import { IAuthRegister } from '../../interfaces/Auth.interface';
 import cn from 'classnames';
 import Link from 'next/link';
 import { ChangeEvent } from 'preact/compat';
+import { API_FUNCTIONS, API_PATH, API_ROUTE } from '../../api/apiService';
+import AuthStore from '../../store/localStorage/localStorageSlice';
+import { useRouter } from 'next/router';
 
 export const RegisterForm = ({ className, ...props }: IRegisterFormProps) => {
-	const { register, control, handleSubmit } = useForm<IRegisterForm>();
+	const { register, control, handleSubmit } = useForm<IAuthRegister>();
 
 	const [showPassword, setShowPassword] = useState<boolean>(false);
 	const [applyPolicy, setApplyPolicy] = useState<boolean>(false);
+
+	const [email, setEmail] = useState<string>('');
+	const [password, setPassword] = useState<string>('');
+	const [username, setUsername] = useState<string>('');
+
+	const [success, setSuccess] = useState<boolean>(false);
+
+	const router = useRouter();
+
+	async function onSubmit(data: IAuthRegister): Promise<JSX.Element> {
+		const response = await fetch(API_PATH + API_ROUTE.auth + API_FUNCTIONS.auth.register, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ login: email, password, username }),
+		});
+
+		let answer = <Card>Неполадки на сервере. Регистрация прервана.</Card>;
+
+		if (response.ok) {
+			answer = <Card>Вы успешно зарегистрированы! Пожалуйста, войдите в систему</Card>;
+			setSuccess(!success);
+		}
+
+		return answer;
+	}
 
 	const toggleShowPassword = () => setShowPassword(!showPassword);
 	const handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>) => {
 		setApplyPolicy(event.target?.checked);
 	};
 
-	const onSubmit = (data: IRegisterForm) => {
-		console.log(data);
-	};
-
 	return (
-		<form className={styles['register-form']} onSubmit={handleSubmit(onSubmit)}>
+		<form className={styles['register-form']} onSubmit={() => handleSubmit(onSubmit)}>
 			<div className={styles['register-form__content']} {...props}>
 				<input
 					className={styles['register-form__input']}
@@ -42,7 +68,7 @@ export const RegisterForm = ({ className, ...props }: IRegisterFormProps) => {
 					className={styles['register-form__input']}
 					type='text'
 					placeholder={'почта'}
-					{...register('email', {
+					{...register('login', {
 						required: {
 							value: true,
 							message: 'Поле почты должно быть обязательно заполнено',

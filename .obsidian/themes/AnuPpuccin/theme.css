@@ -3457,7 +3457,7 @@ input.slider,
   background: rgba(var(--ctp-accent), 0.1);
 }
 
-/*-Slider checkboxes-*/
+/*-SliderComponent checkboxes-*/
 .checkbox-container.is-enabled:after {
   background-color: var(--background-primary);
 }

@@ -14,15 +14,16 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { withLayout } from '../layout/Layout';
-import AuthStore from '../utils/auth';
 import { AuthForm } from '../components';
+import { clearToken } from '../store/localStorage/localStorageSlice';
+import { useAppDispatch } from '../store';
 
 export function Home() {
 	const [rating, setRating] = useState<number>(1);
 
 	const [modal, setModal] = useState<boolean>(false);
 
-	const authStore = new AuthStore();
+	const dispatch = useAppDispatch();
 
 	return (
 		<>
@@ -40,7 +41,7 @@ export function Home() {
 			<Button arrow={'none'} appearance={'primary'}>
 				<Link href={'/privateRoute'}>приватка</Link>
 			</Button>
-			<Button onClick={() => authStore.clearToken()} arrow={'none'} appearance={'primary'}>
+			<Button onClick={() => dispatch(clearToken())} arrow={'none'} appearance={'primary'}>
 				убрать приватку
 			</Button>
 			<Button arrow={'right'} appearance={'primary'}>

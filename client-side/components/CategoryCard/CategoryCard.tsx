@@ -14,7 +14,7 @@ export const CategoryCard = ({ image, title, category }: ICategoryCardProps) => 
 					API_PATH +
 					API_ROUTE.product +
 					API_FUNCTIONS.product.findByCategoryWithPagination +
-					'0?page=1&limit=20'
+					`${category}?page=1&limit=20`
 				}
 			>
 				<div className={styles.categoryCard__image}>
