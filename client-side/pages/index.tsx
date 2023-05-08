@@ -28,7 +28,7 @@ export function Home() {
 	const dispatch = useAppDispatch();
 
 	return (
-		<>
+		<Card color={'black'}>
 			<Head>
 				<title>Волго-Вятский Монетный Двор главная</title>
 				<meta
@@ -117,7 +117,7 @@ export function Home() {
 			<Card color={'red'}>Сколько-то текста в карточке</Card>
 			<Card color={'blue'}>Сколько-то текста в карточке</Card>
 			<Card color={'black'}>Сколько-то текста в карточке</Card>
-		</>
+		</Card>
 	);
 }
 

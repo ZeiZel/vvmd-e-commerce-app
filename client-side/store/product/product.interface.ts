@@ -19,7 +19,7 @@ export interface IProductImage {
 }
 
 export interface IProduct {
-	id: string;
+	_id: string;
 	images: IProductImage[];
 	title: string;
 	price: number;

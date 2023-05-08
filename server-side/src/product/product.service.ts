@@ -39,7 +39,7 @@ export class ProductService {
 	}
 
 	async findByCategoryWithPagination(categoryNumber: number, page: number, limit: number) {
-		const skip = page * limit;
+		const skip = (page - 1) * limit;
 		return this.productModel.find({ category: categoryNumber }).skip(skip).limit(limit).exec();
 	}
 

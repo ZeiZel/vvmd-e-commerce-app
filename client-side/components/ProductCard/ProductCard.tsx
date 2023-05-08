@@ -14,9 +14,9 @@ export const ProductCard = ({ product }: IProductCardInterface) => {
 		return <ErrorPage type={'404'} />;
 	}
 
-	const { images, title, count, price, id } = product;
+	const { images, title, count, price } = product;
 
-	const img = product.images ? product.images[0].path : 'Not Found';
+	const img = images ? (images[0].path ? images[0].path : 'Not Found') : 'Not Found';
 
 	return (
 		<div>

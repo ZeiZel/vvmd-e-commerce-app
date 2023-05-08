@@ -1,0 +1,9 @@
+.products-list {
+	display: grid;
+
+	&__items {
+		display: flex;
+		flex-flow: row wrap;
+
+	}
+}
