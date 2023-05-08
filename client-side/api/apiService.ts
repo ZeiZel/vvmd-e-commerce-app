@@ -1,4 +1,5 @@
 export const API_PATH = 'http://localhost:3000/api/';
+export const API_PATH_IMAGE = 'http://localhost:3000';
 
 export const API_ROUTE = {
 	auth: 'auth/',

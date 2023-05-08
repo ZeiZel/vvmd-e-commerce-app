@@ -13,7 +13,7 @@ export const Modal = forwardRef(
 			<div
 				onClick={() => setActive(false)}
 				ref={ref}
-				className={cn(className, styles.modal, {
+				className={cn(styles.modal, {
 					[styles.hide]: !active,
 				})}
 				{...props}
@@ -21,7 +21,7 @@ export const Modal = forwardRef(
 				<Card
 					onClick={(e) => e.stopPropagation()}
 					color={'black'}
-					className={cn(styles['modal__content'], {
+					className={cn(styles['modal__content'], className, {
 						[styles.active]: active,
 					})}
 				>

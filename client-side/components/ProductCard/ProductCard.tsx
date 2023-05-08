@@ -4,8 +4,9 @@ import { Card } from '../Card/Card';
 import styles from './ProductCard.module.scss';
 import Image from 'next/image';
 import { Button } from '../Button/Button';
-import { HTag, Modal, Rating } from '../';
+import { HTag, Modal } from '../';
 import { ErrorPage, ProductPage } from '../../page-components';
+import { API_PATH_IMAGE } from '../../api/apiService';
 
 export const ProductCard = ({ product }: IProductCardInterface) => {
 	const [modal, setModal] = useState<boolean>(false);
@@ -16,7 +17,11 @@ export const ProductCard = ({ product }: IProductCardInterface) => {
 
 	const { images, title, count, price } = product;
 
-	const img = images ? (images[0].path ? images[0].path : 'Not Found') : 'Not Found';
+	const img = images
+		? images[0].path
+			? images[0].path.replace('/uploads', '')
+			: 'Not Found'
+		: 'Not Found';
 
 	return (
 		<div>
@@ -26,7 +31,7 @@ export const ProductCard = ({ product }: IProductCardInterface) => {
 				className={styles['product-card']}
 			>
 				<div className={styles['product-card__image']}>
-					<Image src={img} alt='CatalogPage' width={200} height={200} />
+					<Image src={API_PATH_IMAGE + img} alt='CatalogPage' width={200} height={200} />
 				</div>
 				<HTag tag={'h2'}>{title}</HTag>
 				<div className='product-details'>
@@ -40,9 +45,7 @@ export const ProductCard = ({ product }: IProductCardInterface) => {
 					)}
 				</div>
 			</Card>
-			<Modal active={modal} setActive={setModal}>
-				<ProductPage product={product} />
-			</Modal>
+			<ProductPage modal={modal} setModal={setModal} product={product} />
 		</div>
 	);
 };

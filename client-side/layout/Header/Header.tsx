@@ -5,7 +5,6 @@ import styles from './Header.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import LogoIcon from '../logo.png';
-import AccLogoIcon from './acclogo.png';
 import { LoginStatus } from '../../components';
 
 export const Header: FC<IHeaderProps> = ({ className, ...props }: IHeaderProps): JSX.Element => {
@@ -29,7 +28,7 @@ export const Header: FC<IHeaderProps> = ({ className, ...props }: IHeaderProps):
 						<Link href={'/contacts'}>Контакты</Link>
 					</li>
 				</ul>
-				<LoginStatus login={'Alexey'} image={AccLogoIcon} />
+				<LoginStatus />
 			</nav>
 		</header>
 	);

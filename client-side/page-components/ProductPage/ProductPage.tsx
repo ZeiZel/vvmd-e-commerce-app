@@ -1,17 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import styles from './ProductPage.module.scss';
-import { Card, Spinner } from '../../components';
+import { Modal, SliderComponent, Spinner } from '../../components';
 import { IProductCardProps } from './ProductPage.props';
 import cn from 'classnames';
-import { useAppDispatch } from '../../store';
-import { useGetProductByIdMutation } from '../../store/product/product.api';
-import Error404 from '../../pages/404';
-import { IProduct } from '../../store/product/product.interface';
 
-export const ProductPage = ({ product, className, ...props }: IProductCardProps) => {
+export const ProductPage = ({
+	modal,
+	setModal,
+	product,
+	className,
+	...props
+}: IProductCardProps) => {
+	const { images, title, category, count, price, characteristics, tags, description } = product;
+
 	return (
-		<div color={'black'} className={styles.product}>
-			<div className={styles.product__title}>{}</div>
-		</div>
+		<Modal active={modal} setActive={setModal} className={styles.product}>
+			<div className={styles.product__slider}>
+				<SliderComponent slides={product.images} />
+			</div>
+			<div className={styles.product__title}>{title}</div>
+			<div className={styles.product__category}>{category}</div>
+			<div className={styles.product__count}>{count}</div>
+			<div className={styles.product__price}>{price}</div>
+			{/*<div className={styles.product__title}>{characteristics.map()}</div>*/}
+			<div className={styles.product__description}>{description}</div>
+			{/*<div className={styles.product__title}>{tags.map()}</div>*/}
+		</Modal>
 	);
 };
