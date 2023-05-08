@@ -8,6 +8,7 @@ import {
 	Paragraph,
 	Rating,
 	Tag,
+	ThemeToggle,
 	Up,
 } from '../components';
 import React, { useState } from 'react';
@@ -17,6 +18,7 @@ import { withLayout } from '../layout/Layout';
 import { AuthForm } from '../components';
 import { clearToken } from '../store/localStorage/localStorageSlice';
 import { useAppDispatch } from '../store';
+import { ProductCard } from '../components/ProductCard/ProductCard';
 
 export function Home() {
 	const [rating, setRating] = useState<number>(1);
@@ -53,6 +55,9 @@ export function Home() {
 			<Button arrow={'none'} appearance={'primary'}>
 				Текст
 			</Button>
+			<Divider />
+
+			<ThemeToggle />
 			<Divider />
 
 			<Modal active={modal} setActive={setModal}>

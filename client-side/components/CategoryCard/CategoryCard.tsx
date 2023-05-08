@@ -9,14 +9,7 @@ import { API_FUNCTIONS, API_PATH, API_ROUTE } from '../../api/apiService';
 export const CategoryCard = ({ image, title, category }: ICategoryCardProps) => {
 	return (
 		<Card className={styles.categoryCard}>
-			<Link
-				href={
-					API_PATH +
-					API_ROUTE.product +
-					API_FUNCTIONS.product.findByCategoryWithPagination +
-					`${category}?page=1&limit=20`
-				}
-			>
+			<Link href={`/products/${category}`}>
 				<div className={styles.categoryCard__image}>
 					<Image
 						className={styles.image}

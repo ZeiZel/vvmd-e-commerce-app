@@ -1,16 +1,18 @@
 import { Action, configureStore, Store, ThunkAction } from '@reduxjs/toolkit';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { productApi } from './product/product.api';
 import { shoppingcartApi } from './shoppingcart/shoppingcart.api';
 import { paymentApi } from './payment/payment.api';
 import { authApi } from './auth/authApi';
 import authentication from './auth/authSlice';
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import localStorageSlice from './localStorage/localStorageSlice';
+import toggleTheme from './toggleTheme/toggleThemeSlice';
+import localStorage from './localStorage/localStorageSlice';
 
 export function makeStore(): Store {
 	return configureStore({
 		reducer: {
-			localStorageSlice,
+			localStorage,
+			toggleTheme,
 			authentication,
 			[authApi.reducerPath]: authApi.reducer,
 			[productApi.reducerPath]: productApi.reducer,

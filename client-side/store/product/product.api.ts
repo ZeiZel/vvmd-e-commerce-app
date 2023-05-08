@@ -2,15 +2,24 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { API_PATH } from '../../api/apiService';
 import { IProduct } from './product.interface';
 
+export interface getByCategoryArgs {
+	category: string;
+	limit: number;
+	page: number;
+}
+
 export const productApi = createApi({
 	reducerPath: 'api/product',
 	baseQuery: fetchBaseQuery({
 		baseUrl: API_PATH,
 	}),
 	endpoints: (build) => ({
+		getProductById: build.mutation<IProduct, string>({
+			query: (id: string) => `/product/${id}`,
+		}),
 		// todo: сомнительные типы
-		getProducts: build.query<IProduct[], number>({
-			query: (category: number = 0, limit: number = 20, page: number = 2) =>
+		getProducts: build.query<IProduct[], getByCategoryArgs>({
+			query: ({ category = '0', limit = 20, page = 2 }) =>
 				`product/category/${category}?page=${page}&limit=${limit}`,
 		}),
 		getAllProducts: build.query<IProduct[], any>({
@@ -22,5 +31,9 @@ export const productApi = createApi({
 	}),
 });
 
-export const { useGetProductsQuery, useGetAllProductsQuery, useGetProductsByStringQuery } =
-	productApi;
+export const {
+	useGetProductsQuery,
+	useGetAllProductsQuery,
+	useGetProductsByStringQuery,
+	useGetProductByIdMutation,
+} = productApi;

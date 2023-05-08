@@ -1,0 +1,13 @@
+.error {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 100vh;
+
+	&__answer {
+		font-size: 58px;
+		font-weight: bold;
+	}
+}

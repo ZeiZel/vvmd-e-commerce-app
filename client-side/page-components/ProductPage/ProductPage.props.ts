@@ -1,10 +1,7 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
-import { IProductModel } from '../../interfaces/Product.interface';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { IProduct } from '../../store/product/product.interface';
 
 export interface IProductCardProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-	children: ReactNode;
-	products: IProductModel[];
-	active: boolean;
-	setActive: () => void;
+	product: IProduct;
 }

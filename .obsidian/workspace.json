@@ -64,6 +64,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "25bc6bc27a16a0d3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -198,6 +206,9 @@
   },
   "active": "352c32821842bfc4",
   "lastOpenFiles": [
+    "server-side/mongo/mongo-data-4.4/diagnostic.data/metrics.interim.temp",
+    "server-side/mongo/mongo-data-4.4/diagnostic.data/metrics.interim",
+    "server-side/mongo/mongo-data-4.4/WiredTiger.turtle.set",
     "server-side/src/user/user.model.ts",
     "server-side/src/user/user.ts",
     "server-side/src/user/user.service.ts",
@@ -206,9 +217,6 @@
     "server-side/src/email/email.service.ts",
     "server-side/src/collection/collection.model.ts",
     "server-side/src/collection/collection.ts",
-    "server-side/src/collection/collection.service.ts",
-    "server-side/src/collection/collection.controller.ts",
-    "server-side/src/user/user.module.ts",
     "server-side/node_modules/superagent-proxy/README.md",
     "server-side/node_modules/superagent-proxy/CHANGELOG.md",
     "server-side/node_modules/mjml-preset-core/README.md",

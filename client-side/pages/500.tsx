@@ -1,7 +1,9 @@
 import React from 'react';
+import { ErrorPage } from '../page-components';
+import { withLayout } from '../layout/Layout';
 
 const Error500 = () => {
-	return <div></div>;
+	return <ErrorPage type={'500'} />;
 };
 
-export default Error500;
+export default withLayout(Error500);

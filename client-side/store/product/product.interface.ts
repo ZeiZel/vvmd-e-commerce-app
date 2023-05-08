@@ -19,7 +19,8 @@ export interface IProductImage {
 }
 
 export interface IProduct {
-	images?: IProductImage[];
+	id: string;
+	images: IProductImage[];
 	title: string;
 	price: number;
 	count: number;

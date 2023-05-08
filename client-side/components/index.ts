@@ -21,3 +21,4 @@ export * from './LoginForm/LoginForm';
 export * from './RegisterForm/RegisterForm';
 export * from './AuthForm/AuthForm';
 export * from './Spinner/Spinner';
+export * from './ThemeToggle/ThemeToggle';

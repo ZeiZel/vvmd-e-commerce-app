@@ -94,10 +94,9 @@ export const RegisterForm = ({ className, ...props }: IRegisterFormProps) => {
 						type='checkbox'
 						id={'privacy-policy'}
 					/>
-					Я принимаю{' '}
-					<Link href={'/'} className={styles['register-form__link']}>
-						условия конфиденциальности
-					</Link>
+					<div className={styles['register-form__link']}>
+						Я принимаю <Link href={'/'}>условия конфиденциальности</Link>
+					</div>
 				</label>
 				{isSuccess && (
 					<Card color={'green'}>

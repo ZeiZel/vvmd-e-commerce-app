@@ -1,19 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ProductPage.module.scss';
-import { Card, Modal, Slider } from '../../components';
+import { Card, Spinner } from '../../components';
 import { IProductCardProps } from './ProductPage.props';
 import cn from 'classnames';
+import { useAppDispatch } from '../../store';
+import { useGetProductByIdMutation } from '../../store/product/product.api';
+import Error404 from '../../pages/404';
+import { IProduct } from '../../store/product/product.interface';
 
-const ProductPage = ({ products, active, setActive, className, ...props }: IProductCardProps) => {
+export const ProductPage = ({ product, className, ...props }: IProductCardProps) => {
 	return (
-		<Modal active={active} setActive={setActive}>
-			<Card color={'black'}>
-				<div className={cn(className, styles['product-page'])}>
-					<Slider className={cn(styles['product-page__slider'])}></Slider>
-				</div>
-			</Card>
-		</Modal>
+		<div color={'black'} className={styles.product}>
+			<div className={styles.product__title}>{}</div>
+		</div>
 	);
 };
-
-export default ProductPage;
