@@ -17,6 +17,10 @@ import { AuthDto } from './dto/auth.dto';
 import { USER_ALREADY_EXISTED } from './auth.constants';
 import { ApiBody, ApiOkResponse } from '@nestjs/swagger';
 import {
+	FindUserByDtoRequest,
+	FindUserByDtoResponse,
+	FindUserByIdRequest,
+	FindUserByIdResponse,
 	LoginUserRequest,
 	LoginUserResponse,
 	RegisterUserRequest,
@@ -56,6 +60,8 @@ export class AuthController {
 		return this.authService.login(email);
 	}
 
+	@ApiBody({ type: FindUserByDtoRequest })
+	@ApiOkResponse({ type: FindUserByDtoResponse })
 	@UseGuards(JwtAuthGuard)
 	@UsePipes(new ValidationPipe())
 	@HttpCode(HttpStatus.OK)
@@ -64,6 +70,8 @@ export class AuthController {
 		return this.authService.findUser(login);
 	}
 
+	@ApiBody({ type: FindUserByIdRequest })
+	@ApiOkResponse({ type: FindUserByIdResponse })
 	@UseGuards(JwtAuthGuard)
 	@UsePipes(new ValidationPipe())
 	@HttpCode(HttpStatus.OK)

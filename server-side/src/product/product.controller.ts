@@ -22,11 +22,20 @@ import { PRODUCT_CANNOT_CREATED, PRODUCT_NOT_FOUND_ERROR } from './product.const
 import { FileInterceptor } from '@nestjs/platform-express';
 import { JwtAuthGuard } from '../auth/guards/jwt.guard';
 import { Types } from 'mongoose';
+import { ApiBody, ApiOkResponse } from '@nestjs/swagger';
+import {
+	ProductResponse,
+	CreateProductRequest,
+	FindProductByIdRequest,
+	FindUserByIdResponse,
+} from './types';
 
 @Controller('product')
 export class ProductController {
 	constructor(private readonly productService: ProductService) {}
 
+	@ApiBody({ type: CreateProductRequest })
+	@ApiOkResponse({ type: ProductResponse })
 	@Post('/create')
 	@HttpCode(200)
 	@UseGuards(JwtAuthGuard)
@@ -40,6 +49,7 @@ export class ProductController {
 		return product;
 	}
 
+	@ApiOkResponse({ type: ProductResponse })
 	@Post('/addImg/:id')
 	@HttpCode(200)
 	@UseInterceptors(FileInterceptor('image'))
@@ -47,6 +57,7 @@ export class ProductController {
 		return this.productService.addImgToProduct(id, [file]);
 	}
 
+	@ApiOkResponse({ type: FindUserByIdResponse })
 	@Get(':id')
 	async get(@Param('id') id: Types.ObjectId) {
 		const product = await this.productService.findById(id);
@@ -58,6 +69,7 @@ export class ProductController {
 		return product;
 	}
 
+	@ApiOkResponse({ type: [ProductResponse] })
 	@Get()
 	async getAll() {
 		const products = await this.productService.findAll();
@@ -69,6 +81,7 @@ export class ProductController {
 		return products;
 	}
 
+	@ApiOkResponse({ type: ProductResponse })
 	@UseGuards(JwtAuthGuard)
 	@Patch(':id')
 	async patch(@Param('id') id: string, @Body() dto: CreateProductDto) {
@@ -81,6 +94,7 @@ export class ProductController {
 		return updatedProduct;
 	}
 
+	@ApiOkResponse({ type: ProductResponse })
 	@UseGuards(JwtAuthGuard)
 	@HttpCode(200)
 	@Delete(':id')
@@ -94,6 +108,7 @@ export class ProductController {
 		return deletedProduct;
 	}
 
+	@ApiOkResponse({ type: [ProductResponse] })
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
 	@Get('/category/:categoryNumber')
@@ -105,6 +120,7 @@ export class ProductController {
 		return this.productService.findByCategoryWithPagination(categoryNumber, page, limit);
 	}
 
+	@ApiOkResponse({ type: ProductResponse })
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
 	@Get('/searching/search')
