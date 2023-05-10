@@ -1,0 +1,31 @@
+.banner {
+	background-image: url("../../../public/bg-main-slider.png");
+	background-size: cover;
+
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 100vw;
+		height: 100vh;
+	}
+
+	&__title {
+		margin-right: 100px;
+	}
+
+	&__image {
+
+	}
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin: 0 auto;
+
+	width: 1140px;
+}

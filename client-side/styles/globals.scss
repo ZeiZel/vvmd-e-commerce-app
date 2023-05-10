@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-//@import 'bootstrap/dist/css/bootstrap.css';
 
 :root {
 	--black: #262323;
@@ -34,17 +33,16 @@ html {
 
 html,
 body {
-	background: var(--dark-black) !important;
+	background: var(--dark-black);
 
 	margin: 0;
 	padding: 0;
 
-	color: var(--white) !important;
+	color: var(--white);
 	font-family: var(--font-family);
 }
 
 body {
-	padding-top: 20px;
 
 	overflow-x: hidden;
 
@@ -70,13 +68,12 @@ body {
 
 .container {
 	width: 1140px;
-	padding: 0 15px;
 	margin: 0 auto;
 }
 
 a {
-	text-decoration: none !important;
-	color: inherit !important;
+	text-decoration: none;
+	color: inherit;
 }
 
 .overflow-hidden {

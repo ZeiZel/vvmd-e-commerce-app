@@ -1,11 +1,15 @@
 .footer {
+	max-height: 230px;
 	padding: 40px;
-	margin-bottom: 20px;
+
+	&__wrapper {
+	}
 
 	&__group {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		gap: 40px;
 	}
 
 	&__left {
@@ -46,5 +50,16 @@
 
 	&__license {
 		color: var(--gray-dark);
+
+		a {
+			transition: all .2s;
+			&:hover {
+				color: var(--white)
+			}
+
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+		}
 	}
 }

@@ -8,8 +8,8 @@ import { format } from 'date-fns';
 
 export const Footer: FC<IFooterProps> = ({ className, ...props }: IFooterProps): JSX.Element => {
 	return (
-		<footer className={cn(styles.footer, className)} {...props}>
-			<Card>
+		<Card className={cn(styles.footer, className)} {...props}>
+			<footer className={styles.footer__wrapper}>
 				<div className={styles['footer__group']}>
 					<div className={styles['footer__left']}>
 						<nav className={styles['footer__nav']}>
@@ -35,7 +35,7 @@ export const Footer: FC<IFooterProps> = ({ className, ...props }: IFooterProps):
 							appearance={'ghost'}
 							arrow={'right'}
 						>
-							Подписаться на нашу рассылку
+							<Link href={'https://t.me/VVMDmint'}>Подписаться на нашу рассылку</Link>
 						</Button>
 					</div>
 				</div>
@@ -43,10 +43,11 @@ export const Footer: FC<IFooterProps> = ({ className, ...props }: IFooterProps):
 				<Divider className={styles['footer__divider']} />
 				<div className={styles['footer__license']}>
 					<p>{format(new Date(), 'yyyy')} © «Волго-Вятский монетный двор», ООО</p>
-					<Link href={'#'}>Пользовательское соглашение</Link>
-					<Link href={'#'}>Политика конфиденциальности</Link>
+					<br />
+					<Link href={'/'}>Пользовательское соглашение</Link>
+					<Link href={'/'}>Политика конфиденциальности</Link>
 				</div>
-			</Card>
-		</footer>
+			</footer>
+		</Card>
 	);
 };

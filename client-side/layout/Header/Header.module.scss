@@ -1,4 +1,5 @@
 .header {
+	max-height: 95px;
 	padding: 15px 30px;
 
 	&__wrapper {
@@ -6,6 +7,7 @@
 		justify-content: space-between;
 		align-items: center;
 		flex-direction: row;
+		gap: 20px;
 	}
 
 	&__logo {
@@ -49,13 +51,16 @@
 		align-items: center;
 		gap: 20px;
 
+		button {
+			margin: 0;
+		}
+
 		a {
 			width: 42px;
 			height: 42px;
 			background: rgba(217, 217, 217, 0.1);
 			display: inline-flex;
 			border-radius: 50%;
-			margin-right: 6px;
 			align-items: center;
 			justify-content: center;
 			line-height: 1;
