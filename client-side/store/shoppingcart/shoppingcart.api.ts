@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { fetchBaseQuery } from '@reduxjs/toolkit/query';
-import { API_FUNCTIONS, API_PATH, API_ROUTE } from '../../api/apiService';
+import { API_FUNCTIONS, API_PATH, API_ROUTE } from '../../api/helper.api';
 import { IShoppingcart, IShoppingCartProduct } from './shoppingcart.interface';
 
 export const shoppingcartApi = createApi({

@@ -13,6 +13,7 @@ import Image from 'next/image';
 import { Button } from '../Button/Button';
 import { Input } from '../Input/Input';
 import { Card } from '../Card/Card';
+import { setUser } from '../../store/auth/authSlice';
 
 export const LoginForm: FC = (): JSX.Element => {
 	const { register, handleSubmit } = useForm<ILoginForm>();
@@ -30,6 +31,7 @@ export const LoginForm: FC = (): JSX.Element => {
 
 		if (responseData.access_token) {
 			dispatch(setToken(responseData.access_token));
+			dispatch(setUser({ ...responseData }));
 			// await router.push('/');
 			return <Card color={'green'}>Вы успешно вошли!</Card>;
 		}
@@ -90,7 +92,9 @@ export const LoginForm: FC = (): JSX.Element => {
 				>
 					Отправить
 				</Button>
-				{error && <HTag tag={'h2'}>Login failed {`${error.message}`}</HTag>}
+				{error && (
+					<HTag tag={'h2'}>Вход не был выполнен. Пожалуйста, повторите позже.</HTag>
+				)}
 			</div>
 		</form>
 	);

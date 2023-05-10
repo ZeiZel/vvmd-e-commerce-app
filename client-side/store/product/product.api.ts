@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { API_PATH } from '../../api/apiService';
+import { API_PATH } from '../../api/helper.api';
 import { IProduct } from './product.interface';
 
 export interface getByCategoryArgs {

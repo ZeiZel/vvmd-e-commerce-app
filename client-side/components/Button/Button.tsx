@@ -20,7 +20,7 @@ export const Button: FC<IButtonProps> = ({
 			{...props}
 		>
 			<span></span>
-			{children}
+			<span>{children}</span>
 			{arrow != 'none' && (
 				<span
 					className={cn(styles.arrow, {

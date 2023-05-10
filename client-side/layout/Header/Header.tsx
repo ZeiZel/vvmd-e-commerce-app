@@ -1,35 +1,79 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { IHeaderProps } from './Header.props';
 import cn from 'classnames';
 import styles from './Header.module.scss';
-import Link from 'next/link';
+import { Button, Card } from '../../components';
 import Image from 'next/image';
-import LogoIcon from '../logo.png';
-import { LoginStatus } from '../../components';
+import Link from 'next/link';
 
 export const Header: FC<IHeaderProps> = ({ className, ...props }: IHeaderProps): JSX.Element => {
+	const [scroll, setScroll] = useState<boolean>(false);
+
+	useEffect(() => {
+		if (typeof window === 'undefined') {
+			return;
+		}
+
+		const onScroll = () => {
+			if (window.scrollY > 50) {
+				setScroll(true);
+			} else {
+				setScroll(false);
+			}
+		};
+
+		window.addEventListener('scroll', onScroll);
+
+		return () => window.removeEventListener('scroll', onScroll);
+	}, []);
+
 	return (
-		<header className={cn(styles.header, className)} {...props}>
-			<Link className={styles['header__logo']} href={'/'}>
-				<Image src={LogoIcon} alt={'логотип'} width={200} height={100} />
-			</Link>
-			<nav className={styles['header__nav']}>
-				<ul>
-					<li>
-						<Link href={'/catalog'}>Каталог</Link>
-					</li>
-					<li>
-						<Link href={'/buy'}>Купить</Link>
-					</li>
-					<li>
-						<Link href={'/about'}>О компании</Link>
-					</li>
-					<li>
-						<Link href={'/contacts'}>Контакты</Link>
-					</li>
-				</ul>
-				<LoginStatus />
-			</nav>
-		</header>
+		<Card
+			color={'black'}
+			className={cn(className, styles.header, {
+				[styles.scrolled]: scroll,
+			})}
+			{...props}
+		>
+			<header className={styles.header__wrapper}>
+				<div className={styles.header__logo}>
+					<Link href={'/'}>
+						<Image src={'/logo.png'} alt={'logo'} width={200} height={100} />
+					</Link>
+				</div>
+
+				<nav className={styles.header__nav}>
+					<ul className={styles.header__links}>
+						<li className={styles['header__links-item']}>
+							<Link href={'/catalog'}>Каталог</Link>
+						</li>
+						<li className={styles['header__links-item']}>
+							<Link href={'/buy'}>Купить</Link>
+						</li>
+						<li className={styles['header__links-item']}>
+							<Link href={'/about'}>О компании</Link>
+						</li>
+						<li className={styles['header__links-item']}>
+							<Link href={'/contacts'}>Связаться</Link>
+						</li>
+					</ul>
+				</nav>
+
+				<div className={styles.header__contacts}>
+					<Link href={'https://vk.com/vvmdru'}>
+						<Image src={'/vk.png'} alt={'vk logo'} width={30} height={30} />
+					</Link>
+					<Link href={'https://t.me/VVMDmint'}>
+						<Image src={'/tg.png'} alt={'vk logo'} width={30} height={30} />
+					</Link>
+					<Link href={'https://www.youtube.com/channel/UCIOplldBAEgFdGjFSMg1qzg'}>
+						<Image src={'/youtube.png'} alt={'vk logo'} width={30} height={30} />
+					</Link>
+					<Button arrow={'none'} appearance={'ghost'}>
+						Связаться с нами
+					</Button>
+				</div>
+			</header>
+		</Card>
 	);
 };

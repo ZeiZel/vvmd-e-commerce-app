@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { ICategoryCardProps } from './CategoryCard.props';
 import styles from './CategoryCard.module.scss';
 import Link from 'next/link';
-import { API_FUNCTIONS, API_PATH, API_ROUTE } from '../../api/apiService';
+import { API_FUNCTIONS, API_PATH, API_ROUTE } from '../../api/helper.api';
 
 export const CategoryCard = ({ image, title, category }: ICategoryCardProps) => {
 	return (

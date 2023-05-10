@@ -8,7 +8,7 @@ import { IAuthRegister } from '../../interfaces/Auth.interface';
 import cn from 'classnames';
 import Link from 'next/link';
 import { ChangeEvent } from 'preact/compat';
-import { API_FUNCTIONS, API_PATH, API_ROUTE } from '../../api/apiService';
+import { API_FUNCTIONS, API_PATH, API_ROUTE } from '../../api/helper.api';
 import AuthStore from '../../store/localStorage/localStorageSlice';
 import { useRouter } from 'next/router';
 import { useRegisterMutation } from '../../store/auth/authApi';

@@ -1,57 +1,89 @@
 .header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	padding: 15px 30px;
 
-	padding: 13px 20px;
-	margin-bottom: 40px;
-
-	background: var(--black);
-
-	border: none;
-	border-radius: 15px;
-
-	box-shadow: var(--shadow);
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: row;
+	}
 
 	&__logo {
-		display: inline-block;
+
 	}
 
 	&__nav {
-		display: inline-flex;
-		align-items: center;
+
+	}
+
+	&__links {
+		display: flex;
 		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		gap: 20px;
 
-		text-align: right;
+		&-item {
+			position: relative;
 
+			&::before {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 0%;
+				height: 3px;
+				background-color: var(--white);
+				transition: all 0.3s ease-in-out;
+			}
 
+			&:hover::before {
+				width: 100%;
+			}
+		}
+	}
 
-		ul {
-			margin-right: 20px;
+	&__contacts {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
 
-			li {
-				display: inline-block;
-				margin-right: 40px;
-				position: relative;
+		a {
+			width: 42px;
+			height: 42px;
+			background: rgba(217, 217, 217, 0.1);
+			display: inline-flex;
+			border-radius: 50%;
+			margin-right: 6px;
+			align-items: center;
+			justify-content: center;
+			line-height: 1;
+			border: 1px solid rgba(255, 255, 255, 0.5);
 
-				&:last-child {
-					margin: 0;
-				}
+			&::before {
+				content: "";
+				width: 42px;
+				height: 42px;
+				position: absolute;
+				background-color: #ffffff;
+				border-radius: 50%;
+				transform: scale(0);
+				transition: 0.3s ease-in-out;
+			}
 
-				&::before {
-					content: '';
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					width: 0%;
-					height: 3px;
-					background-color: var(--white);
-					transition: all 0.3s ease-in-out;
-				}
+			&:hover::before {
+				transform: scale(1);
+			}
 
-				&:hover::before {
-					width: 100%;
-				}
+			& img {
+				width: 55%;
+				z-index: 1;
+				transition: 0.3s ease-in-out;
+			}
+
+			&:hover img {
+				filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
 			}
 		}
 	}

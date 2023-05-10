@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Button } from '../Button/Button';
 import { HTag, Modal } from '../';
 import { ErrorPage, ProductPage } from '../../page-components';
-import { API_PATH_IMAGE } from '../../api/apiService';
+import { API_PATH_IMAGE } from '../../api/helper.api';
 
 export const ProductCard = ({ product }: IProductCardInterface) => {
 	const [modal, setModal] = useState<boolean>(false);

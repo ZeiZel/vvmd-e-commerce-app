@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { API_FUNCTIONS, API_PATH, API_ROUTE } from '../../api/apiService';
+import { API_FUNCTIONS, API_PATH, API_ROUTE } from '../../api/helper.api';
 import {
 	IAuthLogin,
 	IAuthLoginResponse,

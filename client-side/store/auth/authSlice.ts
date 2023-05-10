@@ -11,11 +11,12 @@ const initialState: IUserState = {
 
 export const userSlice = createSlice({
 	initialState,
-	name: 'userSlice',
+	name: 'user',
 	reducers: {
 		logout: () => initialState,
 		setUser: (state, action: PayloadAction<IAuthLoginResponse>) => {
 			state.user = action.payload;
+			localStorage.setItem('user', JSON.stringify(state.user.user));
 		},
 	},
 });

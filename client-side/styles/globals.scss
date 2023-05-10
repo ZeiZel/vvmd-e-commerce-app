@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+//@import 'bootstrap/dist/css/bootstrap.css';
 
 :root {
 	--black: #262323;
@@ -26,19 +27,26 @@
 	box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+	scroll-padding: 75px;
+}
+
 html,
 body {
-	background: var(--dark-black);
+	background: var(--dark-black) !important;
 
 	margin: 0;
 	padding: 0;
 
-	color: var(--white);
+	color: var(--white) !important;
 	font-family: var(--font-family);
 }
 
 body {
 	padding-top: 20px;
+
+	overflow-x: hidden;
 
 	&::-webkit-scrollbar {
 		width: 8px;
@@ -67,8 +75,8 @@ body {
 }
 
 a {
-	text-decoration: none;
-	color: inherit;
+	text-decoration: none !important;
+	color: inherit !important;
 }
 
 .overflow-hidden {

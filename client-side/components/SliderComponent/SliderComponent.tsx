@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { ISliderProps } from './SliderComponent.props';
 import styles from './SliderComponent.module.scss';
-import { API_PATH_IMAGE } from '../../api/apiService';
+import { API_PATH_IMAGE } from '../../api/helper.api';
 
 export const SliderComponent = ({ slides }: ISliderProps): JSX.Element => {
 	const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);

@@ -28,7 +28,7 @@ export const AuthForm = () => {
 				arrow={'none'}
 				appearance={'ghost'}
 			>
-				{showRegister ? 'Вы уже зарегистрированы?' : 'Вы ещё не зарегистрированы?'}
+				{showRegister ? 'Вы ещё не зарегистрированы?' : 'Вы уже зарегистрированы?'}
 			</Button>
 		</div>
 	);
