@@ -27,10 +27,6 @@ export const ProductsList = () => {
 		page,
 	});
 
-	useEffect(() => {
-		console.log(products);
-	}, [products]);
-
 	// произвести сравнение
 	const category = catalogPageData[Number(alias)];
 

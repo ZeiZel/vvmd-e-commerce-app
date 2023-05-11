@@ -10,13 +10,15 @@
 
 .header {
 	position: fixed;
+	z-index: 10000;
 	top: 0;
 	left: 50%;
 	margin-left: calc(-1024px / 2);
 }
 
 .footer {
-
+	position: relative;
+	z-index: 10000;
 }
 
 .skipLink {

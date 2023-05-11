@@ -1,0 +1,14 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100vw;
+	height: 100vh;
+
+	&__parallax {
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+}
