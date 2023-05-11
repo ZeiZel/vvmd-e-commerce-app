@@ -1,19 +1,31 @@
 .input {
-	color: var(--black);
-	background: var(--white);
-	box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
+	width: 100%;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	color: #fff;
+	margin: 0 0 8px 0;
+	padding: 18px 26px;
+	font-weight: 500;
+	font-size: 18px;
+	letter-spacing: 0.8px;
+	transition: 0.3s ease-in-out;
 
-	font-family: var(--font-family);
+	&:focus {
+		background: rgba(255, 255, 255, 1);
+		color: #121212;
+	}
 
-	font-size: 16px;
-	line-height: 22px;
+	&::placeholder {
+		font-size: 16px;
+		font-weight: 400;
+		color: #fff;
+	}
 
-	width: 280px;
-	padding: 5px;
-	background: var(--black);
-	border: 1px solid var(--gray-dark);
-	outline-color: var(--white);
-	border-radius: 3px;
+	&:focus::placeholder {
+		color: #121212;
+		opacity: 0.8;
+	}
 }
 
 .input::placeholder {

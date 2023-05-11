@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ButtonHTMLAttributes, DetailedHTMLProps, useState } from 'react';
 import { Card } from '../Card/Card';
 import { LoginForm } from '../LoginForm/LoginForm';
 import { RegisterForm } from '../RegisterForm/RegisterForm';
@@ -6,6 +6,7 @@ import { Button } from '../Button/Button';
 import { IAuthRegister } from '../../interfaces/Auth.interface';
 import { HTag } from '../HTag/HTag';
 import styles from './AuthForm.module.scss';
+import { Modal } from '../Modal/Modal';
 
 const initialState: IAuthRegister = {
 	login: '',
@@ -13,22 +14,38 @@ const initialState: IAuthRegister = {
 	password: '',
 };
 
-export const AuthForm = () => {
+export interface IAuthForm
+	extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {}
+
+export const AuthForm = ({ className, ...props }: IAuthForm) => {
 	const [formValue, setFormValue] = useState<IAuthRegister>(initialState);
 	const [showRegister, setShowRegister] = useState<boolean>(false);
 
+	const [active, setActive] = useState<boolean>(false);
+
 	return (
 		<div className={styles['auth-form__wrapper']}>
-			<div className={styles['auth-form__htag']}>
-				<HTag tag={'h2'}>{showRegister ? 'Авторизация' : 'Регистрация'}</HTag>
-			</div>
-			{showRegister ? <LoginForm /> : <RegisterForm />}
+			<Modal active={active} setActive={setActive}>
+				<div className={styles['auth-form__htag']}>
+					<HTag tag={'h2'}>{showRegister ? 'Авторизация' : 'Регистрация'}</HTag>
+				</div>
+				{showRegister ? <LoginForm /> : <RegisterForm />}
+				<Button
+					onClick={() => setShowRegister(!showRegister)}
+					arrow={'none'}
+					appearance={'ghost'}
+				>
+					{showRegister ? 'Вы ещё не зарегистрированы?' : 'Вы уже зарегистрированы?'}
+				</Button>
+			</Modal>
 			<Button
-				onClick={() => setShowRegister(!showRegister)}
+				className={className}
+				onClick={() => setActive(!active)}
 				arrow={'none'}
-				appearance={'ghost'}
+				appearance={'primary'}
+				{...props}
 			>
-				{showRegister ? 'Вы ещё не зарегистрированы?' : 'Вы уже зарегистрированы?'}
+				Войти
 			</Button>
 		</div>
 	);

@@ -11,7 +11,7 @@ export const Textarea = forwardRef(
 		return (
 			<div className={cn(styles.textareaWrapper, className)}>
 				<textarea
-					className={cn({
+					className={cn(styles.textarea, {
 						[styles.error]: error,
 					})}
 					ref={ref}

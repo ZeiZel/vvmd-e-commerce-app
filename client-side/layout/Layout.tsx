@@ -1,10 +1,11 @@
-import React, { FC, FunctionComponent, useRef, useState } from 'react';
+import React, { FC, FunctionComponent, KeyboardEventHandler, useRef, useState } from 'react';
 import styles from './Layout.module.scss';
-import { ILayoutProps } from './Layout.props';
+import { ILayoutProps, IToastWrapper } from './Layout.props';
 import { Header } from './Header/Header';
 import { Footer } from './Footer/Footer';
 import cn from 'classnames';
 import { Up } from '../components';
+import { ToastContainer } from 'react-toastify';
 
 export const Layout: FC<ILayoutProps> = ({ children }: ILayoutProps) => {
 	// состояние ссылки
@@ -41,6 +42,31 @@ export const Layout: FC<ILayoutProps> = ({ children }: ILayoutProps) => {
 			<Footer className={styles.footer} />
 			<Up />
 		</div>
+	);
+};
+
+export const ToastWrapper = ({
+	autoClose = 3000,
+	position = 'top-right',
+	children,
+	...props
+}: IToastWrapper): JSX.Element => {
+	return (
+		// @ts-ignore
+		<ToastContainer
+			autoClose={autoClose}
+			position={position}
+			closeButton={false}
+			hideProgressBar={true}
+			newestOnTop={false}
+			pauseOnFocusLoss={false}
+			pauseOnHover={false}
+			rtl={false}
+			limit={3}
+			{...props}
+		>
+			{children}
+		</ToastContainer>
 	);
 };
 

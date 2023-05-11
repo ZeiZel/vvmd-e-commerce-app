@@ -65,13 +65,6 @@ export const AdvantagesSection = () => {
 					</Carousel>
 				</Card>
 			</div>
-			<Image
-				className={styles['background-image-left']}
-				src={'/0_coins_and_medals.png'}
-				alt='Image'
-				width={100}
-				height={100}
-			/>
 		</section>
 	);
 };
