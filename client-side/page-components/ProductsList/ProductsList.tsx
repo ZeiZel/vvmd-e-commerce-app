@@ -40,21 +40,30 @@ export const ProductsList = () => {
 
 	if (category && products) {
 		return (
-			<Card color={'black'} className={styles['products-list']}>
+			<div className={styles['products-list']}>
 				<Head>
 					<title>{category.title}</title>
 				</Head>
-				<HTag tag={'h1'}>{category.title}</HTag>
-				<div className={styles['products-list__items']}>
-					{products.length > 0 ? (
-						products.map((product: IProduct) => (
-							<ProductCard key={product._id} product={product} />
-						))
-					) : (
-						<HTag tag={'h1'}>Товаров данной категории нет</HTag>
-					)}
+				<div className={styles.container}>
+					<div className={styles['products-list__wrapper']}>
+						<Card className={styles['products-list__filters']}>
+							<HTag tag={'h2'}>Фильтры</HTag>
+						</Card>
+						<Card color={'black'} className={styles['products-list__cards']}>
+							<HTag tag={'h1'}>{category.title}</HTag>
+							<div className={styles['products-list__items']}>
+								{products.length > 0 ? (
+									products.map((product: IProduct) => (
+										<ProductCard key={product._id} product={product} />
+									))
+								) : (
+									<HTag tag={'h1'}>Товаров данной категории нет</HTag>
+								)}
+							</div>
+						</Card>
+					</div>
 				</div>
-			</Card>
+			</div>
 		);
 	}
 

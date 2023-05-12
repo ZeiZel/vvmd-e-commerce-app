@@ -5,15 +5,17 @@ import styles from './CatalogPage.module.scss';
 
 export const CatalogPage = () => {
 	return (
-		<div className={styles.wrapper}>
-			{catalogPageData.map((item) => (
-				<CategoryCard
-					key={item.category}
-					category={item.category}
-					title={item.title}
-					image={item.image}
-				/>
-			))}
+		<div className={styles.container}>
+			<div className={styles.catalog__wrapper}>
+				{catalogPageData.map((item) => (
+					<CategoryCard
+						key={item.category}
+						category={item.category}
+						title={item.title}
+						image={item.image}
+					/>
+				))}
+			</div>
 		</div>
 	);
 };

@@ -9,6 +9,9 @@ import { CollectionModule } from './collection/collection.module';
 import { PaymentModule } from './payment/payment.module';
 import { ShoppingcartModule } from './shoppingcart/shoppingcart.module';
 import { FilesModule } from './files/files.module';
+import { TelegramModule } from './telegram/telegram.module';
+import { getTelegramConfig } from './configs/telegram.config';
+import { MessageModule } from './message/message.module';
 
 @Module({
 	imports: [
@@ -25,6 +28,12 @@ import { FilesModule } from './files/files.module';
 		PaymentModule,
 		ShoppingcartModule,
 		FilesModule,
+		TelegramModule.forRootAsync({
+			imports: [ConfigModule],
+			inject: [ConfigService],
+			useFactory: getTelegramConfig,
+		}),
+		MessageModule,
 	],
 })
 export class AppModule {}

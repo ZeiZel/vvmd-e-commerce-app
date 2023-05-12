@@ -1,6 +1,21 @@
+@mixin flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .product-card {
-	width: 250px;
-	height: 350px;
+	@include flex;
+	flex-direction: column;
+	gap: 20px;
+
+	padding: 30px;
 
 	background: #1f1313;
+
+	&__image {
+		& > img {
+			border-radius: 20px;
+		}
+	}
 }

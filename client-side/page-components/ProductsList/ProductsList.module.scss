@@ -1,9 +1,37 @@
+@mixin flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .products-list {
-	display: grid;
+	padding-top: 80px;
+
+	&__wrapper {
+		@include flex;
+		flex-direction: row;
+	}
+
+	&__filters {
+		padding: 30px;
+	}
+
+	&__cards {
+
+	}
 
 	&__items {
 		display: flex;
 		flex-flow: row wrap;
 
 	}
+}
+
+.container {
+	@include flex;
+	height: 100vh;
+
+	margin: 0 auto;
+
+	width: 1140px;
 }

@@ -3,6 +3,7 @@ import { format } from 'date-fns';
 import { path } from 'app-root-path';
 import { ensureDir, writeFile } from 'fs-extra';
 import { FileElementResponse } from './dto/file-element.response';
+import * as sharp from 'sharp';
 
 @Injectable()
 export class FilesService {
@@ -25,5 +26,9 @@ export class FilesService {
 		}
 
 		return res;
+	}
+
+	async convertToWebP(file: Buffer): Promise<Buffer> {
+		return sharp(file).webp().toBuffer();
 	}
 }

@@ -7,15 +7,15 @@
 .contacts {
 	position: relative;
 
-	background-color: #a4508b;
-	background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+	background-color: #861657;
+	background-image: linear-gradient(326deg, #861657 0%, #ffa69e 74%);
 
 	img {
 		width: 92%;
 	}
 
 	h2 {
-		font-size: 45px;
+		font-size: 40px;
 		font-weight: 700;
 		margin-bottom: 30px;
 	}
@@ -25,52 +25,30 @@
 		font-weight: 500;
 	}
 
-
-	form button {
-		font-weight: 700;
-		color: #000;
-		background-color: #fff;
-		padding: 14px 48px;
-		font-size: 18px;
-		border-radius: 0;
-		position: relative;
-		transition: 0.3s ease-in-out;
-	}
-
 	form textarea {
 		width: 600px;
 		height: 200px;
 	}
 
-	form button span {
-		z-index: 1;
-		position: relative;
+	form button {
+		width: 200px;
+		height: 50px;
 	}
 
-	form button:hover {
-		color: #fff;
-	}
+	&__social {
+		@include flex;
+		flex-direction: row;
 
-	form button::before {
-		content: "";
-		background: #121212;
-		width: 0;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 0;
-		transition: 0.3s ease-in-out;
-	}
+		height: 600px;
 
-	form button:hover::before {
-		width: 100%;
-	}
+		padding: 0;
 
+		overflow: hidden;
+	}
 
 	&__wrapper {
 		@include flex;
-		flex-direction: row-reverse;
+		flex-direction: row;
 
 		width: 100vw;
 		height: 100vh;
@@ -88,43 +66,45 @@
 		}
 	}
 
-	&__social {
+	&__title {
+		background-color: #6b0f1a;
+		background-image: linear-gradient(315deg, #6b0f1a 0%, #b91372 74%);
+
+		margin: 0;
+		padding: 30px;
+
+		height: 100%;
+
 		@include flex;
 		flex-direction: column;
-		gap: 20px;
-	}
+		flex-grow: 1;
 
-	&__title {
-		margin-right: 100px;
-
-		& > h2 {}
 	}
 
 	&__register {
 		@include flex;
+		flex-direction: column;
 		gap: 20px;
+
+		padding: 50px;
+
+		&-button {
+			width: 200px;
+			height: 50px;
+		}
 	}
 
 	&__form {
 		@include flex;
-		gap: 30px;
+		flex-direction: column;
+		gap: 20px;
 
-		padding: 40px;
+		& > input {
+			padding: 10px;
+		}
 
-		border-radius: 15px;
-
-		&-item {
-			@include flex;
-			flex-direction: column;
-			gap: 20px;
-
-			& > input {
-				padding: 10px;
-			}
-
-			& > textarea {
-				width: 100%;
-			}
+		& > textarea {
+			width: 100%;
 		}
 	}
 }

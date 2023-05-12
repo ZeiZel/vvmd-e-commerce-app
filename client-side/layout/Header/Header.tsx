@@ -5,6 +5,7 @@ import styles from './Header.module.scss';
 import { Button, Card } from '../../components';
 import Image from 'next/image';
 import Link from 'next/link';
+import { TG_PATH, VK_PATH, YT_PATH } from '../../api/helper.api';
 
 export const Header: FC<IHeaderProps> = ({ className, ...props }: IHeaderProps): JSX.Element => {
 	const [scroll, setScroll] = useState<boolean>(false);
@@ -60,13 +61,13 @@ export const Header: FC<IHeaderProps> = ({ className, ...props }: IHeaderProps):
 				</nav>
 
 				<div className={styles.header__contacts}>
-					<Link href={'https://vk.com/vvmdru'}>
+					<Link href={VK_PATH}>
 						<Image src={'/vk.png'} alt={'vk logo'} width={30} height={30} />
 					</Link>
-					<Link href={'https://t.me/VVMDmint'}>
+					<Link href={TG_PATH}>
 						<Image src={'/tg.png'} alt={'vk logo'} width={30} height={30} />
 					</Link>
-					<Link href={'https://www.youtube.com/channel/UCIOplldBAEgFdGjFSMg1qzg'}>
+					<Link href={YT_PATH}>
 						<Image src={'/youtube.png'} alt={'vk logo'} width={30} height={30} />
 					</Link>
 					<Button arrow={'none'} appearance={'ghost'}>

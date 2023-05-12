@@ -7,6 +7,7 @@ export const YT_PATH = 'https://www.youtube.com/channel/UCIOplldBAEgFdGjFSMg1qzg
 
 export const API_ROUTE = {
 	auth: 'auth/',
+	message: 'message/',
 	payment: 'payment/',
 	product: 'product/',
 	shoppingCart: 'shoppingcart/',
@@ -21,6 +22,9 @@ export const API_FUNCTIONS = {
 	},
 	payment: {
 		makePayment: '',
+	},
+	message: {
+		notify: '',
 	},
 	product: {
 		create: 'create/',
