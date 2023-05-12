@@ -7,6 +7,8 @@ import { Button } from '../Button/Button';
 import { HTag, Modal } from '../';
 import { ErrorPage, ProductPage } from '../../page-components';
 import { API_PATH_IMAGE } from '../../api/helper.api';
+import { priceRu } from '../../helpers';
+import CartIcon from '../../public/cart.svg';
 
 export const ProductCard = ({ product }: IProductCardInterface) => {
 	const [modal, setModal] = useState<boolean>(false);
@@ -34,16 +36,13 @@ export const ProductCard = ({ product }: IProductCardInterface) => {
 					<Image src={API_PATH_IMAGE + img} alt='CatalogPage' width={200} height={200} />
 				</div>
 				<HTag tag={'h2'}>{title}</HTag>
-				<div className='product-details'>
-					{count ? <p>Available: {count}</p> : <p>Под заказ</p>}
-					{price ? (
-						<p>Price: ${price}</p>
-					) : (
-						<Button arrow={'none'} appearance={'ghost'}>
-							<div>Оформить заказ</div>
-						</Button>
-					)}
+				<div className={styles['product-details']}>
+					{count ? <span>Доступно: {count}</span> : <span>Нет в наличии</span>}
+					<span>Цена: {priceRu(price)}</span>
 				</div>
+				<Button arrow={'none'} appearance={'primary'}>
+					<Image src={'/cart.svg'} alt={'cart'} width={30} height={30} />
+				</Button>
 			</Card>
 			<ProductPage modal={modal} setModal={setModal} product={product} />
 		</div>

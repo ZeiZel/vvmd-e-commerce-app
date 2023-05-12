@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { IHeaderProps } from './Header.props';
 import cn from 'classnames';
 import styles from './Header.module.scss';
-import { Button, Card } from '../../components';
+import { AuthForm, Button, Card } from '../../components';
 import Image from 'next/image';
 import Link from 'next/link';
 import { TG_PATH, VK_PATH, YT_PATH } from '../../api/helper.api';
@@ -61,18 +61,26 @@ export const Header: FC<IHeaderProps> = ({ className, ...props }: IHeaderProps):
 				</nav>
 
 				<div className={styles.header__contacts}>
-					<Link href={VK_PATH}>
+					<Link href={VK_PATH} className={styles['header__contacts-link']}>
 						<Image src={'/vk.png'} alt={'vk logo'} width={30} height={30} />
 					</Link>
-					<Link href={TG_PATH}>
+					<Link href={TG_PATH} className={styles['header__contacts-link']}>
 						<Image src={'/tg.png'} alt={'vk logo'} width={30} height={30} />
 					</Link>
-					<Link href={YT_PATH}>
+					<Link href={YT_PATH} className={styles['header__contacts-link']}>
 						<Image src={'/youtube.png'} alt={'vk logo'} width={30} height={30} />
 					</Link>
-					<Button arrow={'none'} appearance={'ghost'}>
-						Связаться с нами
-					</Button>
+					{typeof window === 'undefined' ? (
+						<div></div>
+					) : localStorage.getItem('token') ? (
+						<Button arrow={'none'} appearance={'ghost'}>
+							<Link href={`/shoppingcart/${localStorage.getItem('user_id')}`}>
+								Корзина
+							</Link>
+						</Button>
+					) : (
+						<AuthForm />
+					)}
 				</div>
 			</header>
 		</Card>

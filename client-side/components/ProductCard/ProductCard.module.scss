@@ -11,11 +11,28 @@
 
 	padding: 30px;
 
-	background: #1f1313;
+	background: var(--dark-black);
+
+	transition: all .35s;
+
+	&:hover {
+		background: var();
+		transform: translate(0, -10px);
+	}
+
+	button {
+		align-self: flex-end;
+	}
 
 	&__image {
 		& > img {
 			border-radius: 20px;
 		}
 	}
+}
+
+.product-details {
+	@include flex;
+	flex-direction: column;
+	gap: 10px;
 }

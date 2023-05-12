@@ -14,6 +14,7 @@ export const ContactSection = () => {
 	const [fetchContact, { isLoading, isSuccess, isError }] = useSubmitContactFormDataMutation();
 
 	const onSubmit = async (data: IContact) => {
+		console.log(data);
 		await fetchContact(data).unwrap();
 	};
 

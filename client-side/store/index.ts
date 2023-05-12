@@ -4,6 +4,7 @@ import { productApi } from './product/product.api';
 import { shoppingcartApi } from './shoppingcart/shoppingcart.api';
 import { paymentApi } from './payment/payment.api';
 import { authApi } from './auth/authApi';
+import { contactFormApi } from '../page-components/MainPage/ContactSection/contactSlice';
 import authentication from './auth/authSlice';
 import toggleTheme from './toggleTheme/toggleThemeSlice';
 import localStorage from './localStorage/localStorageSlice';
@@ -14,6 +15,7 @@ export function makeStore(): Store {
 			localStorage,
 			toggleTheme,
 			authentication,
+			[contactFormApi.reducerPath]: contactFormApi.reducer,
 			[authApi.reducerPath]: authApi.reducer,
 			[productApi.reducerPath]: productApi.reducer,
 			[paymentApi.reducerPath]: paymentApi.reducer,
