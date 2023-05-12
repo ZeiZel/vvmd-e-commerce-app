@@ -3,63 +3,45 @@ import Image from 'next/image';
 import { ISliderProps } from './SliderComponent.props';
 import styles from './SliderComponent.module.scss';
 import { API_PATH_IMAGE } from '../../api/helper.api';
+import { responsiveOptions } from '../../helpers';
+import Carousel from 'react-multi-carousel';
+import { HTag } from '../HTag/HTag';
 
-export const SliderComponent = ({ slides }: ISliderProps): JSX.Element => {
-	const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
+export const SliderComponent = ({ images }: ISliderProps): JSX.Element => {
+	if (!images) {
+		return <HTag tag={'h2'}>Изображений нет</HTag>;
+	}
 
-	const handlePrevSlide = () => {
-		setActiveSlideIndex((currentIndex) =>
-			currentIndex === 0 ? slides.length - 1 : currentIndex - 1,
-		);
-	};
+	const firstImage = images[0].path;
+	const [selectedImage, setSelectedImage] = useState(firstImage);
 
-	const handleNextSlide = () => {
-		setActiveSlideIndex((currentIndex) =>
-			currentIndex === slides.length - 1 ? 0 : currentIndex + 1,
-		);
-	};
-
-	const handleSlideClick = (index: number) => {
-		setActiveSlideIndex(index);
+	const handleImageClick = (imagePath: string) => {
+		setSelectedImage(imagePath);
 	};
 
 	return (
-		<div className='slider-container'>
-			<div className='slides'>
-				{slides.map((slide, index) => (
-					<div
-						key={slide.name}
-						className={`slide ${index === activeSlideIndex ? 'active' : ''}`}
-						onClick={() => handleSlideClick(index)}
-					>
-						<Image
-							src={API_PATH_IMAGE + slide.path.replace('/uploads', '')}
-							alt={slide.path}
-							width={700}
-							height={400}
-						/>
-					</div>
-				))}
-			</div>
-			<div className='slide-controls'>
-				<button onClick={handlePrevSlide}>{'<'}</button>
-				<button onClick={handleNextSlide}>{'>'}</button>
-			</div>
-			<div className='thumbnails'>
-				{slides.map((slide, index) => (
-					<div
-						key={slide.name}
-						className={`thumbnail ${index === activeSlideIndex ? 'active' : ''}`}
-						onClick={() => handleSlideClick(index)}
-					>
-						<Image
-							src={API_PATH_IMAGE + slide.path.replace('/uploads', '')}
-							alt={slide.path}
-							width={100}
-							height={60}
-						/>
-					</div>
-				))}
+		<div className={styles.slider}>
+			<div className={styles['slider__wrapper']}>
+				<div className={styles['slider__main-image']}>
+					<img src={selectedImage} alt='Selected' />
+				</div>
+
+				<Carousel
+					infinite={true}
+					autoPlay={true}
+					responsive={responsiveOptions}
+					className={styles.slider__carousel}
+				>
+					{images.map((image) => (
+						<div
+							key={image.path}
+							onClick={() => handleImageClick(image.path)}
+							className={styles['slider__carousel-item']}
+						>
+							<img src={image.path} alt={image.name} />
+						</div>
+					))}
+				</Carousel>
 			</div>
 		</div>
 	);

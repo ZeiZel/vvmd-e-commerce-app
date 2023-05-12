@@ -1,8 +1,5 @@
-export interface Slide {
-	name: string;
-	path: string;
-}
+import { IProductImage } from '../../store/product/product.interface';
 
 export interface ISliderProps {
-	slides: Slide[];
+	images: IProductImage[];
 }
