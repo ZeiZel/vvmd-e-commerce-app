@@ -25,10 +25,8 @@ export const SliderComponent = ({ images }: ISliderProps): JSX.Element => {
 				<div className={styles['slider__main-image']}>
 					<img src={selectedImage} alt='Selected' />
 				</div>
-
 				<Carousel
 					infinite={true}
-					autoPlay={true}
 					responsive={responsiveOptions}
 					className={styles.slider__carousel}
 				>

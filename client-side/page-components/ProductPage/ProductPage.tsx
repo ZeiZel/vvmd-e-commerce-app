@@ -44,15 +44,12 @@ export const ProductPage = ({
 					{<Characteristics characteristics={product.characteristics} />}
 				</div>
 				<div className={styles.product__details}>
-					<span>Категория: {categoryName}</span>
-					<span>
-						Теги:
-						{tags.map((tag) => (
-							<Tag key={tag} size={'s'} color={'ghost'}>
-								{tag}
-							</Tag>
-						))}
-					</span>
+					Теги:
+					{tags.map((tag) => (
+						<Tag key={tag} size={'s'} color={'ghost'}>
+							{tag}
+						</Tag>
+					))}
 				</div>
 			</div>
 		</Modal>

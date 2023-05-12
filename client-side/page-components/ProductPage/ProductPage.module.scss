@@ -15,21 +15,21 @@
 	position: relative;
 	z-index: 1000000;
 
+	overflow-y: scroll;
 
 	&__wrapper {
 		padding-top: 100px;
 
 		display: grid;
-		grid-template-columns: auto 600px 400px auto;
-		grid-template-rows: auto auto auto 600px 100px;
+		grid-template-columns: auto 550px 300px auto;
+		grid-template-rows: 30px auto 300px auto;
 		min-height: 100vh;
 		grid-template-areas:
 		". slider title ."
 		". slider description ."
-		". slider price ."
 		". slider order ."
-		". characteristics . ."
-		". tags category .";
+		". characteristics details .";
+		gap: 20px;
 
 		width: 100%;
 		height: 100%;
@@ -51,6 +51,12 @@
 
 	&__order {
 		grid-area: order;
+
+		@include flex;
+
+		align-items: start;
+		flex-direction: column;
+		gap: 10px;
 	}
 
 	&__characteristics {
@@ -58,10 +64,11 @@
 	}
 
 	&__details {
+		display: flex;
+		align-items: start;
+		gap: 10px;
 		grid-area: details;
 	}
-
-
 
 	&::-webkit-scrollbar {
 		width: 8px;
