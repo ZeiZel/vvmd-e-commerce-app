@@ -49,9 +49,14 @@ export const shoppingcartApi = createApi({
 				method: 'DELETE',
 			}),
 		}),
-		getAllProductsInCart: build.query<IShoppingCartProduct[], string>({
-			query: (userId) =>
-				API_ROUTE.shoppingCart + API_FUNCTIONS.shoppingCart.getAll + `${userId}`,
+		getAllProductsInCart: build.query<IShoppingCartProduct[], any>({
+			query: ({ userId, token }) => ({
+				url: API_ROUTE.shoppingCart + API_FUNCTIONS.shoppingCart.getAll + `${userId}`,
+				method: 'GET',
+				headers: {
+					Authorization: 'Bearer ' + token,
+				},
+			}),
 		}),
 	}),
 });

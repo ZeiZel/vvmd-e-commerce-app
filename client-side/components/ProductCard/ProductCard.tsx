@@ -8,7 +8,6 @@ import { HTag, Modal } from '../';
 import { ErrorPage, ProductPage } from '../../page-components';
 import { API_PATH_IMAGE } from '../../api/helper.api';
 import { priceRu } from '../../helpers';
-import CartIcon from '../../public/cart.svg';
 
 export const ProductCard = ({ product }: IProductCardInterface) => {
 	const [modal, setModal] = useState<boolean>(false);

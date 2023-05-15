@@ -6,4 +6,4 @@ const Error500 = () => {
 	return <ErrorPage type={'500'} />;
 };
 
-export default withLayout(Error500);
+export default Error500;

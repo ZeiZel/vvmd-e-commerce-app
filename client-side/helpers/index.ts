@@ -1,5 +1,7 @@
 import { ICatalogPageModel } from '../interfaces/Catalog.interface';
 
+export const isBrowser: Boolean = typeof window === 'undefined';
+
 export const responsiveOptions = {
 	superLargeDesktop: {
 		breakpoint: { max: 4000, min: 3000 },

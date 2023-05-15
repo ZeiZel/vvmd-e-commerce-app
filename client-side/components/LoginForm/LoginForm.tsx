@@ -32,7 +32,9 @@ export const LoginForm: FC = (): JSX.Element => {
 		if (responseData.access_token) {
 			dispatch(setToken(responseData.access_token));
 			dispatch(setUser({ ...responseData }));
-			// await router.push('/');
+
+			await router.push('/');
+
 			return <Card color={'green'}>Вы успешно вошли!</Card>;
 		}
 	}

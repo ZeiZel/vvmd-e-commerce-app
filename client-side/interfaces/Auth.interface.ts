@@ -4,12 +4,27 @@ export interface IAuthLogin {
 }
 
 export interface IAuthLoginResponse {
+	id: string;
 	user: {
-		login: string;
+		email: string;
 		username: string;
 		passwordHash: string;
 	};
 	access_token: string;
+}
+
+export interface IFindUserRequest {
+	login: string;
+}
+
+export interface IFindUserResponse {
+	_id: string;
+	email: string;
+	passwordHash: string;
+	username: string;
+	createdAt: Date;
+	updatedAt: Date;
+	__v: number;
 }
 
 export interface IAuthRegisterResponse {

@@ -5,6 +5,8 @@ import {
 	IAuthLoginResponse,
 	IAuthRegister,
 	IAuthRegisterResponse,
+	IFindUserRequest,
+	IFindUserResponse,
 } from '../../interfaces/Auth.interface';
 
 export const authApi = createApi({

@@ -26,7 +26,7 @@
 	}
 
 	form textarea {
-		width: 600px;
+		width: 550px;
 		height: 200px;
 	}
 
@@ -79,6 +79,12 @@
 		flex-direction: column;
 		flex-grow: 1;
 
+		p {
+			font-weight: 300;
+			font-size: 18px;
+			letter-spacing: 0.8px;
+			line-height: 1.5em;
+		}
 	}
 
 	&__register {
@@ -98,6 +104,7 @@
 		@include flex;
 		flex-direction: column;
 		gap: 20px;
+		padding: 20px;
 
 		& > input {
 			padding: 10px;

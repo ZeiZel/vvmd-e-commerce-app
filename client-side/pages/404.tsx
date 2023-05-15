@@ -6,4 +6,4 @@ const Error404 = () => {
 	return <ErrorPage type={'404'} />;
 };
 
-export default withLayout(Error404);
+export default Error404;

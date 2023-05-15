@@ -23,3 +23,4 @@ export * from './AuthForm/AuthForm';
 export * from './Spinner/Spinner';
 export * from './ThemeToggle/ThemeToggle';
 export * from './Characteristics/Characteristics';
+export * from './ShoppingProductCard/ShoppingProductCard';

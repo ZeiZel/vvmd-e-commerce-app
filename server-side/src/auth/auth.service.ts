@@ -60,6 +60,7 @@ export class AuthService {
 		}
 
 		return {
+			id: user._id,
 			user: {
 				email: user.email,
 				username: user.username,

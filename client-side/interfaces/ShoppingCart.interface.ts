@@ -1,9 +1,9 @@
-import { IProductModel } from './Product.interface';
+import { IProduct } from '../store/product/product.interface';
 
 export interface ShoppingListPiece {
 	count: number;
 	price: number;
-	product: IProductModel;
+	product: IProduct;
 }
 
 export interface IShoppingListModel {

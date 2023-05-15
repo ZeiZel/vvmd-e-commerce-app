@@ -1,7 +1,7 @@
-import { IProductModel } from './Product.interface';
+import { IProduct } from '../store/product/product.interface';
 
 export interface ICollectionsInterface {
 	name: string;
 	count: number;
-	products: IProductModel[];
+	products: IProduct[];
 }

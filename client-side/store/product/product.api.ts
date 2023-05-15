@@ -22,7 +22,7 @@ export const productApi = createApi({
 			query: ({ category = '0', limit = 20, page = 2 }) =>
 				`product/category/${category}?page=${page}&limit=${limit}`,
 		}),
-		getAllProducts: build.query<IProduct[], any>({
+		getAllProducts: build.query({
 			query: () => `product/`,
 		}),
 		getProductsByString: build.query<IProduct[], string>({

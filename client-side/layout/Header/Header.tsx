@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FC, useEffect, useState } from 'react';
 import { IHeaderProps } from './Header.props';
 import cn from 'classnames';
@@ -6,12 +8,15 @@ import { AuthForm, Button, Card } from '../../components';
 import Image from 'next/image';
 import Link from 'next/link';
 import { TG_PATH, VK_PATH, YT_PATH } from '../../api/helper.api';
+import { isBrowser } from '../../helpers';
 
 export const Header: FC<IHeaderProps> = ({ className, ...props }: IHeaderProps): JSX.Element => {
 	const [scroll, setScroll] = useState<boolean>(false);
 
+	const userId = !isBrowser ? localStorage.getItem('user-id') : null;
+
 	useEffect(() => {
-		if (typeof window === 'undefined') {
+		if (isBrowser) {
 			return;
 		}
 
@@ -74,9 +79,7 @@ export const Header: FC<IHeaderProps> = ({ className, ...props }: IHeaderProps):
 						<div></div>
 					) : localStorage.getItem('token') ? (
 						<Button arrow={'none'} appearance={'ghost'}>
-							<Link href={`/shoppingcart/${localStorage.getItem('user_id')}`}>
-								Корзина
-							</Link>
+							<Link href={`/shoppingcart/${userId}`}>Корзина</Link>
 						</Button>
 					) : (
 						<AuthForm />
