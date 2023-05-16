@@ -11,7 +11,7 @@ export interface IProductImage {
 export interface IShoppingCartProduct {
 	userId: string;
 	productId: string;
-	images?: IProductImage[];
+	images: IProductImage[];
 	title: string;
 	price: number;
 	totalPrice: number;

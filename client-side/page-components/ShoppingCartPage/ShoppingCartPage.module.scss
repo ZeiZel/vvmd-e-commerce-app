@@ -5,14 +5,22 @@
 }
 
 .cart {
+	padding-top: 100px;
+
 	&__wrapper {
 		@include flex;
 		flex-direction: row;
 		gap: 20px;
 	}
 
-	&__products {
+	&__delete {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
 
+	&__products {
+		position: relative;
 	}
 
 	&__order {
