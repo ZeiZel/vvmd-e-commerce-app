@@ -54,7 +54,11 @@ export const ProductsList = () => {
 							<div className={styles['products-list__items']}>
 								{products.length > 0 ? (
 									products.map((product: IProduct) => (
-										<ProductCard key={product._id} product={product} />
+										<ProductCard
+											key={product._id}
+											product={product}
+											useModal={true}
+										/>
 									))
 								) : (
 									<HTag tag={'h1'}>Товаров данной категории нет</HTag>

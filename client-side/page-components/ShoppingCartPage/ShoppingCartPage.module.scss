@@ -1,0 +1,25 @@
+@mixin flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cart {
+	&__wrapper {
+		@include flex;
+		flex-direction: row;
+		gap: 20px;
+	}
+
+	&__products {
+
+	}
+
+	&__order {
+
+	}
+}
+
+.container {
+	width: 1140px;
+}

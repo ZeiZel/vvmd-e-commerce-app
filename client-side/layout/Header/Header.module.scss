@@ -2,6 +2,11 @@
 	max-height: 95px;
 	padding: 15px 30px;
 
+	animation: show;
+	transition: all .2s ease-in-out;
+
+	background: rgba(0, 0, 0, .3);
+
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
@@ -92,4 +97,12 @@
 			}
 		}
 	}
+}
+
+.hidden {
+	transform: translate(0, -120%);
+}
+
+.showed {
+	transform: translate(0, 0);
 }

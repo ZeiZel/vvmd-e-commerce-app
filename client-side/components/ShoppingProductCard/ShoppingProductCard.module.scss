@@ -1,0 +1,32 @@
+@mixin flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.product {
+	margin: 10px;
+	padding: 10px;
+
+
+	&__wrapper {
+		@include flex;
+		flex-direction: row;
+		gap: 20px;
+	}
+
+	&__count {
+		@include flex;
+		gap: 10px;
+
+		input {
+			width: 65px;
+		}
+
+		button {
+			width: 40px;
+			height: 40px;
+		}
+	}
+
+}

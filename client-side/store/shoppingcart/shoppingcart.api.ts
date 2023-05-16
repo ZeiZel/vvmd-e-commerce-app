@@ -10,10 +10,13 @@ export const shoppingcartApi = createApi({
 	}),
 	endpoints: (build) => ({
 		addProductToCart: build.mutation({
-			query: (cartProduct: IShoppingcart) => ({
+			query: ({ cartProduct, token }: { cartProduct: IShoppingcart; token: string }) => ({
 				url: API_ROUTE.shoppingCart + API_FUNCTIONS.shoppingCart.add,
 				method: 'POST',
 				body: cartProduct,
+				headers: {
+					Authorization: 'Bearer ' + token,
+				},
 			}),
 		}),
 		updateCount: build.mutation({

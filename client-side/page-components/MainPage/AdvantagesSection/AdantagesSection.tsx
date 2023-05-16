@@ -56,7 +56,7 @@ export const AdvantagesSection = () => {
 						{products && products.length > 0 ? (
 							products.map((product: IProduct) => (
 								<div key={product._id} className={styles.item}>
-									<ProductCard product={product} />
+									<ProductCard product={product} useModal={false} />
 								</div>
 							))
 						) : (

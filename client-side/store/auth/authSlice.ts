@@ -16,8 +16,8 @@ export const userSlice = createSlice({
 		logout: () => initialState,
 		setUser: (state, action: PayloadAction<IAuthLoginResponse>) => {
 			state.user = action.payload;
-			localStorage.setItem('user', state.user.user.email);
-			localStorage.setItem('user-id', state.user.id);
+			localStorage.setItem('user', JSON.stringify(state.user.user.email));
+			localStorage.setItem('user-id', JSON.stringify(state.user.id));
 		},
 	},
 });

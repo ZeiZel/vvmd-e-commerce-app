@@ -24,7 +24,7 @@ export const BuyPage = () => {
 					<HTag tag={'h1'}>Все продукты компании</HTag>
 					<Divider />
 					{products.map((product: IProduct) => (
-						<ProductCard key={product._id} product={product} />
+						<ProductCard key={product._id} product={product} useModal={true} />
 					))}
 				</Card>
 			</div>

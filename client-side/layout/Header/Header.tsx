@@ -9,35 +9,44 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { TG_PATH, VK_PATH, YT_PATH } from '../../api/helper.api';
 import { isBrowser } from '../../helpers';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 export const Header: FC<IHeaderProps> = ({ className, ...props }: IHeaderProps): JSX.Element => {
-	const [scroll, setScroll] = useState<boolean>(false);
+	const [scrollPosition, setScrollPosition] = useState<number>(0);
+	const [prevScrollPosition, setPrevScrollPosition] = useState<number>(0);
+	const [showHeader, setShowHeader] = useState<boolean>(true);
 
-	const userId = !isBrowser ? localStorage.getItem('user-id') : null;
+	const [userId] = useLocalStorage('user-id', '');
 
 	useEffect(() => {
-		if (isBrowser) {
-			return;
-		}
+		const handleScroll = () => {
+			const currentPosition = window.pageYOffset;
+			setScrollPosition(currentPosition);
 
-		const onScroll = () => {
-			if (window.scrollY > 50) {
-				setScroll(true);
-			} else {
-				setScroll(false);
+			if (prevScrollPosition < currentPosition && showHeader) {
+				setShowHeader(false);
 			}
+
+			if (prevScrollPosition > currentPosition && !showHeader) {
+				setShowHeader(true);
+			}
+
+			setPrevScrollPosition(currentPosition);
 		};
 
-		window.addEventListener('scroll', onScroll);
+		window.addEventListener('scroll', handleScroll);
 
-		return () => window.removeEventListener('scroll', onScroll);
-	}, []);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, [prevScrollPosition, scrollPosition, showHeader]);
 
 	return (
 		<Card
 			color={'black'}
 			className={cn(className, styles.header, {
-				[styles.scrolled]: scroll,
+				[styles.hidden]: !showHeader,
+				[styles.showed]: showHeader,
 			})}
 			{...props}
 		>
