@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import styles from './ShoppingProductCard.module.scss';
 import { IShoppingProductCardProps } from './ShoppingProductCard.props';
 import { Divider } from '../Divider/Divider';
 import { API_PATH } from '../../api/helper.api';
@@ -18,18 +19,22 @@ export const ShoppingProductCard = ({ product }: IShoppingProductCardProps) => {
 	}));
 
 	return (
-		<div>
-			<Image
-				src={API_PATH.replace('/api/', '') + imagesArray[0].path.replace('/uploads', '')}
-				alt={title}
-				width={100}
-				height={100}
-			/>
-			<HTag tag={'h2'}>{title}</HTag>
-			<span>{countToBuy}</span>
-			<span>{price}</span>
-			<span>{count}</span>
-			<span>{totalPrice}</span>
+		<div className={styles.product}>
+			<div className={styles.product__image}>
+				<Image
+					src={imagesArray[0].path.replace('/uploads', '')}
+					alt={title}
+					width={100}
+					height={100}
+				/>
+			</div>
+			<span className={styles.product__title}>
+				<HTag tag={'h2'}>{title}</HTag>
+			</span>
+			<span className={styles['product__count-to-buy']}>{countToBuy}</span>
+			<span className={styles.product__price}>{price}</span>
+			<span className={styles.product__count}>{count}</span>
+			<span className={styles['product__total-price']}>{totalPrice}</span>
 			<Divider />
 		</div>
 	);
