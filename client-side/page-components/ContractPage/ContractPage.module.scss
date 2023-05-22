@@ -1,0 +1,28 @@
+@mixin flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contract {
+	&__wrapper {
+		@include flex;
+
+		width: 100vw;
+		height: 100vh;
+	}
+
+	&__container {
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.container {
+	margin: 0 auto;
+	width: 1140px;
+}

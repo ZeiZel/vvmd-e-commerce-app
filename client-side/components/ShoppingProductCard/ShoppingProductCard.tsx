@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './ShoppingProductCard.module.scss';
 import { IShoppingProductCardProps } from './ShoppingProductCard.props';
-import { Divider } from '../Divider/Divider';
+import { Divider } from '../UI/Divider/Divider';
 import { API_PATH } from '../../api/helper.api';
 import { IProductImage } from '../../interfaces/Product.interface';
-import { HTag } from '../HTag/HTag';
+import { HTag } from '../UI/HTag/HTag';
 import { ErrorPage } from '../../page-components';
 import { priceRu } from '../../helpers';
-import { Button } from '../Button/Button';
-import { Input } from '../Input/Input';
+import { Button } from '../UI/Button/Button';
+import { Input } from '../UI/Input/Input';
 import DeleteIcon from './close.svg';
 import {
 	useDeleteOneProductMutation,

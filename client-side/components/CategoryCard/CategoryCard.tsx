@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from '../Card/Card';
+import { Card } from '../UI/Card/Card';
 import Image from 'next/image';
 import { ICategoryCardProps } from './CategoryCard.props';
 import styles from './CategoryCard.module.scss';

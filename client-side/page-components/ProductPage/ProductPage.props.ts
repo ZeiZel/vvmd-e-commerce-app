@@ -6,4 +6,5 @@ export interface IProductCardProps
 	product: IProduct;
 	modal: boolean;
 	setModal: Dispatch<SetStateAction<boolean>>;
+	addToProductCart: (event: Event) => void;
 }

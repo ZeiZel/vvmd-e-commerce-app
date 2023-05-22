@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { isBrowser } from '../helpers';
+import { isNotBrowser } from '../helpers';
 
 export const useLocalStorage = (key: string, initialValue: any) => {
 	const [value, setValue] = useState(() => {
-		const jsonValue = !isBrowser ? localStorage.getItem(key) : null;
+		const jsonValue = !isNotBrowser ? localStorage.getItem(key) : null;
 
 		if (jsonValue) return JSON.parse(jsonValue);
 

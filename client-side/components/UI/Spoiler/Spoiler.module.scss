@@ -1,0 +1,26 @@
+.spoiler {
+	&__image {
+		display: inline-block;
+		margin-left: 5px;
+	}
+
+	&__header {
+		cursor: pointer;
+		background-color: var(--dark-black);
+		border-radius: 20px;
+		padding: 10px;
+	}
+
+	&__content {
+		-webkit-user-select: none; /* для Safari */
+		user-select: none;
+
+		border-radius: 20px;
+
+		border: 1px solid #ddd;
+		padding: 0.5rem;
+	}
+}
+
+
+

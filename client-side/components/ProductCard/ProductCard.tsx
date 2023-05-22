@@ -1,37 +1,46 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IProductCardInterface } from './ProductCard.props';
-import { Card } from '../Card/Card';
+import { Card } from '../UI/Card/Card';
 import styles from './ProductCard.module.scss';
 import Image from 'next/image';
-import { Button } from '../Button/Button';
-import { HTag, Modal, Spinner } from '../';
-import { ErrorPage, ProductPage } from '../../page-components';
+import { Button } from '../UI/Button/Button';
+import { ContactForm, HTag, Modal } from '../';
+import { ProductPage } from '../../page-components';
 import { API_PATH_IMAGE } from '../../api/helper.api';
 import { priceRu } from '../../helpers';
 import { useAddProductToCartMutation } from '../../store/shoppingcart/shoppingcart.api';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { notify } from '../../helpers/tostify';
+import cn from 'classnames';
+import Head from 'next/head';
 
 export const ProductCard = ({ product, useModal }: IProductCardInterface) => {
 	const [modal, setModal] = useState<boolean>(false);
+	const [openContacts, setOpenContacts] = useState<boolean>(false);
 
-	if (!product) {
-		return <ErrorPage type={'404'} />;
-	}
-
-	const [fetchProduct, { isError, isLoading }] = useAddProductToCartMutation();
+	const [fetchProduct, { isError, isLoading, isSuccess }] = useAddProductToCartMutation();
 	const [login, updateLogin, removeLogin] = useLocalStorage('user', '');
 	const [token] = useLocalStorage('token', '');
 
-	const addToProductCart = (event: Event) => {
+	const addToProductCart = async (event: Event) => {
 		event.stopPropagation();
 
-		const response = fetchProduct({
+		if (product.count === 0) {
+			setOpenContacts(true);
+			return;
+		}
+
+		const response = await fetchProduct({
 			cartProduct: {
 				login,
 				productId: product._id,
 			},
 			token,
 		}).unwrap();
+
+		if (isError)
+			notify('error', 'Сначала войдите в систему перед добавлением товара в корзину!');
+		if (isSuccess) notify('success', 'Товар успешно добавлен в корзину!');
 	};
 
 	const { images, title, count, price } = product;
@@ -49,23 +58,56 @@ export const ProductCard = ({ product, useModal }: IProductCardInterface) => {
 				color={'black'}
 				className={styles['product-card']}
 			>
-				<div className={styles['product-card__image']}>
-					<Image src={API_PATH_IMAGE + img} alt='CatalogPage' width={200} height={200} />
+				<div className={styles['product-card__content']}>
+					<div className={styles['product-card__image']}>
+						<Image
+							src={API_PATH_IMAGE + img}
+							alt='CatalogPage'
+							width={200}
+							height={200}
+						/>
+					</div>
+
+					<HTag tag={'h3'} className={styles['product-card__title']}>
+						{title}
+					</HTag>
+
+					<div className={styles['product-details']}>
+						{count ? <span>Доступно: {count}</span> : <span>Нет в наличии</span>}
+						<span>Цена: {priceRu(price)}</span>
+					</div>
 				</div>
-				<HTag tag={'h2'}>{title}</HTag>
-				<div className={styles['product-details']}>
-					{count ? <span>Доступно: {count}</span> : <span>Нет в наличии</span>}
-					<span>Цена: {priceRu(price)}</span>
-				</div>
-				<Button arrow={'none'} appearance={'primary'} onClick={addToProductCart}>
-					{isLoading ? (
-						<Spinner />
-					) : (
+
+				{useModal && (
+					<Button
+						arrow={'none'}
+						appearance={'primary'}
+						onClick={addToProductCart}
+						className={cn({
+							[styles.openContacts]: openContacts,
+						})}
+					>
 						<Image src={'/cart.svg'} alt={'cart'} width={30} height={30} />
-					)}
-				</Button>
+					</Button>
+				)}
 			</Card>
-			{useModal && <ProductPage modal={modal} setModal={setModal} product={product} />}
+
+			{useModal && (
+				<ProductPage
+					modal={modal}
+					setModal={setModal}
+					product={product}
+					addToProductCart={addToProductCart}
+				/>
+			)}
+
+			{useModal && openContacts && (
+				<Modal active={openContacts} setActive={setOpenContacts}>
+					<div className={styles.container}>
+						<ContactForm />
+					</div>
+				</Modal>
+			)}
 		</div>
 	);
 };

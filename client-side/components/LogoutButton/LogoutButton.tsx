@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../Button/Button';
+import { Button } from '../UI/Button/Button';
 import { useAppDispatch } from '../../store';
 import { logout } from '../../store/auth/authSlice';
 import { ILogoutButtonProps } from './LogoutButton.props';

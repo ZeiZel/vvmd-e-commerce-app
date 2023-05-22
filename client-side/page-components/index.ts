@@ -5,3 +5,5 @@ export * from './ErrorPage/ErrorPage';
 export * from './MainPage/MainPage';
 export * from './BuyPage/BuyPage';
 export * from './ShoppingCartPage/ShoppingCartPage';
+export * from './ContractPage/ContractPage';
+export * from './AuthPage/AuthPage';

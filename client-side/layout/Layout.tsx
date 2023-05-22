@@ -1,40 +1,16 @@
 import React, { FC, FunctionComponent, KeyboardEventHandler, useRef, useState } from 'react';
 import styles from './Layout.module.scss';
-import { ILayoutProps, IToastWrapper } from './Layout.props';
+import { ILayoutProps } from './Layout.props';
 import { Header } from './Header/Header';
 import { Footer } from './Footer/Footer';
-import cn from 'classnames';
 import { Up } from '../components';
-import { ToastContainer } from 'react-toastify';
 
 export const Layout: FC<ILayoutProps> = ({ children }: ILayoutProps) => {
-	// состояние ссылки
-	const [isSkipLinkDisplayed, setIsSkipLinkDisplayed] = useState<boolean>(false);
 	// значение рефа бади
 	const bodyRef = useRef<HTMLDivElement>(null);
 
-	// пропуск
-	const skipContentAction = (key: KeyboardEvent) => {
-		if (key.code == 'Space' || key.code == 'Enter') {
-			key.preventDefault();
-			bodyRef.current?.focus();
-		}
-		setIsSkipLinkDisplayed(false);
-	};
-
 	return (
 		<div className={styles.wrapper}>
-			{/* это ссылка для организации быстрого перехода к контенту страницы, которая видима только при переходе с клавиатуры */}
-			<a
-				onFocus={() => setIsSkipLinkDisplayed(true)}
-				tabIndex={0}
-				className={cn(styles.skipLink, {
-					[styles.displayed]: isSkipLinkDisplayed,
-				})}
-				onKeyDown={skipContentAction}
-			>
-				Сразу к содержанию
-			</a>
 			<Header className={styles.header} />
 			<main className={styles.body} ref={bodyRef} tabIndex={0} role='main'>
 				{children}
@@ -42,31 +18,6 @@ export const Layout: FC<ILayoutProps> = ({ children }: ILayoutProps) => {
 			<Footer className={styles.footer} />
 			<Up />
 		</div>
-	);
-};
-
-export const ToastWrapper = ({
-	autoClose = 3000,
-	position = 'top-right',
-	children,
-	...props
-}: IToastWrapper): JSX.Element => {
-	return (
-		// @ts-ignore
-		<ToastContainer
-			autoClose={autoClose}
-			position={position}
-			closeButton={false}
-			hideProgressBar={true}
-			newestOnTop={false}
-			pauseOnFocusLoss={false}
-			pauseOnHover={false}
-			rtl={false}
-			limit={3}
-			{...props}
-		>
-			{children}
-		</ToastContainer>
 	);
 };
 

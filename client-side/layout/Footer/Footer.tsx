@@ -8,7 +8,7 @@ import { format } from 'date-fns';
 
 export const Footer: FC<IFooterProps> = ({ className, ...props }: IFooterProps): JSX.Element => {
 	return (
-		<Card className={cn(styles.footer, className)} {...props}>
+		<div className={cn(styles.footer, className)} {...props}>
 			<footer className={styles.footer__wrapper}>
 				<div className={styles['footer__group']}>
 					<div className={styles['footer__left']}>
@@ -44,10 +44,10 @@ export const Footer: FC<IFooterProps> = ({ className, ...props }: IFooterProps):
 				<div className={styles['footer__license']}>
 					<p>{format(new Date(), 'yyyy')} © «Волго-Вятский монетный двор», ООО</p>
 					<br />
-					<Link href={'/'}>Пользовательское соглашение</Link>
-					<Link href={'/'}>Политика конфиденциальности</Link>
+					<Link href={'/contract'}>Пользовательское соглашение</Link>
+					<Link href={'/contract'}>Политика конфиденциальности</Link>
 				</div>
 			</footer>
-		</Card>
+		</div>
 	);
 };

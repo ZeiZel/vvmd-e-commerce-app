@@ -4,10 +4,15 @@
 	align-items: center;
 }
 
-.product-card {
+.container {
 	@include flex;
-	flex-direction: column;
-	gap: 20px;
+	width: 1140px;
+	margin: 0 auto;
+}
+
+.product-card {
+
+	position: relative;
 
 	padding: 30px;
 
@@ -15,21 +20,43 @@
 
 	transition: all .35s;
 
+	height: 500px;
+	width: 300px;
+
+	&__content {
+		@include flex;
+		flex-direction: column;
+		gap: 20px;
+
+	}
+
 	&:hover {
 		background: var();
 		transform: translate(0, -10px);
 	}
 
 	button {
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+
 		align-self: flex-end;
 	}
 
 	&__image {
+
+
 		& > img {
 			border-radius: 20px;
 		}
 	}
+
+	&__title {
+		font-size: 16px;
+		font-weight: bold;
+	}
 }
+
 
 .product-details {
 	@include flex;

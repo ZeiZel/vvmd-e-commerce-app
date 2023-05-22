@@ -1,5 +1,5 @@
-export const API_PATH = 'http://localhost:3000/api/';
-export const API_PATH_IMAGE = 'http://localhost:3000';
+export const API_PATH = 'http://localhost:3001/api/';
+export const API_PATH_IMAGE = 'http://localhost:3001';
 
 export const VK_PATH = 'https://vk.com/vvmdru';
 export const TG_PATH = 'https://t.me/VVMDmint';

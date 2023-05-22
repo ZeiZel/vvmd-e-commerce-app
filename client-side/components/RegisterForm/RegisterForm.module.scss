@@ -7,9 +7,15 @@
 	gap: 20px;
 
 	width: 350px;
-	height: 350px;
+
+	padding: 50px;
 
 	&__input {
+		&-password-wrapper {
+			svg * {
+				fill: black;
+			}
+		}
 	}
 
 	&__button {
@@ -41,8 +47,8 @@
 
 	&__eye {
 		position: absolute;
-		right: 5px;
-		top: 5px;
+		right: 16px;
+		top: 19px;
 	}
 }
 

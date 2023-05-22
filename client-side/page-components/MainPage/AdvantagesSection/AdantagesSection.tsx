@@ -38,7 +38,7 @@ export const AdvantagesSection = () => {
 		<section className={styles.products}>
 			<div className={styles.container}>
 				<Card color={'black'} className={cn(styles['products__wrapper'])}>
-					<HTag tag={'h2'}>Монеты и медалиs монетного типа</HTag>
+					<HTag tag={'h2'}>Монеты и медали монетного типа</HTag>
 					<Paragraph>
 						Волго-Вятский монетный двор – первый частный монетный двор в России. Мы
 						чеканим монету, создаём ордена, медали, мемориальные медали, на которых

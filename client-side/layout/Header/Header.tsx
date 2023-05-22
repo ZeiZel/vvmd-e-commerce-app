@@ -1,22 +1,19 @@
-'use client';
-
 import React, { FC, useEffect, useState } from 'react';
 import { IHeaderProps } from './Header.props';
 import cn from 'classnames';
 import styles from './Header.module.scss';
-import { AuthForm, Button, Card } from '../../components';
+import { AuthButton, Card, ShoppingCartModal } from '../../components';
 import Image from 'next/image';
 import Link from 'next/link';
 import { TG_PATH, VK_PATH, YT_PATH } from '../../api/helper.api';
-import { isBrowser } from '../../helpers';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
-export const Header: FC<IHeaderProps> = ({ className, ...props }: IHeaderProps): JSX.Element => {
+export const Header = ({ className, ...props }: IHeaderProps): JSX.Element => {
 	const [scrollPosition, setScrollPosition] = useState<number>(0);
 	const [prevScrollPosition, setPrevScrollPosition] = useState<number>(0);
 	const [showHeader, setShowHeader] = useState<boolean>(true);
 
-	const [userId] = useLocalStorage('user-id', '');
+	// const [userId] = useLocalStorage('user', '');
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -76,23 +73,16 @@ export const Header: FC<IHeaderProps> = ({ className, ...props }: IHeaderProps):
 
 				<div className={styles.header__contacts}>
 					<Link href={VK_PATH} className={styles['header__contacts-link']}>
-						<Image src={'/vk.png'} alt={'vk logo'} width={30} height={30} />
+						<Image src={'/vk.svg'} alt={'vk logo'} width={30} height={30} />
 					</Link>
 					<Link href={TG_PATH} className={styles['header__contacts-link']}>
-						<Image src={'/tg.png'} alt={'vk logo'} width={30} height={30} />
+						<Image src={'/tg.svg'} alt={'vk logo'} width={30} height={30} />
 					</Link>
 					<Link href={YT_PATH} className={styles['header__contacts-link']}>
-						<Image src={'/youtube.png'} alt={'vk logo'} width={30} height={30} />
+						<Image src={'/yt.svg'} alt={'vk logo'} width={30} height={30} />
 					</Link>
-					{typeof window === 'undefined' ? (
-						<div></div>
-					) : localStorage.getItem('token') ? (
-						<Button arrow={'none'} appearance={'ghost'}>
-							<Link href={`/shoppingcart/${userId}`}>Корзина</Link>
-						</Button>
-					) : (
-						<AuthForm />
-					)}
+					<AuthButton />
+					<ShoppingCartModal />
 				</div>
 			</header>
 		</Card>

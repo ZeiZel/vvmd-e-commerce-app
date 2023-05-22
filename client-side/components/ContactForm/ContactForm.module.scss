@@ -1,0 +1,112 @@
+@mixin flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contacts {
+	@include flex;
+	flex-direction: row;
+	padding: 10px;
+
+	h2 {
+		font-size: 40px;
+		font-weight: 700;
+		margin-bottom: 30px;
+	}
+
+	h3 {
+		font-size: 35px;
+		font-weight: 500;
+	}
+
+	form textarea {
+		width: 550px;
+		height: 200px;
+	}
+
+	form button {
+		width: 200px;
+		height: 50px;
+	}
+
+	&__social {
+		@include flex;
+		flex-direction: row;
+
+		height: 600px;
+
+		padding: 0;
+
+		overflow: hidden;
+	}
+
+	&__wrapper {
+		@include flex;
+		flex-direction: row;
+
+		width: 100vw;
+		height: 100vh;
+	}
+
+	&__form-inputs {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		gap: 10px;
+
+		& > input {
+			width: 50%;
+			align-items: center;
+		}
+	}
+
+	&__title {
+		background: var(--gray-dark);
+
+		margin: 0;
+		padding: 30px;
+
+		height: 100%;
+
+		@include flex;
+		flex-direction: column;
+		flex-grow: 1;
+
+		p {
+			font-weight: 300;
+			font-size: 18px;
+			letter-spacing: 0.8px;
+			line-height: 1.5em;
+		}
+	}
+
+	&__register {
+		@include flex;
+		flex-direction: column;
+		gap: 20px;
+
+		padding: 50px;
+
+		&-button {
+			width: 200px;
+			height: 50px;
+		}
+	}
+
+	&__form {
+		@include flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 20px;
+
+		& > input {
+			padding: 10px;
+		}
+
+		& > textarea {
+			width: 100%;
+		}
+	}
+}
+

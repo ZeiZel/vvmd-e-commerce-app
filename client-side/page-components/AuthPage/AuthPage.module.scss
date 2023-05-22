@@ -1,0 +1,28 @@
+@mixin flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.auth-form {
+	@include flex;
+
+	width: 100vw;
+	height: 100vh;
+
+	&__wrapper {
+		@include flex;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__container {
+		@include flex;
+		flex-direction: column;
+		padding: 30px;
+	}
+
+	&__htag {
+		margin-bottom: 20px;
+	}
+}

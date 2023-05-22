@@ -1,0 +1,23 @@
+.button {
+	position: relative;
+}
+
+.cart {
+	position: absolute;
+	top: 70px;
+	right: 10px;
+	z-index: 13000;
+
+	background: var(--black);
+
+	&__wrapper {
+		width: 250px;
+		height: 400px;
+
+		overflow-y: scroll;
+	}
+
+	&__product {
+		margin: 10px;
+	}
+}

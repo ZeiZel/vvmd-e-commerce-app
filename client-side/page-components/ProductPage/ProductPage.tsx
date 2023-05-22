@@ -1,8 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './ProductPage.module.scss';
-import { Button, Characteristics, Modal, SliderComponent, Spinner, Tag } from '../../components';
+import {
+	Button,
+	Characteristics,
+	HTag,
+	Modal,
+	Paragraph,
+	SliderComponent,
+	Spinner,
+	Tag,
+} from '../../components';
 import { IProductCardProps } from './ProductPage.props';
-import cn from 'classnames';
 import { IProductImage } from '../../interfaces/Product.interface';
 import { API_PATH } from '../../api/helper.api';
 import { catalogPageData, declOfNum, priceRu } from '../../helpers';
@@ -12,6 +20,7 @@ export const ProductPage = ({
 	setModal,
 	product,
 	className,
+	addToProductCart,
 	...props
 }: IProductCardProps) => {
 	const { images, title, category, count, price, characteristics, tags, description } = product;
@@ -29,14 +38,16 @@ export const ProductPage = ({
 				<div className={styles.product__slider}>
 					<SliderComponent images={imagesArray} />
 				</div>
-				<div className={styles.product__title}>{title}</div>
-				<div className={styles.product__description}>{description}</div>
+				<HTag tag={'h2'} className={styles.product__title}>
+					{title}
+				</HTag>
+				<Paragraph className={styles.product__description}>{description}</Paragraph>
 				<div className={styles.product__order}>
 					<span>
 						{count} товар{declOfNum(count, ['', 'а', 'ов'])}
 					</span>
 					<span>{priceRu(price)}</span>
-					<Button arrow={'none'} appearance={'primary'}>
+					<Button arrow={'none'} appearance={'primary'} onClick={addToProductCart}>
 						Добавить в корзину
 					</Button>
 				</div>

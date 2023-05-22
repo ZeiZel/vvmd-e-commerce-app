@@ -62,12 +62,12 @@ export const BannerSection = () => {
 								<span className={styles['wrap']}>{text}</span>
 							</span>
 						</HTag>
-						<Paragraph>
+						<Paragraph size={'m'}>
 							КОНФРОНТАЦИЯ – уникальный дизайн коллекционной серии монет с высоким
 							рельефом.
 						</Paragraph>
 						<Button arrow={'right'} appearance={'primary'}>
-							<Link href={'/'}>Смотреть подробнее</Link>
+							<Link href={'/products/0'}>Выбрать товар</Link>
 						</Button>
 					</div>
 					<div className={styles.banner__image}>

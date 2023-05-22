@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ButtonIcon } from '../ButtonIcon/ButtonIcon';
+import { ButtonIcon } from '../UI/ButtonIcon/ButtonIcon';
 import { useAnimation, motion } from 'framer-motion';
 import { useScrollY } from '../../hooks/useScrollY';
 import styles from './Up.module.scss';

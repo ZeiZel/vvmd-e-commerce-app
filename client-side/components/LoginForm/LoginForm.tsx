@@ -5,14 +5,14 @@ import styles from './LoginForm.module.scss';
 import { useLoginMutation } from '../../store/auth/authApi';
 import { useForm } from 'react-hook-form';
 import { ILoginForm } from '../../interfaces/Auth.interface';
-import { Spinner } from '../Spinner/Spinner';
+import { Spinner } from '../UI/Spinner/Spinner';
 import { useAppDispatch } from '../../store';
-import { HTag } from '../HTag/HTag';
+import { HTag } from '../UI/HTag/HTag';
 import cn from 'classnames';
 import Image from 'next/image';
-import { Button } from '../Button/Button';
-import { Input } from '../Input/Input';
-import { Card } from '../Card/Card';
+import { Button } from '../UI/Button/Button';
+import { Input } from '../UI/Input/Input';
+import { Card } from '../UI/Card/Card';
 import { setUser } from '../../store/auth/authSlice';
 
 export const LoginForm: FC = (): JSX.Element => {
@@ -24,7 +24,10 @@ export const LoginForm: FC = (): JSX.Element => {
 
 	const [fetchLogin, { error, isLoading }] = useLoginMutation();
 
-	const toggleShowPassword = () => setShowPassword(!showPassword);
+	const toggleShowPassword = (e: Event) => {
+		e.stopPropagation();
+		setShowPassword(!showPassword);
+	};
 
 	async function onSubmit(data: ILoginForm) {
 		const responseData = await fetchLogin(data).unwrap();
