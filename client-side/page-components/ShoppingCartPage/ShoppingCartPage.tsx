@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useEffect, useState } from 'react';
+import React, { MouseEventHandler, useState } from 'react';
 import styles from './ShoppingCartPage.module.scss';
 import { Button, Card, HTag, ShoppingProductCard, Spinner } from '../../components';
 import {

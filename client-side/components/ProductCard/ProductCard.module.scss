@@ -62,4 +62,12 @@
 	@include flex;
 	flex-direction: column;
 	gap: 10px;
+
+	&__stock {
+		color: var(--green-light)
+	}
+
+	&__empty {
+		color: var(--primary)
+	}
 }

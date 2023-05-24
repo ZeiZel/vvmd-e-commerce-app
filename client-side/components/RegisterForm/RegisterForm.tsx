@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { MouseEventHandler, useState } from 'react';
 import styles from './RegisterForm.module.scss';
 import Image from 'next/image';
 import { Button, Card } from '../../components';
@@ -23,7 +23,7 @@ export const RegisterForm = ({ className, ...props }: IRegisterFormProps) => {
 	}
 
 	const toggleShowPassword = (e: Event) => {
-		e.stopPropagation();
+		e.preventDefault();
 		setShowPassword(!showPassword);
 	};
 
@@ -64,7 +64,12 @@ export const RegisterForm = ({ className, ...props }: IRegisterFormProps) => {
 							},
 						})}
 					/>
-					<button onClick={toggleShowPassword} className={styles['register-form__eye']}>
+					<Button
+						arrow={'none'}
+						appearance={'primary'}
+						onClick={toggleShowPassword}
+						className={styles['register-form__eye']}
+					>
 						{showPassword ? (
 							<Image
 								src={'/opened-eye.svg'}
@@ -80,7 +85,7 @@ export const RegisterForm = ({ className, ...props }: IRegisterFormProps) => {
 								height={25}
 							/>
 						)}
-					</button>
+					</Button>
 				</div>
 				{isSuccess && (
 					<Card color={'green'}>

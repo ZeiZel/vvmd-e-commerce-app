@@ -7,22 +7,33 @@
 		padding: 0;
 		margin: 0;
 
+
 		&__item {
 			padding: 10px;
 			cursor: pointer;
+
+			transition: all .2s;
+
+			border-radius: 5px;
+
+			&:hover {
+				background: var(--gray);
+			}
 		}
 
 		&__content {
 			flex: 1;
 			padding: 10px;
+
+			font-weight: normal;
 		}
 	}
 }
 
 .light {
-	background: #fff;
+	background: var(--gray);
 }
 
 .dark {
-	background: #ccc;
+	border-bottom: 1px solid var(--gray-dark);
 }

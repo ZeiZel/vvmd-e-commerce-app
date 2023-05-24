@@ -15,6 +15,7 @@ export const Card = forwardRef<HTMLDivElement, ICardProps>(
 					[styles.black]: color === 'black',
 					[styles.green]: color === 'green',
 					[styles.red]: color === 'red',
+					[styles.gray]: color === 'gray',
 				})}
 				ref={ref}
 				{...props}

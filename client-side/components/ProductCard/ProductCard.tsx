@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import styles from './ProductCard.module.scss';
 import { IProductCardInterface } from './ProductCard.props';
 import { Card } from '../UI/Card/Card';
-import styles from './ProductCard.module.scss';
 import Image from 'next/image';
 import { Button } from '../UI/Button/Button';
 import { ContactForm, HTag, Modal } from '../';
@@ -12,7 +12,6 @@ import { useAddProductToCartMutation } from '../../store/shoppingcart/shoppingca
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { notify } from '../../helpers/tostify';
 import cn from 'classnames';
-import Head from 'next/head';
 
 export const ProductCard = ({ product, useModal }: IProductCardInterface) => {
 	const [modal, setModal] = useState<boolean>(false);
@@ -73,7 +72,13 @@ export const ProductCard = ({ product, useModal }: IProductCardInterface) => {
 					</HTag>
 
 					<div className={styles['product-details']}>
-						{count ? <span>Доступно: {count}</span> : <span>Нет в наличии</span>}
+						{count ? (
+							<span className={styles['product-details__stock']}>
+								Доступно: {count}
+							</span>
+						) : (
+							<span className={styles['product-details__empty']}>Под заказ</span>
+						)}
 						<span>Цена: {priceRu(price)}</span>
 					</div>
 				</div>

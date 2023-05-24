@@ -7,3 +7,5 @@ export * from './BuyPage/BuyPage';
 export * from './ShoppingCartPage/ShoppingCartPage';
 export * from './ContractPage/ContractPage';
 export * from './AuthPage/AuthPage';
+export * from './AboutPage/AboutPage';
+export * from './ContactsPage/ContactsPage';

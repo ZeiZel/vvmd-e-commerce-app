@@ -25,7 +25,7 @@ export const LoginForm: FC = (): JSX.Element => {
 	const [fetchLogin, { error, isLoading }] = useLoginMutation();
 
 	const toggleShowPassword = (e: Event) => {
-		e.stopPropagation();
+		e.preventDefault();
 		setShowPassword(!showPassword);
 	};
 
