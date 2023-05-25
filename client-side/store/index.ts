@@ -8,10 +8,12 @@ import { contactFormApi } from '../page-components/MainPage/ContactSection/conta
 import authentication from './auth/authSlice';
 import toggleTheme from './toggleTheme/toggleThemeSlice';
 import localStorage from './localStorage/localStorageSlice';
+import shoppingCart from '../page-components/ShoppingCartPage/ShoppingCartPageSlice';
 
 export function makeStore(): Store {
 	return configureStore({
 		reducer: {
+			shoppingCart,
 			localStorage,
 			toggleTheme,
 			authentication,
@@ -28,6 +30,7 @@ export function makeStore(): Store {
 				paymentApi.middleware,
 				shoppingcartApi.middleware,
 				authApi.middleware,
+				contactFormApi.middleware,
 			),
 	});
 }

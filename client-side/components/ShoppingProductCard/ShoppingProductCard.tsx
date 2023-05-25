@@ -6,7 +6,6 @@ import { Divider } from '../UI/Divider/Divider';
 import { API_PATH } from '../../api/helper.api';
 import { IProductImage } from '../../interfaces/Product.interface';
 import { HTag } from '../UI/HTag/HTag';
-import { ErrorPage } from '../../page-components';
 import { priceRu } from '../../helpers';
 import { Button } from '../UI/Button/Button';
 import { Input } from '../UI/Input/Input';
@@ -17,54 +16,77 @@ import {
 	useUpdateTotalPriceMutation,
 } from '../../store/shoppingcart/shoppingcart.api';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { notify } from '../../helpers/tostify';
+import {
+	decrementTotalPrice,
+	incrementTotalPrice,
+} from '../../page-components/ShoppingCartPage/ShoppingCartPageSlice';
+import { useAppDispatch } from '../../store';
 
-export const ShoppingProductCard = ({ product, countTotalPrice }: IShoppingProductCardProps) => {
+export const ShoppingProductCard = ({ product, handleTotalPrice }: IShoppingProductCardProps) => {
+	const dispatch = useAppDispatch();
+
 	const { images, productId, price, totalPrice, title, count, countToBuy } = product;
 	const [countToBuyValue, setCountToBuyValue] = useState<number>(countToBuy);
-	const [totalPriceValue, setTotalPriceValue] = useState<number>(totalPrice);
+	const [totalPriceValue, setTotalPriceValue] = useState<number>(0);
+	const [token] = useLocalStorage('token', '');
+
+	const [fetchDeleteOneProduct] = useDeleteOneProductMutation();
+	const [fetchUpdateCount] = useUpdateCountMutation();
+	const [fetchUpdateTotalPrice] = useUpdateTotalPriceMutation();
 
 	const imagesArray: IProductImage[] = images.map((image) => ({
 		...image,
 		path: API_PATH.replace('/api/', '') + image.path.replace('/uploads', ''),
 	}));
 
-	const [token] = useLocalStorage('token', '');
-	const [fetchDeleteOneProduct] = useDeleteOneProductMutation();
-	const [fetchUpdateCount] = useUpdateCountMutation();
-	const [fetchUpdateTotalPrice] = useUpdateTotalPriceMutation();
-
 	useEffect(() => {
 		setTotalPriceValue(countToBuyValue * price);
-		countTotalPrice(totalPriceValue);
-	}, [countToBuyValue]);
+		fetchUpdateCount({ productId, count: countToBuyValue, token }).unwrap();
+		fetchUpdateTotalPrice({ productId, totalPrice: totalPriceValue, token });
+	}, [countToBuyValue, totalPriceValue]);
 
-	const updateTotalPrice = async (totalPrice: number) => {
-		await fetchUpdateTotalPrice({ token, productId, totalPrice }).unwrap();
+	const htp = () => handleTotalPrice(totalPriceValue);
+
+	useEffect(() => {
+		htp();
+	}, []);
+
+	const handleDecrement = (e: Event) => {
+		if (countToBuyValue > 0) {
+			dispatch(decrementTotalPrice(price));
+		}
+
+		setCountToBuyValue((countToBuyValue) => {
+			if (countToBuyValue > 0) {
+				// тут нельзя вызвать диспетч, так как он сработает дважды !! ХАХАХАХХАХАХАХАХХА
+				return countToBuyValue - 1;
+			} else {
+				return countToBuyValue;
+			}
+		});
 	};
 
-	const handleUpdateCount = async (event: Event, countToUpdate: number) => {
-		event.stopPropagation();
+	const handleIncrement = (e: Event) => {
+		if (countToBuyValue < count) {
+			dispatch(incrementTotalPrice(price));
+		}
 
-		// позволяет выбрать товаров на количество от 0 до общего количества товаров на складе
-		setCountToBuyValue((countToBuyValue) =>
-			countToUpdate > 0
-				? countToBuyValue < count
-					? countToBuyValue + 1
-					: countToBuyValue
-				: countToBuyValue > 0
-				? countToBuyValue - 1
-				: countToBuyValue,
-		);
-
-		await updateTotalPrice(totalPriceValue);
-
-		await fetchUpdateCount({ token, count: countToBuyValue, productId }).unwrap();
+		setCountToBuyValue((countToBuyValue) => {
+			if (countToBuyValue < count) {
+				return countToBuyValue + 1;
+			} else {
+				return countToBuyValue;
+			}
+		});
 	};
 
-	const handleDelete = async (event: Event) => {
+	const handleDelete = (event: Event) => {
 		event.stopPropagation();
 
-		await fetchDeleteOneProduct({ productId, token }).unwrap();
+		fetchDeleteOneProduct({ productId, token }).unwrap();
+
+		notify('success', 'Товар успешно удалён из корзины');
 	};
 
 	return (
@@ -78,48 +100,39 @@ export const ShoppingProductCard = ({ product, countTotalPrice }: IShoppingProdu
 				>
 					<DeleteIcon />
 				</Button>
-				<span className={styles.product__image}>
-					<Image
-						src={imagesArray[0].path.replace('/uploads', '')}
-						alt={title}
-						width={100}
-						height={100}
-					/>
-				</span>
-				<div>
-					<span className={styles.product__title}>
-						<HTag tag={'h2'}>{title}</HTag>
+				<div className={styles['product__data']}>
+					<span className={styles.product__image}>
+						<Image
+							src={imagesArray[0].path.replace('/uploads', '')}
+							alt={title}
+							width={100}
+							height={100}
+						/>
 					</span>
 					<div>
-						<span className={styles['product__count-to-buy']}>
-							Общее количество: {count}
+						<span className={styles.product__title}>
+							<HTag tag={'h2'}>{title}</HTag>
 						</span>
-						<span className={styles.product__price}>Цена: {priceRu(price)}</span>
+						<div className={styles['product__details']}>
+							<span>Общее количество: {count}</span>
+							<span>Цена: {priceRu(price)}</span>
+						</div>
 					</div>
+					<span className={styles.product__count}>
+						Количество:
+						<Button arrow={'none'} appearance={'primary'} onClick={handleDecrement}>
+							-
+						</Button>
+						<Input placeholder={'0...'} value={countToBuyValue} />
+						<Button arrow={'none'} appearance={'primary'} onClick={handleIncrement}>
+							+
+						</Button>
+					</span>
+					<span className={styles['product__total-price']}>
+						{priceRu(totalPriceValue)}
+					</span>
 				</div>
-				<span className={styles.product__count}>
-					Количество:
-					<Button
-						arrow={'none'}
-						appearance={'primary'}
-						onClick={(e) => handleUpdateCount(e, 0)}
-					>
-						-
-					</Button>
-					<Input placeholder={'0...'} value={countToBuyValue} />
-					<Button
-						arrow={'none'}
-						appearance={'primary'}
-						onClick={(e) => handleUpdateCount(e, 1)}
-					>
-						+
-					</Button>
-				</span>
-				<span className={styles['product__total-price']}>
-					К общей стоимости: {totalPriceValue}
-				</span>
 			</div>
-
 			<Divider />
 		</div>
 	);

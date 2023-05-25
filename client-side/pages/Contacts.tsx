@@ -1,5 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
+import { withLayout } from '../layout/Layout';
+import { ContactsPage } from '../page-components';
 
 const Contacts = () => {
 	return (
@@ -7,8 +9,9 @@ const Contacts = () => {
 			<Head>
 				<title>Контакты</title>
 			</Head>
+			<ContactsPage />
 		</div>
 	);
 };
 
-export default Contacts;
+export default withLayout(Contacts);

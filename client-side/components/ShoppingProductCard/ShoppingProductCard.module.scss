@@ -7,15 +7,20 @@
 .product {
 
 	margin: 10px;
-	padding: 10px;
+	padding: 30px;
 
 
 	&__wrapper {
 		@include flex;
-		flex-direction: row;
-		gap: 20px;
 
 		position: relative;
+	}
+
+	&__data {
+		display:grid;
+		grid-template-columns: 130px 320px 320px 120px;
+		justify-content: center;
+		align-items: center;
 	}
 
 	&__delete {
@@ -29,13 +34,19 @@
 		gap: 10px;
 
 		input {
-			width: 65px;
+			width: 60px;
 		}
 
 		button {
 			width: 40px;
 			height: 40px;
 		}
+	}
+
+	&__details {
+		display: flex;
+
+		flex-direction: column;
 	}
 
 }

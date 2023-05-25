@@ -13,7 +13,7 @@ import { IProductImage } from '../../interfaces/Product.interface';
 import { IShoppingCartProduct } from '../../store/shoppingcart/shoppingcart.interface';
 import { Spinner } from '../UI/Spinner/Spinner';
 import { Card } from '../UI/Card/Card';
-import CartIcon from './cart.svg';
+import CartIcon from '../../public/cart.svg';
 
 export const ShoppingCartModal = ({ className }: IShoppingCartProps): JSX.Element => {
 	const [showModal, setShowModal] = useState<boolean>(false);
@@ -63,12 +63,12 @@ const Modal = ({ userId, className }: IShoppingCartModalProps): JSX.Element => {
 
 	return (
 		<Card className={cn(styles.cart, className)}>
-			<Card color={'black'} className={cn(styles.cart__wrapper)}>
+			<div className={cn(styles.cart__wrapper)}>
 				{products ? (
 					products.map((product: IShoppingCartProduct) => (
 						<div key={product.productId} className={cn(styles.cart__product)}>
 							<div className={styles.product__image}>
-								{product.images.map((image: IProductImage, i, images) => (
+								{product.images.map((image: IProductImage) => (
 									<Image
 										key={image.name}
 										src={
@@ -78,15 +78,17 @@ const Modal = ({ userId, className }: IShoppingCartModalProps): JSX.Element => {
 										alt={image.name}
 										width={100}
 										height={100}
+										style={{ borderRadius: '20px' }}
 									/>
 								))}
 							</div>
+							<span>{product.title}</span>
 						</div>
 					))
 				) : (
 					<HTag tag={'h2'}>Товаров в корзине нет</HTag>
 				)}
-			</Card>
+			</div>
 			<Button arrow={'none'} appearance={'ghost'}>
 				<Link href={`/shoppingcart/${userId}`}>Корзина</Link>
 			</Button>
