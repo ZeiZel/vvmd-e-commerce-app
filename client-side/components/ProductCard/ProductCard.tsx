@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './ProductCard.module.scss';
 import { IProductCardInterface } from './ProductCard.props';
 import { Card } from '../UI/Card/Card';
@@ -8,18 +8,24 @@ import { ContactForm, HTag, Modal } from '../';
 import { ProductPage } from '../../page-components';
 import { API_PATH_IMAGE } from '../../api/helper.api';
 import { priceRu } from '../../helpers';
-import { useAddProductToCartMutation } from '../../store/shoppingcart/shoppingcart.api';
+import {
+	useAddProductToCartMutation,
+	useGetAllProductsInCartQuery,
+} from '../../store/shoppingcart/shoppingcart.api';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { notify } from '../../helpers/tostify';
 import cn from 'classnames';
+import { IShoppingCartProduct } from '../../store/shoppingcart/shoppingcart.interface';
 
 export const ProductCard = ({ product, useModal }: IProductCardInterface) => {
 	const [modal, setModal] = useState<boolean>(false);
 	const [openContacts, setOpenContacts] = useState<boolean>(false);
-
-	const [fetchProduct, { isError, isLoading, isSuccess }] = useAddProductToCartMutation();
-	const [login, updateLogin, removeLogin] = useLocalStorage('user', '');
 	const [token] = useLocalStorage('token', '');
+	const [userId] = useLocalStorage('user-id', '');
+
+	const { data: productsFromCart } = useGetAllProductsInCartQuery({ userId, token });
+	const [fetchProduct, { isError, isLoading, isSuccess, status }] = useAddProductToCartMutation();
+	const [login, updateLogin, removeLogin] = useLocalStorage('user', '');
 
 	const addToProductCart = async (event: Event) => {
 		event.stopPropagation();
@@ -29,17 +35,31 @@ export const ProductCard = ({ product, useModal }: IProductCardInterface) => {
 			return;
 		}
 
-		const response = await fetchProduct({
-			cartProduct: {
-				login,
-				productId: product._id,
-			},
-			token,
-		}).unwrap();
+		const sameProduct =
+			productsFromCart &&
+			productsFromCart.find((p: IShoppingCartProduct) => {
+				return p.productId === product._id;
+			});
 
-		if (isError)
-			notify('error', 'Сначала войдите в систему перед добавлением товара в корзину!');
-		if (isSuccess) notify('success', 'Товар успешно добавлен в корзину!');
+		if (!sameProduct) {
+			const response = await fetchProduct({
+				cartProduct: {
+					login,
+					productId: product._id,
+				},
+				token,
+			})
+				.unwrap()
+				.then(() => {
+					notify('success', 'Товар успешно добавлен в корзину!');
+				})
+				.catch(() => {
+					notify(
+						'error',
+						'Пожалуйста, авторизуйтесь перед добавлением товара в корзину.',
+					);
+				});
+		}
 	};
 
 	const { images, title, count, price } = product;
