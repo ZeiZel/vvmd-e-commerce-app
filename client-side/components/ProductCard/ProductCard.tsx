@@ -16,8 +16,11 @@ import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { notify } from '../../helpers/tostify';
 import cn from 'classnames';
 import { IShoppingCartProduct } from '../../store/shoppingcart/shoppingcart.interface';
+import { useRouter } from 'next/router';
 
 export const ProductCard = ({ product, useModal }: IProductCardInterface) => {
+	const router = useRouter();
+
 	const [modal, setModal] = useState<boolean>(false);
 	const [openContacts, setOpenContacts] = useState<boolean>(false);
 	const [token] = useLocalStorage('token', '');
@@ -59,6 +62,8 @@ export const ProductCard = ({ product, useModal }: IProductCardInterface) => {
 						'Пожалуйста, авторизуйтесь перед добавлением товара в корзину.',
 					);
 				});
+
+			router.reload();
 		}
 	};
 

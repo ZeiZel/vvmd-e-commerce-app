@@ -22,9 +22,11 @@ import {
 	incrementTotalPrice,
 } from '../../page-components/ShoppingCartPage/ShoppingCartPageSlice';
 import { useAppDispatch } from '../../store';
+import { useRouter } from 'next/router';
 
 export const ShoppingProductCard = ({ product, handleTotalPrice }: IShoppingProductCardProps) => {
 	const dispatch = useAppDispatch();
+	const router = useRouter();
 
 	const { images, productId, price, totalPrice, title, count, countToBuy } = product;
 	const [countToBuyValue, setCountToBuyValue] = useState<number>(countToBuy);
@@ -87,6 +89,8 @@ export const ShoppingProductCard = ({ product, handleTotalPrice }: IShoppingProd
 		fetchDeleteOneProduct({ productId, token }).unwrap();
 
 		notify('success', 'Товар успешно удалён из корзины');
+
+		router.reload();
 	};
 
 	return (

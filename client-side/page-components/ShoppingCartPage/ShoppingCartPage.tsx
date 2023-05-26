@@ -54,6 +54,8 @@ export const ShoppingCartPage = () => {
 		await fetchDeleteAll({ userId, token }).unwrap();
 
 		notify('success', 'Все товары удалены из корзины');
+
+		router.reload();
 	};
 
 	if (isLoading) return <Spinner />;
