@@ -22,6 +22,16 @@
 	--shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.input-range {
+	&__slider {
+		background-color: var(--primary-hover) !important;
+		border: var(--primary-hover) !important;
+	}
+	&__track--active {
+		background-color: var(--primary-hover) !important;
+	}
+}
+
 
 * {
 	box-sizing: border-box;

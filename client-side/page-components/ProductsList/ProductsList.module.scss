@@ -5,19 +5,29 @@
 }
 
 .products-list {
-	padding-top: 80px;
+	padding-top: 120px;
+
+	min-height: 100vh;
 
 	&__wrapper {
-		@include flex;
-		flex-direction: row;
+		display: grid;
+		grid-template-columns: 300px 1040px;
 	}
 
 	&__filters {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
 		padding: 30px;
+		height: 350px;
 	}
 
 	&__cards {
+		display: flex;
+		flex-direction: column;
 
+		height: 100vh;
 	}
 
 	&__items {
@@ -29,9 +39,6 @@
 
 .container {
 	@include flex;
-	height: 100vh;
-
 	margin: 0 auto;
-
-	width: 1140px;
+	width: 1440px;
 }
