@@ -55,6 +55,7 @@ export const ProductCard = ({ product, useModal }: IProductCardInterface) => {
 				.unwrap()
 				.then(() => {
 					notify('success', 'Товар успешно добавлен в корзину!');
+					router.reload();
 				})
 				.catch(() => {
 					notify(
@@ -62,8 +63,6 @@ export const ProductCard = ({ product, useModal }: IProductCardInterface) => {
 						'Пожалуйста, авторизуйтесь перед добавлением товара в корзину.',
 					);
 				});
-
-			router.reload();
 		}
 	};
 

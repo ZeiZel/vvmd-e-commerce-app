@@ -64,12 +64,7 @@ export const RegisterForm = ({ className, ...props }: IRegisterFormProps) => {
 							},
 						})}
 					/>
-					<Button
-						arrow={'none'}
-						appearance={'primary'}
-						onClick={toggleShowPassword}
-						className={styles['register-form__eye']}
-					>
+					<button onClick={toggleShowPassword} className={styles['register-form__eye']}>
 						{showPassword ? (
 							<Image
 								src={'/opened-eye.svg'}
@@ -85,7 +80,7 @@ export const RegisterForm = ({ className, ...props }: IRegisterFormProps) => {
 								height={25}
 							/>
 						)}
-					</Button>
+					</button>
 				</div>
 				{isSuccess && (
 					<Card color={'green'}>

@@ -14,6 +14,7 @@ import { Button } from '../UI/Button/Button';
 import { Input } from '../UI/Input/Input';
 import { Card } from '../UI/Card/Card';
 import { setUser } from '../../store/auth/authSlice';
+import { notify } from '../../helpers/tostify';
 
 export const LoginForm: FC = (): JSX.Element => {
 	const { register, handleSubmit } = useForm<ILoginForm>();
@@ -97,10 +98,8 @@ export const LoginForm: FC = (): JSX.Element => {
 				>
 					Отправить
 				</Button>
-				{error && (
-					<HTag tag={'h2'}>Вход не был выполнен. Пожалуйста, повторите позже.</HTag>
-				)}
 			</div>
+			{error && notify('error', error.data.message as string)}
 		</form>
 	);
 };

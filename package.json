@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"cd server-side && npm run start:dev\" \"cd client-side && npm run dev\""
   },
   "keywords": [],
